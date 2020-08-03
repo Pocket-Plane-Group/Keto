@@ -7,7 +7,7 @@ The mod is directly compatible with all BG2 games: BGII, BGT, BGII:EE, EET.
 
 Note: For downloading the current version from GitHub, make sure you go to the releases page and download the [latest release](https://github.com/Pocket-Plane-Group/Keto/releases) of this mod!
 
-[Read the Readme](https://Pocket-Plane-Group.github.io/Pocket-Plane-Group.github.io/readmes/KetoReadme.txt)
+[Read the Readme](https://Pocket-Plane-Group.github.io/Pocket-Plane-Group.github.io/readmes/KetoReadme.txt) - 
 [Read the French Readme](https://Pocket-Plane-Group.github.io/Pocket-Plane-Group.github.io/readmes/KetoReadme.french.txt)
 
 [Visit the Mod's Page at PPG](http://www.pocketplane.net/keto)
