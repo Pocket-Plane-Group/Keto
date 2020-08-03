@@ -2424,9 +2424,9 @@ EXIT
 
 
 CHAIN IF
-~InParty("Keto")
-See("Keto")
-!StateCheck("Keto",STATE_SLEEPING)
+~InParty("Jaheira")
+See("Jaheira")
+!StateCheck("Jaheira",STATE_SLEEPING)
 GGT("JaheiraBanditPlot",2)
 OR(2)
 G("JaheiraRomanceActive",1)

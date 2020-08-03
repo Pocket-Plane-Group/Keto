@@ -1,4 +1,4 @@
-V5
+
 	               	  Keto NPC MOD For Baldur’s Gate 2
                             A Pocket Plane Group Project
                              http://www.pocketplane.net
@@ -6,7 +6,7 @@ V5
 
 INTRODUCING KETO
 
-Keto is a new NPC add-on for Baldur's Gate 2. A travelling storyteller, Keto has
+Keto is an NPC add-on for Baldur's Gate 2. A travelling storyteller, Keto has
 seen the front door of just about every dungeon in Amn, and seen the inside of
 even more taverns. An energetic young woman who has a love/hate relationship
 with adventuring (she loves adventure but hates the inevitable peril), Keto
@@ -18,9 +18,6 @@ you’ll swear she was always meant to be in the game. We have tried very hard to
 give her the same level of detail as the Bioware NPCs, right down to audio
 recording and inter-party dialogue. If you have any reactions to share, please
 let us know at the Pocket Plane Group forums: http://forums.pocketplane.net
-
-Alternately, e-mail the developers: jcompton@pocketplane.net and
-llamababe@pocketplane.net
 
 Mirror sites, the latest Keto updates, alternate portrait suggestions and
 more will always be available at http://www.pocketplane.net/keto/
@@ -174,6 +171,14 @@ the mod, remember, it was 3 AM!
 
 
 HISTORY
+
+V6: Corrected EE BAMs (switched back to BAMs instead of BMP)
+    Moved tp2 inside the mod folder
+    Added iconv for text format transformation
+    Removd outdated version number from mod name in setup.tra
+    Added keto.ini to support ALIEN's Project Infinity
+    Renamed French readme and added it to the call during installation
+    BWPFixpack fix integrated: Keto will not try to banter with Jaheira if she is not there
 
 V5: EET compatibility
     Updated to WeiDU 246
