@@ -1,0 +1,111 @@
+@0    = ~Keto-SOA NPC V2~
+@1    = ~Keto~
+@2    = ~So, there I was. Just humming a tune to keep my bravery, while the light of my torch flickered in the stifling darkness of the Firewine ruins.~
+@3    = ~We'll continue this when I'm not dying!~ [FWKETO00]
+@4    = ~This just what I'd been hoping it would be!~ [FWKETO01]
+@5    = ~So.  "Do unto others" only applies to other people, is that it?~ [FWKETO02]
+@6    = ~P'feh.  So, *hero*, what's next on the list of atrocities, hmm?~ [FWKETO03]
+@7    = ~This... this is just villainy!~ [FWKETO04]
+@8    = ~Eh? What in the blazes am I going to do up here?~ [FWKETO05]
+@9    = ~So, who else is up for another twenty hours of marching?  No one?  Then perhaps we should rest.~ [FWKETO06]
+@10   = ~Anyone up for jacks?  Hopscotch?  Scotch?  Anyone up for... anything?~ [FWKETO07]
+@11   = ~Keep up the courage until the battle ends!~ [FWKETO08]
+@12   = ~Are we going to be doing this often?~ [FWKETO09]
+@13   = ~And mayhaps there will be tale a of your downfall!~ [FWKETO35]
+@14   = ~I won't fail you!~ [FWKETO10]
+@15   = ~Couldn't we all just get along?~ [FWKETOBC]
+@16 = ~~ [FWKETO11]
+@17 = ~~ [FWKETO12]
+@18   = ~Careful of the wine!  Oh, damn, that's not wine!~ [FWKETO13]
+@19   = ~Smells like trees.  And air.  And not a decent bed around for miles.~ [FWKETO14]
+@20   = ~I see so little of the places I visit.  Would be nice to settle for a while and get a feel for a place.~ [FWKETO15]
+@21   = ~Ugh. If you don't mind me asking, after you're done sightseeing, can we get out of here?~ [FWKETO16]
+@22   = ~It's a good day for traveling!  If you don't mind sharing the road with everyone that agrees, that is.~ [FWKETO17]
+@23   = ~The nighttime was made for sleeping and drinking. Might I point out that we are doing neither?~ [FWKETO18]
+@24   = ~What can I do?~ [FWKETO19]
+@25   = ~Mmmph?~ [FWKETO20]
+@26   = ~I hear you.~ [FWKETO21]
+@27   = ~Tell me.  Maybe I'll make it into a story.~ [FWKETO22]
+@28   = ~Aye?  I'm still paying attention.~ [FWKETO23]
+@29   = ~I'll keep your secrets.~ [FWKETO24]
+@30   = ~All right.~ [FWKETO25]
+@31   = ~Couldn't we do... anything else?~ [FWKETO26]
+@32   = ~Aye, I'm goin', already.~ [FWKETO27]
+@33   = ~And you'd like a happy tune to go with it?~ [FWKETO28]
+@34   = ~Ah, another heroic venture.~ [FWKETO29]
+@35   = ~Aye.~ [FWKETO30]
+@36   = ~Truly, the stuff of legends.~ [FWKETO31]
+@37 = ~~ [FWKETO32]
+@38   = ~Do you mind?  I'm trying to have a drink here!~ [FWKETO33]
+@39   = ~Ha HA!~ [FWKETO34]
+@40   = ~Hmmph, big surprise...~ [FWKETO36]
+@41   = ~I don't know why I bother!~ [FWKETO37]
+@42   = ~No, really, just keep piling it on.~ [FWKETO38]
+@43   = ~And they're none the wiser!~ [FWKETO39]
+@44   = ~Maybe I should quit the gab and get back to hiding, aye?~ [FWKETO40]
+@45   = ~Well, that would have worked if I weren't getting BEAT ON.~ [FWKETO41]
+@46   = ~Try not to fall on that, aye?  That goes for me, too...~ [FWKETO42]
+@47   = ~When asked about her past, KETO surprises you by being hazier and more sparse with detail than you would expect from a professional storyteller. She is either from 'the East' or 'the South', depending on when you ask. From the tales she tells, you gather that she has been 'a little too late' or 'a little too early' to personally witness several crucial battles in Amn and the surrounding regions during the past couple of years. Much of her subsistence income working crowds in taverns and inns seems to support a firm appreciation for wine.~
+@48   = ~Alesis~
+@49   = ~Barry~
+@50   = ~Epiphone~
+@51   = ~Amyrillis~
+@52   = ~Germione~
+@53   = ~Germione and Poppy~
+@54   = ~Jasper~
+@55   = ~Sir Joules~
+@56   = ~Chorus~
+@57   = ~Myles~
+@58   = ~Grainne~
+@59   = ~Liffetta~
+@60   = ~Lyrica~
+@61   = ~Penny Madrigal~
+@62   = ~Poppy~
+@63   = ~Prudence~
+@64   = ~Scrap~
+@65   = ~Stacy~
+@66   = ~Talindra~
+@67   = ~Tewes~
+@68   = ~Ulga~
+@69   = ~A bottle of wine~
+@70   = ~Keto's Bottle of Wine~
+@71   = ~Keto's Bottle of Wine
+
+Merry conversation aside, this bottle of wine is Keto's most trusted companion on the road. Its vintage varies depending on the town and the quantity of coin in her purse, but whatever her locale, the bard does her best to keep her bottle full... then empty... then full... then empty...~
+@72   = ~Keto's Pipes~
+@73   = ~Keto's Pipes
+
+Some laymen mistakenly believe all bards are accomplished singers. Keto is quick to disabuse you of this notion. However, she does play the pipes--these pipes--quite well.~
+@74   = ~Cloak~
+@75   = ~Granny O'Fairney's Cloak~
+@76   = ~Granny O'Fairney's Cloak
+
+It is said that Fiona O'Fairney (better known to Keto as "Granny") was a wild adventuress in her youth. From duelling Zhentarim raiders at the Daggerdale border to tea parties among the Featherdale elite, legend has it this scarlet cloak has survived a myriad of punishing onslaughts unscathed, including torch fire, gibberling spit, and her mother-in-law's bunkleberry wine (the same home brew mentioned in "Volo's Guide To All Things Purple").
+
+The family mantle has now passed to Keto, its fabric still resilient, its color yet jaunty--a treasured heirloom, to be sure.
+
+STATISTICS
+
+While Equipped:
+
+ AC: +1
+ Acid Resistance: + 5%
+ Fire Resistance: + 5%
+ Saving Throw:  +1 bonus
+ Weight:  3~
+@77   = ~Letters~
+@78   = ~Keto's Letters~
+@79   = ~Keto's Letters
+
+Before they returned to Featherdale, Keto's parents gifted her with this small collection of correspondence: letters she wrote describing her journeys in the scant months before the encounter that left the bard without memories of her past. The recent discovery of her family roots and slain husband have left Keto too unsettled to contemplate the words of her forgotten self, but, with time, her curiosity will surely prevail.~
+@80   = ~Keto's Invitation~
+@81   = ~This very official-looking invitation directs one Keto Riven to make with all haste for Imnesvale to compete in the First Pan-Amnish Bardic Competition. This notice will serve as proof of her identity.~
+@82   = ~Lyrica's Handprint~
+@83   = ~This "artwork" alleges to be a signed handprint by singing sensation Lyrica. It looks more like an inkblot.~
+@84   = ~Keto/Kelsey Interaction (Requires Kelsey-SOA)~
+@85   = ~You do not appear to have Kelsey-SOA installed.~
+@86   = ~Banter Accelerator~
+@87   = ~You appear to already have the banter accelerator installed.~
+
+
+@1000 = ~When asked about her past, KETO smirks. "Forgotten already, have you?" Born Catriona O'Fairney, daughter to Featherdale landowners Myles and Grainne O'Fairney, Keto was a spirited young woman with a gift for tales who set out on the road with her adventuresome husband a few years ago. An attack by marauding orcs left her husband dead and Keto bruised at the bottom of a cliff, with no memory of her true identity. She took to the road as a wandering bard, gathering and telling tales place to place in the hopes of rediscovering herself. Reunited with her parents after an exhaustive search, Keto has elected to stay with you in the hopes of helping you better navigate the rocky road of your destiny--and to be the primary source for the splendid tales that will doubtless be told for decades to come.~

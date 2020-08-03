@@ -1,0 +1,68 @@
+IF
+Global("PGKetoSpawned","GLOBAL",0)
+XPLT(Player1,500001)
+THEN
+RESPONSE #100
+CreateCreature("keto08",[3602.2565],5)
+SetGlobal("PGKetoSpawned","GLOBAL",1)
+Continue()
+END
+
+IF
+Global("PGKetoSpawned","GLOBAL",0)
+XPGT(Player1,500000)
+XPLT(Player1,1000001)
+THEN
+RESPONSE #100
+CreateCreature("keto10",[3602.2565],5)
+SetGlobal("PGKetoSpawned","GLOBAL",1)
+Continue()
+END
+
+IF
+Global("PGKetoSpawned","GLOBAL",0)
+XPGT(Player1,1000000)
+THEN
+RESPONSE #100
+CreateCreature("keto12",[3602.2565],5)
+SetGlobal("PGKetoSpawned","GLOBAL",1)
+Continue()
+END
+
+
+
+IF
+Global("PGKetoSpawned","GLOBAL",1)
+Global("PGKetoDidMG","AR0500",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoDidMG","AR0500",1)
+ActionOverride("Keto",MakeGlobal())
+SmallWait(1)
+END
+
+
+
+IF
+Global("PGKetoSpawned","GLOBAL",1)
+Global("PGKetoDidMG","AR0500",1)
+!GlobalGT("Playhouse","GLOBAL",0)
+Global("PGKetoMoved","AR0500",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoMoved","AR0500",1)
+MoveGlobal("AR0509","Keto",[432.478])
+END
+
+IF
+Global("PGKetoSpawned","GLOBAL",1)
+Global("PGKetoDidMG","AR0500",1)
+GlobalGT("Playhouse","GLOBAL",0)
+Global("PGKetoMoved","AR0500",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoMoved","AR0500",1)
+MoveGlobal("AR0522","Keto",[432.478])
+END
+
+

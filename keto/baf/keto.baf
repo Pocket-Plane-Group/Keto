@@ -1,0 +1,417 @@
+IF
+InParty(Myself)
+PartyHasItem("PGKScr1")
+Global("PGShowUmar","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("PGShowUmar","LOCALS",1)
+RevealAreaOnMap("AR1100")
+AddJournalEntry(@4000,QUEST)
+END
+
+IF
+InParty(Myself)
+Global("PGKetoBeenInPartyOnce","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoBeenInPartyOnce","GLOBAL",1)
+END
+
+IF
+!InParty(Myself)
+Global("PGKetoBeenInPartyOnce","GLOBAL",1)
+Global("PGKetoIsInFirstFlagons","GLOBAL",0)
+OR(3)
+AreaCheck("AR0509")
+AreaCheck("AR0510")
+AreaCheck("AR0511")
+THEN
+RESPONSE #100
+SetGlobal("PGKetoIsInFirstFlagons","GLOBAL",1)
+END
+
+// Keto Quest Timer
+
+
+// V1: If Yoshimo isn't around
+
+IF
+InParty(Myself)
+!InParty("Yoshimo")
+Global("PGKetoQuestStatus","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoQuestStatus","GLOBAL",1)
+RealSetGlobalTimer("PGKetoQuestTimer","GLOBAL",55000)
+END
+
+// V2: If Yoshimo is around
+
+IF
+InParty(Myself)
+InParty("Yoshimo")
+Global("PGKetoQuestWaitsSix","GLOBAL",0)
+Global("PGKetoQuestStatus","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoQuestStatus","GLOBAL",1)
+SetGlobal("PGKetoQuestWaitsSix","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("Chapter",%bg2_chapter_6%)
+Global("PGKetoDidSixTimerBit","LOCALS",0)
+OR(2)
+Global("PGKetoQuestWaitsSix","GLOBAL",1)
+GlobalTimerNotExpired("PGKetoQuestTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("PGKetoDidSixTimerBit","LOCALS",1)
+RealSetGlobalTimer("PGKetoQuestTimer","GLOBAL",30)
+END
+
+IF
+RealGlobalTimerExpired("PGKetoQuestTimer","GLOBAL")
+Global("PGKetoQuestStatus","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoQuestStatus","GLOBAL",2)
+END
+
+// If we made it to Umar, then left. Dammit.
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!AreaCheck("AR1100")
+!AreaCheck("AR1105")
+GlobalLT("PGKetoQuestStatus","GLOBAL",4)
+Global("KetoNoWannaLeave","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("KetoNoWannaLeave", "GLOBAL", 2)
+Dialogue(Player1)
+END
+
+
+
+// If we never made it to Umar at all
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!AreaCheck("AR1100")
+!AreaCheck("AR1105")
+GlobalLT("PGKetoQuestStatus","GLOBAL",3)
+OR(2)
+GlobalTimerExpired("PGKetoHappyTimer","GLOBAL")
+GlobalTimerExpired("PGKetoUnhappyTimer","GLOBAL")
+Global("PGKetoImpatient", "GLOBAL", 0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoImpatient", "GLOBAL", 1)
+SetGlobalTimer("PGKetoMeansItTimer","GLOBAL",THREE_DAYS)
+Dialogue(Player1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!AreaCheck("AR1100")
+!AreaCheck("AR1105")
+GlobalLT("PGKetoQuestStatus","GLOBAL",3)
+GlobalTimerExpired("PGKetoMeansItTimer","GLOBAL")
+Global("PGKetoMeantIt", "GLOBAL", 0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoMeantIt", "GLOBAL", 1)
+Dialogue(Player1)
+END
+
+
+
+IF
+InParty(Myself)
+OR(2)
+See("PGTewes")
+RealGlobalTimerExpired("PGKetoQuestOutcomeTimer","GLOBAL")
+CombatCounter(0)
+Global("KetoDecideQuestOutcome","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("KetoDecideQuestOutcome","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+
+// Give us Scrap
+
+IF
+InParty(Myself)
+AreaCheck("AR1100")
+!AreaCheck("AR1105")
+Global("PGKetoInvite","GLOBAL",1)
+!Global("PGBardCompoDone","GLOBAL",1)
+GGT("UmarCut",0)
+!G("OgronAttack",1)
+Global("SpawnedScrap","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("SpawnedScrap","LOCALS",1)
+SetGlobal("KetoNoWannaLeave","GLOBAL",1)
+CreateCreatureObjectOffScreen("PGScrap","Keto",0,0,0)
+END
+
+
+
+
+/*
+ When Global("PGKetoInviteVinPt1", "GLOBAL", 1) , we know she got the invite
+ from him. So what we'll do is we'll say "Okay, if PGKetoInvite=1 but
+ PGKetoInviteVinPt1 = 1, don't spawn everyone yet. Set a timer (600 or so ought
+ to be sufficient) and when that expires, set PGKetoInviteVinPt1 to 2. THEN, it'
+ ll be okay.
+*/
+
+
+IF
+InParty(Myself)
+Global("PGKetoIsInFirstFlagons","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoIsInFirstFlagons","GLOBAL",0)
+END
+
+
+IF
+InParty(Myself)
+See([ENEMY])
+InPartyAllowDead("Jan")
+Global("PGKetoJanBattle","LOCALS",0)
+!CombatCounter(0)
+Global("PGKetoBattleTalkChance","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoBattleTalkChance","LOCALS",1)
+END
+
+
+IF
+InParty(Myself)
+InParty("Jan")
+See("Jan")
+!Dead("Jan")
+!See([ENEMY])
+CombatCounter(0)
+Global("PGKetoJanBattle","LOCALS",0)
+Global("PGKetoBattleTalkChance","LOCALS",1)
+THEN
+RESPONSE #20
+SetGlobal("PGKetoJanBattle","LOCALS",1)
+Interact("Jan")
+RESPONSE #80
+SetGlobal("PGKetoBattleTalkChance","LOCALS",0)
+END
+
+IF
+G("PGKetoYoshiFirstWake",1)
+THEN
+RESPONSE #100
+SG("PGKetoYoshiFirstWake",2)
+Interact("Yoshimo")
+END
+
+IF
+Global("PGKetoKeldornBoozyWake","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoKeldornBoozyWake","GLOBAL",2)
+Interact("Keldorn")
+END
+
+IF
+Global("PGKetoKeldornMockWake","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoKeldornMockWake","GLOBAL",2)
+Interact("Keldorn")
+END
+
+
+
+IF
+InParty(Myself)
+InParty("Anomen")
+Global("PGKetoWaitingForAnoWake","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoWaitingForAnoWake","LOCALS",1)
+RealSetGlobalTimer("PGKetoAnoWakeTimer","LOCALS",5000)
+END
+
+IF
+Global("PGWakeUpKeto","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PGWakeUpKeto","GLOBAL",2)
+ActionOverride("Anomen",Interact("Keto"))
+END
+
+IF
+InParty(Myself)
+InParty("Anomen")
+Global("AnomenIsKnight","GLOBAL",0)
+Global("AnomenIsNotKnight","GLOBAL",0)
+GlobalTimerExpired("AnomenKnight","GLOBAL")
+See("Anomen")
+!Dead("Anomen")
+!StateCheck("Anomen",STATE_SLEEPING)
+Global("PGGoodLuckAno", "LOCALS", 0)
+CombatCounter(0)
+AreaCheck("AR0900")
+THEN
+RESPONSE #100
+SetGlobal("PGGoodLuckAno", "LOCALS", 1)
+Interact("Anomen")
+END
+
+IF
+InParty(Myself)
+See("RIFTG03")
+Global("KetoSawAmmy","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("KetoSawAmmy","LOCALS",1)
+END
+
+IF
+InParty(Myself)
+AreaCheck("AR0900")
+See(Player1)
+Global("KetoSawAmmy","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("KetoSawAmmy","LOCALS",2)
+Dialogue(Player1)
+END
+
+IF
+InParty(Myself)
+See("RIFTG03")
+Global("KetoSawAmmy","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("KetoSawAmmy","LOCALS",1)
+END
+
+IF
+InParty(Myself)
+See("firkra02")
+Global("KetoSawFirkraag","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("KetoSawFirkraag","LOCALS",1)
+END
+
+IF
+InParty(Myself)
+AreaCheck("AR1200")
+See(Player1)
+Global("KetoSawFirkraag","LOCALS",1)
+Global("KetoFirkraagDead","LOCALS",0)
+Global("Kidnap","GLOBAL",4)
+Dead("firkra02")
+THEN
+RESPONSE #100
+SetGlobal("KetoSawFirkraag","LOCALS",4)
+SetGlobal("KetoFirkraagLives","LOCALS",5)
+SetGlobal("KetoFirkraagDead","LOCALS",1)
+Dialogue(Player1)
+END
+
+
+IF
+InParty(Myself)
+AreaCheck("AR1200")
+See(Player1)
+Global("KetoSawFirkraag","LOCALS",1)
+Global("KetoFirkraagLives","LOCALS",0)
+Global("Kidnap","GLOBAL",4)
+!Dead("firkra02")
+THEN
+RESPONSE #100
+SetGlobal("KetoFirkraagLives","LOCALS",1)
+Dialogue(Player1)
+END
+
+IF
+InParty(Myself)
+Global("PGKetoFriendsTale","LOCALS",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("PGKetoFriendsTimer","LOCALS",3000)
+SetGlobal("PGKetoFriendsTale","LOCALS",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+Global("PGKetoFriendsTale","LOCALS",1)
+RealGlobalTimerExpired("PGKetoFriendsTimer","LOCALS")
+OR(7)
+AreaCheck("AR0513")
+AreaCheck("AR0509")
+AreaCheck("AR0021")
+AreaCheck("AR0313")
+AreaCheck("AR1105")
+AreaCheck("AR2010")
+AreaCheck("AR1602")
+THEN
+RESPONSE #100
+SetGlobal("PGKetoFriendsTale","LOCALS",2)
+StartCutSceneMode()
+CreateCreatureObjectOffScreen("KetoFan1","Keto",0,0,0)
+SmallWait(3)
+CreateCreatureObject("KetoFan2","KetoFan1",0,0,0)
+EndCutSceneMode()
+END
+
+IF
+InParty(Myself)
+See("KetoFan2")
+See("KetoFan1")
+Global("PGKetoFriendsTale","LOCALS",2)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoFriendsTale","LOCALS",3)
+StartDialogueNoSet("KetoFan1")
+END
+
+IF
+Global("PGKetoKnowsHistory","GLOBAL",1)
+Global("ChangedBio","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("ChangedBio","LOCALS",1)
+SetPlayerSound(Myself,@1000,EXISTANCE5)
+END
+
+IF
+    !G("PGKetoKnowsHistory",1)
+    HotKey(K)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        StartCutScene("ketofix")
+END
+
+IF
+    G("PGKetoKnowsHistory",1)
+    HotKey(K)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        StartCutScene("ketofix2")
+END
+

@@ -1,0 +1,9 @@
+IF
+Global("MoteInBhaalspawnsEye", "GLOBAL", 1)
+Global("PGBlindedPC","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("PGBlindedPC","LOCALS",1)
+ActionOverride(Player1,ApplySpellRES("pgkmote",Myself))
+END
+

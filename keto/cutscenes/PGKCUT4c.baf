@@ -1,0 +1,84 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGJASSY")
+         PlaySong(0)
+         FadeFromColor([20.0],0)
+         Wait(1)
+         Weather(NOWEATHER)
+         Wait(3)
+         CreateCreature("PGTalind",[4053.3062],15)
+         ActionOverride("PGTEWES",DestroySelf())
+         ActionOverride("PGKCHOR1",DestroySelf())
+         ActionOverride("PGKCHOR2",DestroySelf())
+         Wait(3)
+MoveToPoint([4195.3000]) // Jasper wings
+ActionOverride("PGTalind",MoveToPoint([4200.3125]))
+Wait(4) // Wait for her to get there
+FaceObject("PGTalind")
+ActionOverride("PGTalind",Face(14))
+MoveViewPoint([4225.3112],INSTANT)
+SmallWait(1)
+
+DisplayStringHead("PGTalind",@1250)
+Wait(12)
+DisplayStringHead("PGTalind",@12500)
+Wait(13)
+DisplayStringHead("PGTalind",@12501)
+Wait(13)
+DisplayStringHead("PGTalind",@12501)
+Wait(14)
+
+DisplayStringHead("PGTalind",@1251)
+Wait(15)
+
+
+// applause
+
+PlaySound("PGcrowd1")
+DisplayStringHead("PGCROWDA",@999)
+DisplayStringHead("PGCROWDB",@999)
+DisplayStringHead("PGCROWDC",@999)
+DisplayStringHead("PGCROWDD",@999)
+DisplayStringHead("PGCROWDE",@999)
+DisplayStringHead("PGCROWDF",@999)
+DisplayStringHead("PGCROWDG",@999)
+DisplayStringHead("PGCROWDH",@999)
+DisplayStringHead("PGCROWDI",@999)
+DisplayStringHead("PGCROWDJ",@999)
+DisplayStringHead("PGCROWDK",@999)
+DisplayStringHead("PGCROWDL",@999)
+Wait(1)
+ActionOverride("PGTalind",MoveToPoint([4053.3062])) // back to wings
+MoveViewPoint([4404.3129],VERY_FAST) // Camera zoom for parental comments
+DisplayStringHead("PGKMOM",@1258)
+Wait(10)
+DisplayStringHead("PGKDAD",@1259)
+Wait(2)
+DisplayStringHead("PGKMOM",@1260)
+Wait(2)
+DisplayStringHead("PGKMOM",@1261)
+Wait(13)
+DisplayStringHead("PGKDAD",@1262)
+Wait(6)
+DisplayStringHead("PGKDAD",@1263)
+Wait(4)
+DisplayStringHead("PGKMOM",@1264)
+Wait(8)
+DisplayStringHead("PGKDAD",@1265)
+Wait(5)
+DisplayStringHead("PGKDAD",@1266)
+Wait(7)
+DisplayStringHead("PGKMOM",@1267)
+Wait(4)
+FadeFromColor([20.0],0)
+         ActionOverride("PGTalind",DestroySelf())
+         MoveToPoint([4225.3112]) // Jassy moves to centerstage
+Wait(4) // let him get there
+MoveViewObject("PGJassy",VERY_FAST)
+Wait(2)
+	 SetGlobal("PGKetosTurn", "GLOBAL", 1)
+         StartDialogueNoSet([PC])
+END
+

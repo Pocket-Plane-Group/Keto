@@ -1,0 +1,31 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGJASSY")
+         FadeToColor([20.0],0)
+         PlaySong(0)
+         Wait(1)
+         Weather(NOWEATHER)
+         ActionOverride("PGPENNY",DestroySelf())
+         FadeFromColor([20.0],0)
+         Wait(3)
+	 PlaySound("PGCROWD1")
+DisplayStringHead("PGCROWDA",@999)
+DisplayStringHead("PGCROWDB",@999)
+DisplayStringHead("PGCROWDC",@999)
+DisplayStringHead("PGCROWDD",@999)
+DisplayStringHead("PGCROWDE",@999)
+DisplayStringHead("PGCROWDF",@999)
+DisplayStringHead("PGCROWDG",@999)
+DisplayStringHead("PGCROWDH",@999)
+DisplayStringHead("PGCROWDI",@999)
+DisplayStringHead("PGCROWDJ",@999)
+DisplayStringHead("PGCROWDK",@999)
+DisplayStringHead("PGCROWDL",@999)
+	 Wait(6)
+	 SetGlobal("PGPCWantsSecondHalf", "GLOBAL", 1)
+         ActionOverride("PGJASSY",StartDialogueNoSet([PC]))
+END
+
+

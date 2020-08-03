@@ -1,0 +1,15 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("Keto")
+         SetGlobal("PGKetoBlewIt","GLOBAL",1)
+         ActionOverride("PGKMom",EscapeArea())
+         ActionOverride("PGKDad",EscapeArea())
+         Wait(6)
+         ActionOverride("Keto",StartDialogueNoSet(Player1)
+         EndCutSceneMode()
+END
+
+
+

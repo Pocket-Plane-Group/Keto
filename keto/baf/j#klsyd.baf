@@ -1,0 +1,27 @@
+IF
+InParty(Myself)
+InParty("Keto")
+!Dead("Keto")
+GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Global("PGKetoNightYoshiSong","GLOBAL",2)
+Global("PGKetoKelseyYoshitalk","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoKelseyYoshitalk","LOCALS",1)
+RestParty()
+END
+
+IF
+InParty(Myself)
+InParty("Keto")
+!Dead("Keto")
+See("Keto")
+GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
+Global("PGKetoNightYoshiSong","GLOBAL",2)
+Global("PGKetoKelseyYoshitalk","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoKelseyYoshitalk","LOCALS",2)
+Interact("Keto")
+END
+

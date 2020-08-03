@@ -1,0 +1,114 @@
+@0    = ~Keto-SOA NPC V2~
+@1    = ~Keto~
+@2    = ~Donc, j'y étais... Fredonnant un air pour me donner du courage, alors que la lumière de ma torche tremblotait dans les ténèbres étouffantes des ruines de Flammevin...~
+@3    = ~Nous continuerons quand je ne serai plus mourante !~[FWKETO00]
+@4    = ~C'est exactement comme je l'espérais !~ [FWKETO01]
+@5    = ~Bon. "Ne fais pas aux autres..." ne s'applique qu'aux autres, c'est ça ?~ [FWKETO02]
+@6    = ~P'feh. Bon, cher "héros", quelle est la prochaine chose sur ta liste des atrocités à commettre, hein ?~ ~P'feh. Bon, chère "héroïne", quelle est la prochaine chose sur ta liste des atrocités à commettre, hein ?~ [FWKETO03]
+@7    = ~C'est... C'est tout simplement monstrueux !~ [FWKETO04]
+@8    = ~Hein ? Qu'est-ce que je vais bien pouvoir faire là-haut ?~ [FWKETO05]
+@9    = ~Bon, qui d'autre est encore prêt à faire vingt heures de marche ? Personne ? Alors peut-être qu'on devrait se reposer.~ [FWKETO06]
+@10   = ~Quelqu'un veut jouer aux osselets ? A la marelle ? A chat ? Quelqu'un veut jouer à... quelque chose ?~ [FWKETO07]
+@11   = ~Gardons courage jusqu'à la fin du combat !~ [FWKETO08]
+@12   = ~Allons-nous faire ceci souvent ?~ [FWKETO09]
+@13   = ~Et peut-être y aura-t-il une légende contant ta chute !~ [FWKETO35]
+@14   = ~Je ne te trahirai pas !~ [FWKETO10]
+@15   = ~Ne pourrions-nous pas tous nous entendre ?~ [FWKETOBC]
+@16 = ~~ [FWKETO11]
+@17 = ~~ [FWKETO12]
+@18   = ~Attention avec le vin ! Oh, enfers, ce n'est pas du vin !~ [FWKETO13]
+@19   = ~Ça sent les arbres. Et l'air. Et pas le moindre lit décent à des lieues...~ [FWKETO14]
+@20   = ~Je vois si peu des endroits que je visite. Ce serait agréable de s'arrêter quelques temps et de prendre la température des lieux.~ [FWKETO15]
+@21   = ~Beurk. Si ça ne te dérange pas que je pose la question, quand tu auras fini d'admirer le paysage, pourrons-nous sortir d'ici?~ [FWKETO16]
+@22   = ~C'est une bonne journée pour voyager ! Si ça ne t'ennuie pas de partager la route avec tous ceux qui sont du même avis, bien sûr.~ [FWKETO17]
+@23   = ~La nuit est faite pour dormir ou boire. Puis-je signaler que nous ne faisons ni l'un, ni l'autre ?~ [FWKETO18]
+@24   = ~Que puis-je faire ?~ [FWKETO19]
+@25   = ~Mmmph ?~ [FWKETO20]
+@26   = ~Je t'entends.~ [FWKETO21]
+@27   = ~Raconte-moi. Peut-être que j'en ferai une histoire.~ [FWKETO22]
+@28   = ~Oui ? Je suis toujours attentive.~ [FWKETO23]
+@29   = ~Je garderai tes secrets.~ [FWKETO24]
+@30   = ~Très bien.~ [FWKETO25]
+@31   = ~Ne pourrions-nous pas... faire autre chose ?~ [FWKETO26]
+@32   = ~D'accord, j'y vais.~ [FWKETO27]
+@33   = ~Et voudrais-tu d'une mélodie joyeuse pour nous accompagner ?~ [FWKETO28]
+@34   = ~Ah, une autre aventure héroïque.~ [FWKETO29]
+@35   = ~Oui.~ [FWKETO30]
+@36   = ~Vraiment, l'étoffe des légendes.~ [FWKETO31]
+@37 = ~~ [FWKETO32]
+@38   = ~Tu permets ? J'essaie de boire un verre, là !~ [FWKETO33]
+@39   = ~Ha HA !~ [FWKETO34]
+@40   = ~Hmmph, grosse surprise...~ [FWKETO36]
+@41   = ~Je ne comprends pas pourquoi je m'inquiète !~ [FWKETO37]
+@42   = ~Non, vraiment, continue à empiler seulement.~ [FWKETO38]
+@43   = ~Et ce ne sont pas les plus malins !~ [FWKETO39]
+@44   = ~Peut-être que je devrais arrêter de parler et retourner me cacher, non ?~ [FWKETO40]
+@45   = ~Bah, ça aurait marché si on n'était pas en train de me TAPER DESSUS.~ [FWKETO41]
+@46   = ~Essaie de ne pas trébucher là-dessus, d'accord ? Ça vaut pour moi aussi...~ [FWKETO42]
+@47   = ~Quand vous l'interrogez sur son passé, KETO vous surprend en étant plus évasive et avare de détails qu'on ne pourrait s'y attendre de la part d'une conteuse professionnelle. Elle est soit "de l'est" soit "du sud", en fonction du moment où vous lui demandez. D'après ses histoires, vous comprenez que ces dernières années, elle a été chaque fois "un peu trop tôt" ou "un peu trop tard" pour pouvoir assister personnellement à plus d'une bataille cruciale en Amn et dans les environs. La majeure partie de ce qu'elle empoche à divertir les foules dans les tavernes et les auberges semble servir à rassasier sa franche appréciation du vin.~ 
+@48   = ~Alesis~
+@49   = ~Barry~
+@50   = ~Epiphone~
+@51   = ~Amyrillis~
+@52   = ~Germione~
+@53   = ~Germione et Poppy~
+@54   = ~Jasper~
+@55   = ~Sire Joules~
+@56   = ~Choeur~
+@57   = ~Myles~
+@58   = ~Grainne~
+@59   = ~Liffetta~
+@60   = ~Lyrica~
+@61   = ~Penny Madrigal~
+@62   = ~Poppy~
+@63   = ~Prudence~
+@64   = ~Scrap~
+@65   = ~Stacy~
+@66   = ~Talindra~
+@67   = ~Tewes~
+@68   = ~Ulga~
+@69   = ~Une bouteille de vin.~
+@70   = ~La bouteille de vin de Keto~
+@71   = ~La bouteille de vin de Keto
+
+Mises à part les joyeuses conversations, cette bouteille de vin est la compagne de route en laquelle Keto place le plus de confiance. Son cépage dépend de la ville et de la quantité de pièces dans sa bourse, mais quel que soit le décor, la ménéstrelle fait de son mieux pour garder la bouteille pleine... puis vide... puis pleine... puis vide.~
+
+@72   = ~La flûte de Keto~
+@73   = ~La flûte de Keto
+
+Certains néophytes pensent que tous les bardes sont des chanteurs accomplis. Keto est prompte à vous détromper. Cela dit, elle joue de la flûte - de cette flûte - plutôt bien.~
+
+@74   = ~Cape~
+@75   = ~La Cape de Mamy O'Fairney~
+@76   = ~La cape de Mamy O'Fairney
+
+On raconte que Fiona O'Fairney (que Keto connaît mieux sous le nom de "Mamy") était une aventurière intrépide dans sa jeunesse. Des pillards duellistes du Zentharim à la frontière de Valdague jusqu'aux invitations pour le thé parmi l'élite de Valplume, la légende dit que cette cape a résisté à une myriade d'attaques punitives, parmi lesquelles le feu d'une torche, de la salive de grouilleux et le vin aux baies sauvages de sa belle-mère (la même mixture maison que celle qui est mentionnée dans "Le guide de Volo de toutes les choses violettes").
+
+La cape familiale est à présent revenue à Keto, son étoffe toujours résistante, sa couleur toujours brillante, un héritage à chérir, pour sûr.
+
+PARAMETRES :
+
+Lorsqu'elle est équipée :
+
+CA : +1
+Résistance à l'acide : +5%
+Résistance au feu : +5%
+Jet de sauvegarde : bonus de +1 
+Poids : 3~
+
+@77   = ~Lettres~
+@78   = ~Les lettres de Keto~
+@79   = ~Les lettres de Keto
+
+Avant de rentrer à Valplume, les parents de Keto lui ont donné cette petite pile de correspondance : des lettres qu'elle a écrites racontant ses voyages pendant les quelques mois précédant la mauvaise rencontre qui l'a laissée sans mémoire de son passé. La découverte récente de ses racines familiales et de son mari assassiné ont laissé Keto trop perturbée pour examiner les mots de son être oublié, mais, avec le temps, sa curiosité prendra certainement le dessus.~
+@80   = ~L'invitation de Keto~
+@81   = ~Cette invitation qui semble très officielle enjoint une certaine Keto Riven à se rendre au plus vite à Imnesvale, afin qu'elle se produise dans la première Compétition de Bardes Inter-Amnienne. Cette note servira comme preuve de son identité.~
+@82   = ~L'empreinte de Lyrica~
+@83   = ~Cette "oeuvre d'art" est supposée être une empreinte de main signée par la chanteuse prodige Lyrica. On dirait plutôt une tache d'encre.~
+@84   = ~Interactions Keto/Kelsey (Kelsey-SOA doit etre installe)~
+@85   = ~Il semble que Kelsey-SOA ne soit pas installe.~
+@86   = ~Accelerateur de banters.~
+@87   = ~L'accelerateur de banters semble deja installe.~
+
+
+@1000 = ~Quand vous l'interrogez sur son passé, KETO sourit : "Tu as déjà oublié ?" Née Catriona O'Fairney, fille des propriétaires terriens des Vaux Myles et Grainne O'Fairney, Keto était une jeune femme pleine d'esprit avec un don pour le conte qui prit la route avec son aventurier de mari il y a quelques années. Une attaque d'orques en maraude laissa son mari mort et Keto blessée au bas d'une falaise, sans le moindre souvenir de son identité. Elle prit la route en tant que barde itinérant, rassemblant des histoires et les racontant, de taverne en taverne, espérant se redécouvrir. Réunie avec ses parents après une recherche intensive, Keto a décidé de rester avec vous dans l'espoir de vous aider à mieux naviguer sur les routes rocailleuses de la destinée... et pour être la première source des histoires fabuleuses qui seront sans aucun doute colportées à votre sujet pendant des décennies à venir.~

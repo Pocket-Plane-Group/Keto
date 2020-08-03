@@ -1,0 +1,32 @@
+IF
+InParty(Myself)
+InParty("Aerie")
+InParty("Keto")
+!G("HaerDalisRomanceActive",3)
+GlobalGT("Lovetalk","LOCALS",20)
+Global("PGKetoHDAerieBlowup","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoHDAerieBlowup","GLOBAL",1)
+RealSetGlobalTimer("PGKetoHDAerieTimer","GLOBAL",500)
+END
+
+IF
+InParty(Myself)
+InParty("Aerie")
+!Dead("Aerie")
+InParty("Keto")
+!Dead("Keto")
+See("Keto")
+See("Aerie")
+!G("HaerDalisRomanceActive",3)
+RealGlobalTimerExpired("PGKetoHDAerieTimer","GLOBAL")
+Global("PGKetoHDAerieBlowup","GLOBAL",1)
+CombatCounter(0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoHDAerieBlowup","GLOBAL",2)
+SetGlobal("PGAerieKetoShowdown","GLOBAL",1)
+ActionOverride("Aerie",Dialogue("Keto"))
+END
+

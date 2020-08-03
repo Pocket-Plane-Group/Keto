@@ -1,0 +1,80 @@
+IF
+InParty(Myself)
+InParty("Yoshimo")
+!Dead("Yoshimo")
+See("Yoshimo")
+G("PGKetoYoshiFirstWake",0)
+THEN
+RESPONSE #100
+SG("PGKetoYoshiFirstWake",1)
+RestParty()
+END
+
+IF
+InParty(Myself)
+InParty("Yoshimo")
+!Dead("Yoshimo")
+See("Yoshimo")
+Global("PGYoshiStory", "LOCALS", 1)
+Global("PGKetoNightYoshiSong","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoNightYoshiSong","GLOBAL",1)
+Interact("Yoshimo")
+END
+
+IF
+InParty(Myself)
+InParty("Keldorn")
+!Dead("Keldorn")
+See("Keldorn")
+Global("PGKetoKeldornBoozyWake","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoKeldornBoozyWake","GLOBAL",1)
+RestParty()
+END
+
+
+IF
+InParty(Myself)
+InParty("Mazzy")
+!Dead("Mazzy")
+See("Mazzy")
+Global("PPGMazzyKeto2","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PPGMazzyKeto2","GLOBAL",2)
+ActionOverride("Mazzy",Interact("Keto"))
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("PGKetoMockKeldornTimer","GLOBAL")
+InParty("Keldorn")
+!Dead("Keldorn")
+See("Keldorn")
+Global("PGKetoKeldornMockWake","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGKetoKeldornMockWake","GLOBAL",1)
+RestParty()
+END
+
+IF
+InParty(Myself)
+InParty("Anomen")
+!Dead("Anomen")
+See("Anomen")
+RealGlobalTimerExpired("PGKetoAnoWakeTimer","LOCALS")
+Global("PGWakeUpKeto","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PGWakeUpKeto","GLOBAL",1)
+RestParty()
+END
+
+
+
+
+

@@ -1,0 +1,75 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGJASSY")
+         PlaySong(0)
+         Wait(1)
+         Weather(NOWEATHER)
+         FadeFromColor([20.0],0)
+         CreateCreature("PGUlga",[4053.3062],15)
+         ActionOverride("PGTEWES",DestroySelf())
+         ActionOverride("PGKCHOR1",DestroySelf())
+         ActionOverride("PGKCHOR2",DestroySelf())
+         Wait(3)
+         Wait(2)
+MoveToPoint([4195.3000]) // Jasper wings
+ActionOverride("PGUlga",MoveToPoint([4225.3112])) // Move Ulga to center stage
+Wait(6) // Wait for her to get there, and ogres move slowly
+FaceObject("PGUlga")
+MoveViewPoint([4225.3112],INSTANT)
+ActionOverride("PGUlga",Face(14))
+SmallWait(1)
+DisplayStringHead("PGUlga",@1200)
+Wait(5)
+DisplayStringHead("PGUlga",@1201)
+Wait(12)
+MoveViewPoint([4404.3129],VERY_FAST) // Camera zoom for parental comments
+SmallWait(1)
+DisplayStringHead("PGKMOM",@1202)
+Wait(6)
+DisplayStringHead("PGKMOM",@1203)
+Wait(8)
+DisplayStringHead("PGKDAD",@1204)
+Wait(7)
+DisplayStringHead("PGKDAD",@1205)
+Wait(3)
+DisplayStringHead("PGKMOM",@1206)
+Wait(3)
+DisplayStringHead("PGKDAD",@1207)
+Wait(3)
+MoveViewPoint([4225.3112],VERY_FAST)
+Wait(1)
+DisplayStringHead("PGUlga",@1208)
+Wait(12)
+DisplayStringHead("PGUlga",@10209)
+Wait(3)
+PlaySound("PGClap1")
+DisplayStringHead("PGCROWDB",@1209)
+SmallWait(2)
+PlaySound("PGClap2")
+DisplayStringHead("PGCROWDG",@1209)
+Wait(1)
+DisplayStringHead("PGCROWDH",@1209)
+Wait(1)
+DisplayStringHead("PGUlga",@1210)
+Wait(2)
+MoveToPoint([4225.3112]) // Jassy back to center stage
+SmallWait(1)
+DisplayStringHead("PGJassy",@1211)
+Wait(6)
+ActionOverride("PGUlga",MoveToPoint([4053.3062])) // Contestant back to wings
+Wait(10) // Let her get clear, and she moves slowly
+FadeFromColor([20.0],0)
+         ActionOverride("PGUlga",DestroySelf())
+	 Wait(3)
+         MoveViewObject("PGJassy",VERY_FAST)
+	 SetGlobal("PGPCWantsSecondHalf", "GLOBAL", 1)
+	 Wait(1)
+         StartDialogueNoSet([PC])
+         EndCutSceneMode()
+END
+
+
+
+

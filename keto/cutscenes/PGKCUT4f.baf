@@ -1,0 +1,41 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("Keto")
+         ActionOverride("PGJassy",MoveToPoint([4200.3125]))
+         PlaySong(0)
+         Wait(4)
+         DisplayStringHead("PGJassy",@1358)
+         Wait(5)
+         DisplayStringHead("PGJassy",@1403)
+         Wait(15)
+         DisplayStringHead("PGJassy",@1404)
+         Wait(10)
+
+         // applause
+
+PlaySound("PGCrowd4")
+DisplayStringHead("PGCROWDA",@999)
+DisplayStringHead("PGCROWDB",@999)
+DisplayStringHead("PGCROWDC",@999)
+DisplayStringHead("PGCROWDD",@999)
+DisplayStringHead("PGCROWDE",@999)
+DisplayStringHead("PGCROWDF",@999)
+DisplayStringHead("PGCROWDG",@999)
+DisplayStringHead("PGCROWDH",@999)
+DisplayStringHead("PGCROWDI",@999)
+DisplayStringHead("PGCROWDJ",@999)
+DisplayStringHead("PGCROWDK",@999)
+DisplayStringHead("PGCROWDL",@999)
+Wait(2)
+
+       ActionOverride("PGJassy",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+       SetGlobal("PGKetoWonYoshimo","GLOBAL",1)
+       Wait(4)
+       StartDialogueNoSet([PC])
+       EndCutSceneMode()
+END
+
+
+

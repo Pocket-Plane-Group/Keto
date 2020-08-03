@@ -1,0 +1,38 @@
+/*
+IF
+Global("PGKetoInvite","GLOBAL",1)
+Global("PGKetoInviteVinPt1", "GLOBAL", 1)
+Global("RunningInviteVinTimer","AR1105",0)
+THEN
+RESPONSE #100
+SetGlobal("RunningInviteVinTimer","AR1105",1)
+SetGlobalTimer("PGKetoInviteVinTimer","GLOBAL",400)
+END
+*/
+
+
+IF
+Global("PGKetoInvite","GLOBAL",1)
+OR(2)
+GlobalLT("PGKetoInviteVinPt1", "GLOBAL", 1)
+GlobalTimerExpired("PGKetoInviteVinTimer","GLOBAL")
+Global("SpawnedQuestActors","AR1105",0)
+THEN
+RESPONSE #100
+         SetGlobal("SpawnedQuestActors","AR1105",1)
+         SetGlobal("PGKetoQuestStatus","GLOBAL",3)
+         CreateCreature("PGLYRICA",[757.437], 15)
+         CreateCreature("PGBARRY",[783.450], 2)
+         CreateCreature("PGPENNY",[639.546], 14)
+         CreateCreature("PGPOPPY",[674.496], 14)
+         CreateCreature("PGGMIONE",[714.499], 15 )
+         CreateCreature("PGGROUPI",[728.517], 15 )
+         CreateCreature("PGPRU",[913.234], 12)
+         CreateCreature("PGSTACY",[679.613], 4)
+         CreateCreature("PGJOULES",[860.352], 12)
+         CreateCreature("PGFRILLY",[906.318], 13)
+         CreateCreature("PGTEWES",[331.582], 13)
+
+END
+
+

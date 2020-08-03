@@ -1,0 +1,15 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGKMOM")
+         ActionOverride("PGLYRICA",EscapeArea())
+         ActionOverride("PGBARRY",EscapeArea())
+         ActionOverride("PGJassy",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+         Wait(5)
+         StartDialogueNoSet([PC])
+         EndCutSceneMode()
+END
+
+
+

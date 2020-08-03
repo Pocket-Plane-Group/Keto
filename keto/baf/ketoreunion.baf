@@ -1,0 +1,16 @@
+// Put in a few Athkatla city zones
+
+
+IF
+CombatCounter(0)
+Global("PGKetoWentAlone","GLOBAL",1)
+GlobalTimerExpired("PGKetoReturnsTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("PGKetoWentAlone","GLOBAL",2)
+MoveGlobalObject("Keto",Player1)
+SmallWait(1)
+ActionOverride("Keto",Dialogue(Player1))
+END
+
+

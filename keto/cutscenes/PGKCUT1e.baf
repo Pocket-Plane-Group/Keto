@@ -1,0 +1,77 @@
+IF
+True()
+THEN
+RESPONSE #100
+         CutSceneId("Keto")
+MoveViewObject("Keto",INSTANT)
+
+// applause
+
+PlaySong(0)
+PlaySound("PGCrowd4")
+DisplayStringHead("PGCROWDA",@999)
+DisplayStringHead("PGCROWDB",@999)
+DisplayStringHead("PGCROWDC",@999)
+DisplayStringHead("PGCROWDD",@999)
+DisplayStringHead("PGCROWDE",@999)
+DisplayStringHead("PGCROWDF",@999)
+DisplayStringHead("PGCROWDG",@999)
+DisplayStringHead("PGCROWDH",@999)
+DisplayStringHead("PGCROWDI",@999)
+DisplayStringHead("PGCROWDJ",@999)
+DisplayStringHead("PGCROWDK",@999)
+DisplayStringHead("PGCROWDL",@999)
+
+Wait(3)
+
+DisplayStringHead("Keto",@1400)
+Wait(1)
+
+MoveViewPoint([4404.3129],VERY_FAST) // Camera zoom for parental comments
+DisplayStringHead("PGKMom",@1401)
+Wait(2)
+DisplayStringHead("PGKDad",@1402)
+Wait(5)
+
+DisplayStringHead("PGKDAD",@1352)
+Wait(12)
+DisplayStringHead("PGKMOM",@1353)
+Wait(8)
+DisplayStringHead("PGKMOM",@1354)
+Wait(6)
+MoveViewObject("Keto",VERY_FAST)
+
+// applause
+
+PlaySound("PGCrowd4")
+DisplayStringHead("PGCROWDA",@999)
+DisplayStringHead("PGCROWDB",@999)
+DisplayStringHead("PGCROWDC",@999)
+DisplayStringHead("PGCROWDD",@999)
+DisplayStringHead("PGCROWDE",@999)
+DisplayStringHead("PGCROWDF",@999)
+DisplayStringHead("PGCROWDG",@999)
+DisplayStringHead("PGCROWDH",@999)
+DisplayStringHead("PGCROWDI",@999)
+DisplayStringHead("PGCROWDJ",@999)
+DisplayStringHead("PGCROWDK",@999)
+DisplayStringHead("PGCROWDL",@999)
+Wait(1)
+
+DisplayStringHead("Keto",@1355)
+ActionOverride("PGKMom",MoveToObject("Keto")) // parents on stage
+SmallWait(1)
+ActionOverride("PGKDad",MoveToPoint([4148.3023])) // parents on stage
+Wait(4)
+FaceObject("PGKMom")
+Face(1)
+DisplayStringHead("PGKMom",@1356)
+ActionOverride("PGKDad",FaceObject("Keto"))
+Wait(3)
+DisplayStringHead("Keto",@1357)
+Wait(2)
+ActionOverride("PGKdad",StartDialogueNoSet([PC]))
+EndCutSceneMode()
+END
+
+

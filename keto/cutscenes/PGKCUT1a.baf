@@ -1,0 +1,109 @@
+
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGJASSY")
+         FadeToColor([20.0],0)
+         Wait(1)
+         Weather(NOWEATHER)
+         PlaySong(0)
+         CreateCreature("PGJoules",[4053.3062],15)
+         ActionOverride("PGTEWES",DestroySelf())
+         ActionOverride("PGKCHOR1",DestroySelf())
+         ActionOverride("PGKCHOR2",DestroySelf())
+         Wait(3)
+         FadeFromColor([20.0],0)
+         Wait(2)
+ActionOverride("PGJoules",MoveToPoint([4225.3112])) // Move Joules to center stage
+Wait(3) // Wait for him to get there
+MoveViewPoint([4225.3112],INSTANT)
+DisplayStringHead("PGJassy",@1066)
+Wait(5)
+DisplayStringHead("PGJoules",@1067)
+Wait(7)
+DisplayStringHead("PGJoules",@1068)
+Wait(9)
+DisplayStringHead("PGJoules",@1069)
+Wait(4)
+
+DisplayStringHead("PGCrowdB",@1070)
+Wait(3)
+DisplayStringHead("PGCrowdC",@1071)
+Wait(3)
+
+DisplayStringHead("PGJassy",@1072)
+Wait(6)
+DisplayStringHead("PGJoules",@1073)
+Wait(3)
+
+
+MoveToPoint([4195.3000]) // Jasper wings
+Wait(3) // Wait for him to get there
+FaceObject("PGJoules")
+MoveViewPoint([4225.3112],INSTANT)
+
+ActionOverride("PGJoules",Face(14))
+DisplayStringHead("PGJoules",@1074)
+Wait(20)
+DisplayStringHead("PGJoules",@10740)
+Wait(27)
+
+DisplayStringHead("PGJoules",@1075)
+Wait(20)
+DisplayStringHead("PGJoules",@10750)
+Wait(13)
+
+DisplayStringHead("PGCrowdD",@1100)
+Wait(3)
+DisplayStringHead("PGCrowdC",@1101)
+Wait(4)
+DisplayStringHead("PGCrowdC",@1102)
+Wait(3)
+
+ActionOverride("PGjoules",MoveToPoint([4053.3062])) // Contestant back to wings
+MoveToPoint([4225.3112]) // Jassy moves to centerstage
+Wait(3)
+DisplayStringHead("PGJASSY",@1103)
+Wait(5)
+DisplayStringHead("PGJASSY",@1104)
+Wait(8)
+
+MoveViewPoint([4404.3129],VERY_FAST) // Camera zoom for parental comments
+         DisplayStringHead("PGKMOM",@72)
+         Wait(7)
+         DisplayStringHead("PGKMOM",@73)
+         Wait(6)
+         DisplayStringHead("PGKMOM",@74)
+         Wait(3)
+         DisplayStringHead("PGKDAD",@75)
+         Wait(3)
+         DisplayStringHead("PGKDAD",@76)
+         Wait(4)
+         DisplayStringHead("PGKDAD",@77)
+         Wait(4)
+         DisplayStringHead("PGKMOM",@78)
+         Wait(5)
+         DisplayStringHead("PGKDAD",@79)
+         Wait(5)
+         DisplayStringHead("PGKDAD",@80)
+         Wait(5)
+         DisplayStringHead("PGKDAD",@81)
+         Wait(5)
+         DisplayStringHead("PGKDAD",@82)
+         Wait(5)
+         DisplayStringHead("PGKMOM",@83)
+         Wait(5)
+         DisplayStringHead("PGKMOM",@84)
+         Wait(6)
+FadeFromColor([20.0],0)
+	 Wait(3)
+         ActionOverride("PGJoules",DestroySelf())
+         MoveViewObject("PGJassy",VERY_FAST)
+	 SetGlobal("PGPCWantsSecondHalf", "GLOBAL", 1)
+         StartDialogueNoSet([PC])
+END
+
+
+
+

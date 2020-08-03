@@ -1,0 +1,45 @@
+IF
+Global("UlgaSingGood","AR1100",0)
+THEN
+RESPONSE #100
+SetGlobal("UlgaSingGood","AR1100",1)
+CreateCreature("PGUlga",[3205.734], 8)
+END
+
+
+
+IF
+Global("PGBardCompoDone","GLOBAL",1)
+Global("DestroyedQuest","AR1100",0)
+THEN
+RESPONSE #100
+SetGlobal("DestroyedQuest","AR1100",1)
+SetGlobal("PGKetoInvite","GLOBAL",10)
+         ActionOverride("PGLYRICA",EscapeArea())
+         ActionOverride("PGBARRY",EscapeArea())
+         ActionOverride("PGPENNY",EscapeArea())
+         ActionOverride("PGPOPPY",EscapeArea())
+         ActionOverride("PGGMIONE",EscapeArea())
+         ActionOverride("PGPRU",EscapeArea())
+         ActionOverride("PGSTACY",EscapeArea())
+         ActionOverride("PGJOULES",EscapeArea())
+         ActionOverride("PGFRILLY",EscapeArea())
+         ActionOverride("PGTEWES",EscapeArea())
+         ActionOverride("PGCROWDA",EscapeArea())
+         ActionOverride("PGCROWDB",EscapeArea())
+         ActionOverride("PGCROWDC",EscapeArea())
+         ActionOverride("PGCROWDD",EscapeArea())
+         ActionOverride("PGCROWDE",EscapeArea())
+         ActionOverride("PGCROWDF",EscapeArea())
+         ActionOverride("PGCROWDG",EscapeArea())
+         ActionOverride("PGCROWDH",EscapeArea())
+         ActionOverride("PGCROWDI",EscapeArea())
+         ActionOverride("PGCROWDJ",EscapeArea())
+         ActionOverride("PGCROWDK",EscapeArea())
+         ActionOverride("PGCROWDL",EscapeArea())
+         ActionOverride("PGCROWDM",EscapeArea())
+         ActionOverride("PGCROWDN",EscapeArea())
+         ActionOverride("PGSCRAP",EscapeArea())
+         ActionOverride("PGBARRY",DestroySelf())
+END
+

@@ -1,0 +1,870 @@
+/*
+
+
+
+ActionOverride(Player1,LeaveAreaLUA("ARFE01","",[1579.1992],2))
+
+ActionOverride(Player2,LeaveAreaLUA("ARFE01","",[1620.2023],2))
+
+ActionOverride(Player3,LeaveAreaLUA("ARFE01","",[1512.2041],14))
+
+ActionOverride(Player4,LeaveAreaLUA("ARFE01","",[1566.2070],0))
+
+ActionOverride(Player5,LeaveAreaLUA("ARFE01","",[1464.2080],4))
+
+ActionOverride(Player6,LeaveAreaLUA("ARFE01","",[1530.2107],2))
+
+MultiPlayerSync()
+
+Explore()
+
+SmallWait(3)
+
+*/
+
+
+
+
+
+// CUTSCENES
+
+
+@0    = ~Bonnes gens, entendez notre requête.~ [PGKTWO00]
+@1    = ~Votre attention, nous l'implorons et la désirons !~ [PGKTWO01]
+@2    = ~Et si vous êtes enclins à tourner la tête.~ [PGKTWO11]
+@3    = ~Bien du plaisir nous partagerons.~ [PGKTWO02]
+@4    = ~Nous sommes venus conter de nombreuses histoires.~ [PGKTWO03]
+@5    = ~Du temps de nos lointains ancêtres, autrefois.~ [PGKTWO04]
+@6    = ~Et nous sommes sûrs qu'elles chasseront vos idées noires.~ [PGKTWO05]
+@7    = ~Sur ce point, nous parlons d'une même voix.~ [PGKTWO06]
+@8    = ~A mentionner encore une chose.~ [PGKTWO07]
+@9    = ~Nos chansons sont pleines humour...~ [PGKTWO08]
+@10   = ~Et maintenant que s'achève notre prose.~ [PGKTWO09]
+@11   = ~Nous laissons place au rythme du tambour...~ [PGKTWO10]
+@12   = ~Mesdames et messieurs !~ [PGTEWS01]
+@13   = ~Imnesvale ne sera plus jamais la même !~ [PGTEWS02]
+@14   = ~Nous vous souhaitons la bienvenue au premier tournoi annuel bardique inter-amnien !~ [PGTEWS03]
+@15   = ~Et maintenant...~ [PGTEWS04]
+@16   = ~Le plus appliqué des esclaves de l'amour en exercice...~ [PGTEWS05]
+@17   = ~Préfet de la Maison de l'Allégresse...~ [PGTEWS06]
+@18   = ~Les Dieux ont inventé les collants juste pour lui...~ [PGTEWS07]
+@19   = ~Votre maître de cérémonies...~ [PGTEWS08]
+@20   = ~JASPER ST. BAIRD !~ [PGTEWS09]
+@21   = ~Salut à tous !~ [PGJASS00]
+@22   = ~*clap*~
+@23   = ~*clap-clap*~
+@24   = ~Wouhou !~
+@25   = ~Merci, merci, quel public merveilleux !~ [PGJASS02]
+@27   = ~Commençons, hmmm ?~  [PGJASS03]
+@28   = ~Je suis si heureux d'être parmi vous, vous êtes adorables !~ [PGJASS04]
+@29   = ~Les choses commençaient à sentir le roussi pour moi, je dois l'avouer.~ [PGJASS05]
+@30   = ~C'est la dernière fois que je prends des leçons de danse avec une succube.~
+@31   = ~*rires*~ [PGJASS06]
+@32   = ~Je n'ai pas compris.~ [PGHEKLCA]
+@33   = ~Mais je sais que vous tous, impatients connaisseurs, ne vous êtes pas déplacés jusqu'à Imnesvale pour m'écouter raconter ma matinée trépidante !~ [PGJASS07]
+@34   = ~Vous êtes venus ici pour l'Art. Alors commençons !~ [PGJASS08]
+@36   = ~Les règles sont très simples, vous les comprendrez.~ [PGJASS09]
+@37   = ~Chaque participant sera jugé sur le style, l'originalité et la valeur générale du divertissement qu'il propose et ainsi que sur sa popularité auprès des masses.~ [PGJASS10]
+@38   = ~Notre duo de juges s'est secrètement dissimulé parmi vous, chers spectateurs, pour observer vos réactions ainsi qu'user de leur propre expertise pour dénicher le barde parfait et déclarer ce comédien talentueux : Champion Bardique Inter Amnien !~ [PGJASS11]
+@39   = ~*applaudissements*~
+@40   = ~Le vainqueur recevra une bourse de 2000 pièces d'or et un séjour tous frais payés aux Vaux, ainsi que célébrité et gloire à tout jamais !~ [PGJASS12]
+@41   = ~Ou du moins jusqu'au prochain concours !~ [PGJASS13]
+@42   = ~Oh, ce sentiment d'anticipation dans l'air... C'est tellement excitant, je frémis !~ [PGJASS14]
+@44   = ~Ou bien est-ce ma maîtresse immortelle qui essaie de me rappeler ? Allons, allons, ma chatte. Je ne serai pas long !~ [PGJASS15]
+@46   = ~Etes-vous prêts à accueillir le premier artiste ?~ [PGJASS16]
+@47   = ~Qu'on les fasse entrer !~
+@48   = ~*Bâille* Il y a un tas de bardes qui doivent passer. Je vais faire un somme pendant la première moitié du spectacle, à l'ombre de cet arbre.~
+@470   = ~Je ne peux plus attendre !~
+@480   = ~J'ai un truc vraiment très important à faire... par là. Je reviendrai quand ce sera le tour de Keto.~
+@49   = ~Pour commencer, nous avons le Tombeur de l'Est !~ [PGJASS17]
+@50   = ~Votre belle s'endort-elle le soir avec le visage de cet homme à l'intérieur des paupières ?~ [PGJASS18]
+@51   = ~Mes cheveux sont-ils d'or et bouclés ?~ [PGJASS19]
+@52   = ~Bien sûr qu'elle pense à lui !~ [PGJASS20]
+@53   = ~Voici donc le gendre idéal, j'ai nommé... Pendragon Madrigal !~ [PGJASS21]
+@54   = ~Le voilà !~ [PGGMIO02]
+@55   = ~Penny !~ [PGGMIO03]
+@56   = ~Penny, je t'aime !~ [PGGMIO04]
+@57   = ~Je vous préviens, nous ne voulons pas que quelqu'un ait les yeux qui lui sortent de la tête...~ [PGJASS22]
+@58   = ~Donc je vais devoir demander aux dames de ne pas jeter leurs corsets sur la scène.~ [PGJASS23]
+@59   = ~*soupir*~
+@60   = ~Awwwww.~ [PGGMIO15]
+@61   = ~Peuh !~ [PGPOPP11]
+@62   = ~Ahem.~ [PGPENN06] 
+@63   = ~Je dédie ce poème à une dame très spéciale.~ [PGPENN6a]
+@64   = ~Tu te reconnaîtras...~ [PGPENN6b]
+@65   = ~Dans la pluie...~ [PGPENN09]
+@66   = ~...les pavés brillent comme l'argent.~ [PGPENN10]
+@67   = ~Toutes les lueurs...~ [PGPENN11]
+@68   = ~...sont brumeuses sur la rivière.~ [PGPENN12]
+@69   = ~Dans les ténèbres...~ [PGPENN13]
+@70   = ~...les arbres brillent de la lumière des étoiles...~ [PGPENN14]
+@71   = ~...et tout ce que je vois, c'est elle et moi, encore et toujours.~ [PGPENN15]
+@72   = ~Bon Père, as-tu pensé un instant à demander le sexe des personnes que tu as invitées au concours ?~ [PGMOMA9]
+@73   = ~C'est vrai que notre petite a peut-être changé ces dernières années mais...~ [PGMOMB0]
+@74   = ~...il y a peu de chances qu'elle soit devenue un homme !~ [PGMOMB1]
+@75   = ~Allons, ne tire pas de conclusions hâtives, Bonne Mère.~ [PGDADA5]
+@76   = ~Des choses plus étranges se sont produites dans ce monde sauvage et perverti.~ [PGDADA6]
+@77   = ~Aimerais-tu moins notre fille si nous découvrions qu'il lui est poussé de la barbe ?~ [PGDADA7]
+@78   = ~Que penseraient les voisins ?!~
+@79   = ~Que notre fille est devenue un bon gars, et quel est le mal là-dedans ?~
+@80   = ~Ça ne me dérangerait pas d'avoir à la fois un fils et une fille.~
+@81   = ~Deux enfants pour le prix d'un.~
+@82   = ~En voilà une économie.~
+@83   = ~Ah, toi et ton économie.~
+@84   = ~Est-ce trop demander pour une femme que sa fille reste une fille ?~
+@85   = ~Je l'aime...~ [PGPENN16]
+@86   = ~...mais quand la nuit se termine...~ [PGPENN17]
+@87   = ~Elle est partie...~ [PGPENN18]
+@88   = ~...la rivière n'est plus qu'une rivière.~ [PGPENN19]
+@89   = ~Sans elle...~ [PGPENN20]
+@90   = ~...le monde autour de moi change...~ [PGPENN21]
+@91   = ~...les arbres sont nus et les rues pleines d'étrangers.~ [PGPENN22]
+@92   = ~Je l'aime...~ [PGPENN23]
+@93   = ~Je l'aime...~ [PGPENN24]
+@94   = ~Je l'aime...~ [PGPENN25]
+@95   = ~*soupir*~ [PGPOPP14]
+@96   = ~*soupir*~ [PGGMIO16]
+@97   = ~*soupir*~ [PGGROU05]
+@98   = ~*soupir*~ [PGGROU04]
+@198   = ~*soupir*~
+@99   = ~Mais seulement quand je suis seul.~ [PGPENN26]
+@100   = ~Awwww.~ [PGGROU06]
+@200   = ~Awwww.~
+@101   = ~Une superbe performance en effet !~ [PGJASS24]
+@102   = ~Toutes les jeunes filles d'ici à Nashkel vont s'endormir en pleurant ce soir, j'en suis certain !~ [PGJASS25]
+@103   = ~Bien, c'était une première partie excitante, mais nous avons encore de nombreux bardes à venir !~ [PGJASS26]
+@104   = ~Qui est prêt pour notre prochain participant ?~ [PGJASS27]
+@105   = ~Encore ! Encore !~
+@106   = ~Il y en a encore ? Combien de temps cela va-t-il durer ? Réveille-moi quand c'est ton tour, d'accord, Keto ?~
+@107 = ~Ahhhh !~
+@108 = ~Ooooh !~
+
+// LIFFETTA
+
+@999 = ~*applaudissements*~
+@1000 = ~Quatre, ce serait bien
+Trois amis marchant à mes côtés
+Et les premières feuilles printanières.~ [PGLIFFA0]
+@1001 = ~L'aventure est magnifique
+Dans les cavernes nous dansons. Rires.
+Echos, nous descendons.~ [PGLIFFA1]
+@1002 = ~Descendons ? Descendons vers où ?~ [PGCWD2A0]
+@1003 = ~C'est tout ?~ [PGCWD3A0]
+@1004 = ~Qui sont ces quatre ? C'est qui le méchant, là-d'dans ?~ [PGCWD1A0]
+@1005 = ~Le tintement d'une chope
+Le plancher de bois qui craque sous mes pieds
+Des joyaux sur les murs.~ [PGLIFFA2]
+@1006 = ~Une chope ? Ils sont au bar ou ils dansent dans les cavernes ?~ [PGCWD4A0]
+@1007 = ~Silence, voyons comment ça se termine.~ [PGCWD3A1]
+@1008 = ~J'aime bien les joyaux.~ [PGCWD2A1]
+@1009 = ~La bataille, finie
+Tout est rouge. Le souffle brûlant
+Pourtant, pas de soleil.~ [PGLIFFA3]
+@1010 = ~Le jour s'achève
+Tu n'es que lassitude
+Un soupir de fatigue t'échappe.~ [PGLIFFA4]
+@1011 = ~(soupir)~ [PGCWD4A1]
+@1012 = ~Elle ne parlait pas de toi, couillon !~ [PGCWD3A2]
+@1013 = ~Bien ! Je ne sais pas pour vous, mais moi, je suis épuisé juste d'avoir écouté ! Je vous demande à tous d'applaudir ces 119 syllabes percutantes !~ [PGJASS28]
+@1014 = ~Maudites oreilles, Bon Père, je dois devenir sourde. Pour une conteuse, celle-ci avait particulièrement peu de choses à raconter.~ [PGMOMA0]
+@1015 = ~Oui, une jolie sobriété d'expression. De quoi rendre un père fier, en vérité. Pourquoi gaspiller ses mots dans un poème ?~ [PGDADA0]
+@1016 = ~C'était un poème ?! Les choses qu'inventent ces artistes modernes ! De la poésie sans rimes !~ [PGMOMA1]
+@1017 = ~C'est une coutume de Kara-Tur, Bonne Mère.~
+@1018 = ~De Kara-Tur ? Bon, je n'allais pas poser de questions sur les cheveux noirs de cette enfant, cela dit...~
+@1019 = ~Je sais que beaucoup de jeunes filles changent de couleur de cheveux avec l'âge.~
+@1020 = ~Comme Lady Dunryde de Dagger Falls. Une vraie blonde ? Qui pense-t-elle tromper ?~
+@1021 = ~Mais pour en revenir à nos affaires, Bon Père. Je disais cela car il est vrai que notre fille pourrait avoir changé depuis tout ce temps.~
+@10210 = ~Cette poétesse a physiquement peu en commun avec notre fille, mais maintenant je vois pourquoi.~
+@1022 = ~Ce n'est pas du tout notre fille ! Quand tu as choisi les bardes à inviter à cette compétition, as-tu songé que notre bébé n'a certainement pas changé de culture ?!~
+@1023 = ~Voyons, ne tire pas de conclusions hâtives, Bonne Mère. Des choses plus étranges se sont produites dans ce monde sauvage et perverti.~
+@10230 = ~En grandissant, de nombreux enfants deviennent quelque chose que leurs parents trouvent étranger et bizarre.~
+@10231 = ~Aimerais-tu moins notre fille si tu découvrais qu'elle est devenue une fleur de Kara-Tur ?~
+@1024 = ~Que penseraient les voisins ?!~
+@1025 = ~Que notre fille a vu tant de choses de par le monde que son physique reflète désormais ses expériences.~
+@10251 = ~Et en quoi cela poserait-il un problème ? Ça ne me dérangerait pas d'avoir une fille d'au-delà des mers.~
+@10250 = ~Deux filles pour le prix d'une seule. En voilà une économie.~
+@1026 = ~Ah, toi et ton économie. Est-ce que c'est trop demander que de vouloir que sa fille reste blanche de peau et rousse de cheveux ?~
+
+
+// PRUDENCE
+
+@1027 = ~Ma fille, avant que vous ne commenciez, pourquoi ne pas dire quelques mots pour notre public ? Votre nom, Dubhthistle... Etes-vous de l'infâme clan de Schamedar Dubhthistle ?~ [PGJASS29]
+@1028 = ~Je... Je ne suis pas sûre de savoir, monsieur. Je ne suis pas très spéciale. C'est juste Prudence.~ [PGPRU10]
+@1029 = ~En effet ! Et bien, seigneurs et dames, je vous présente... juste Prudence !~ 
+
+@1031 = ~La douce clarté lunaire illumine la scène
+Tout près de la fenêtre, Eileen file sa laine.
+Une grand-mère aveugle, assise près du feu
+Grommelle une chanson, tricote aussi, un peu.
+Dehors une silhouette, celle de son grand amour
+Murmure, penchant la tête, "j'attends depuis toujours.
+Quitte ton tabouret, enjambe la fenêtre
+Et marchons sous la lune, jusqu'au bosquet de hêtres".~ [PGPRU02]
+
+@10310 = ~La douce clarté lunaire illumine la scène
+Tout près de la fenêtre, Eileen file sa laine.
+Une grand-mère aveugle, assise près du feu
+Grommelle une chanson, tricote aussi, un peu.
+Dehors une silhouette, celle de son grand amour
+Murmure, penchant la tête, "j'attends depuis toujours.
+Quitte ton tabouret, enjambe la fenêtre
+Et marchons sous la lune, jusqu'au bosquet de hêtres".~ 
+
+@1032 = ~Chut ! dit la demoiselle, qui fait non de la tête.
+Elle se lève pourtant, veut partir, puis s'arrête
+Regarde emplie de crainte, sa grand-mère assoupie
+D'un pied tourne le rouet, de l'autre déjà s'enfuit
+Et tourne la roue tourne, lentement, lentement
+Et grince la roue grince, doucement, doucement
+Eileen gagne la fenêtre, silencieuse et légère
+Et saute dans les bras de son amant lunaire.~ [PGPRU03]
+@10320 = ~Chut ! dit la demoiselle, qui fait non de la tête.
+Elle se lève pourtant, veut partir, puis s'arrête
+Regarde emplie de crainte, sa grand-mère assoupie
+D'un pied tourne le rouet, de l'autre déjà s'enfuit
+Et tourne la roue tourne, lentement, lentement
+Et grince la roue grince, doucement, doucement
+Eileen gagne la fenêtre, silencieuse et légère
+Et saute dans les bras de son amant lunaire.~ 
+@1033 = ~Et tourne la roue tourne, de plus en plus lentement
+Et grince la roue grince, de plus en plus doucement
+Et puis le rouet s'arrête, est enfin silencieux
+Dans le bosquet de hêtres, marchent les amoureux.~ [PGPRU04]
+@10330 = ~Et tourne la roue tourne, de plus en plus lentement
+Et grince la roue grince, de plus en plus doucement
+Et puis le rouet s'arrête, est enfin silencieux
+Dans le bosquet de hêtres, marchent les amoureux.~
+@1050 = ~Et bien, je n'ai pas entendu chanter comme cela depuis que la demi-déesse elle-même m'a fait don d'un air pour mon anniversaire. Ah, ma jeunesse enfuie...~ [PGJASS30]
+@1051 = ~Mais je digresse. S'il vous plait, vos applaudissements pour Prudence Dubhthistle !~ [PGJASS31]
+@1052 = ~Une fille si charmante, et une si belle voix ! Ah, je ressens le besoin irrépressible de lui faire une tasse de thé.~ [PGMOMB2]
+@1053 = ~Elle a touché mon instinct maternel, c'est certain ! Et tu as entendu, Bon Père ? Elle a eu l'air hésitante quant à son nom de famille !~ [PGMOMB3]
+@1054 = ~Est-ce trop tôt pour dire que je suis fière de la femme que notre fille est devenue ?~ [PGMOMB4]
+@1055 = ~Peut-être bien, Bonne Mère. D'autres jeunes femmes attendent encore leur tour.~ [PGDADA8]
+@1056 = ~L'une d'entre elles pourrait nous surprendre.~ [PGDADA9]
+@1057 = ~Oui, peut-être suis-je trop impatiente d'atteindre la fin de cette satanée recherche et de savoir qu'elle est en bonne santé.~
+@1058 = ~Pour parler du fond du coeur, et pour être honnête, je dois bien dire que même si notre fille savait pousser la chansonnette, elle ne l'a jamais poussée aussi loin que ne l'a fait cette jeune Prudence.~
+@10580 = ~Elle ressemble un peu trop à un rossignol pour être la nôtre...~
+@1059 = ~Bon, ne tire pas trop vite de conclusions, Bonne Mère. Des choses plus étranges se sont produites dans ce monde sauvage et dangereux.~
+@1060 = ~Il est possible que notre Cait ait eu à chanter pour gagner sa pitance plus souvent que nous n'osions l'imaginer.~
+@1061 = ~Le bon côté de la famine est qu'elle crée des compétences !~
+@1062 = ~Oh, Bon Père ! Tiens ta langue ! De telles pensées m'ont causé plus d'une nuit d'insomnie !~
+@1063 = ~Courage, ma chérie. Tout ceci sera du passé pour notre fille, pas plus tard qu'aujourd'hui.~
+@1064 = ~Pas avant que nous ne la trouvions dans cette foule obsédante...~
+@1065 = ~Oui, pas avant.~
+
+// Joules
+
+@1066 = ~Je suis certain que vous allez tous accueillir chaleureusement Sire Joules !~ [PGJASS32]
+@1067 = ~Pas vêtus de ces capes répugnantes, il n'en est pas question. J'aimerais autant qu'ils ne respirent pas trop près de moi, non plus.~ [PGJOUL10]
+@1068 = ~(hum) Oui, bon. Je suis heureux de voir que j'avais raison : cette compétition manque sérieusement de classe ! Je vais vous demander de garder vos vaches silencieuses et d'éviter de vous moucher pendant ma prestation.~ [PGJOUL11]
+@1069 = ~Enfin, je pourrais vous le demander, mais je sais que ça ne sert à rien.~ [PGJOUL12]
+@1070 = ~Qu'est-ce qui veut dire, lui ?~ [PGHELKB7]
+@1071 = ~Il veut dire que tu devrais la fermer !~ [PGHELKC7]
+@1072 = ~Sire Joules, avez-vous préparé une chanson ? Ou bien cela va-t-il être une performance conceptuelle, peut-être ?~ [PGJASS33]
+@1073 = ~On peut dire ça.~ [PGJOUL13]
+@1074 =~Ne me parlez pas de ces dames
+Qu'il faut sans cesse louer, flatter
+Amaryllis a plus de charme
+De douceur et de légèreté
+
+Et quand on flirte et qu'on s'embrasse
+Elle crie « Arrête, vilain garçon ! »
+Mais lorsque plus tard je l'enlace
+Je ne l'entends jamais dire non.~ [PGJOUL07]
+@10740 =~Ne me parlez pas de ces dames
+Qu'il faut sans cesse louer, flatter
+Amaryllis a plus de charme
+De douceur et de légèreté
+
+Et quand on flirte et qu'on s'embrasse
+Elle crie « Arrête, vilain garçon ! »
+Mais lorsque plus tard je l'enlace
+Je ne l'entends jamais dire non.~
+
+@1075 = ~Les dames dorment dans des draps de soie
+Tissés par d'experts artisans.
+Un baldaquin de saules pour moi
+Un lit de mousse, de feuilles, de vent.
+Et Amaryllis, don du ciel
+Son parfum de lait et de miel
+
+Et quand on flirte et qu'on s'embrasse
+Elle crie « Arrête, vilain garçon ! »
+Mais lorsque plus tard je l'enlace
+Je ne l'entends jamais dire non.~ [PGJOUL08]
+@10750 = ~Les dames dorment dans des draps de soie
+Tissés par d'experts artisans.
+Un baldaquin de saules pour moi
+Un lit de mousse, de feuilles, de vent.
+Et Amaryllis, don du ciel
+Son parfum de lait et de miel
+
+Et quand on flirte et qu'on s'embrasse
+Elle crie « Arrête, vilain garçon ! »
+Mais lorsque plus tard je l'enlace
+Je ne l'entends jamais dire non.~
+
+// JOULES
+
+
+@1100 = ~Je n'ai pas trouvé ça si distingué. Pourquoi tant d'excitation, j'me l'demande.~ [PGHEKLD7]
+@1101 = ~Ces gens de la haute ne peuvent même pas se permettre de virer leurs serviteurs, à ce qu'on dit.~ [PGHEKLC8]
+@1102 = ~Ils sont même obligés de se laisser habiller de huit couches de soieries.~ [PGHEKLC9]
+@1103 = ~Je suis certain que nous allons tous fredonner cet air pendant très très longtemps.~ [PGJASS34]
+@1104 = ~J'adore ces chansons follement entraînantes ! Rien ne vaut la sensation de devoir se fracasser la cervelle avec une brique pour les en sortir !~ [PGJASS35]
+
+/*
+
+@1105 = ~Bon Père, est-ce que tu aurais seulement pensé à demander le sexe des personnes que tu as invitées à ce tournoi ?~
+@1106 = ~C'est vrai, notre fille a peut-être changé tout au long de ces dernières années, mais pas au point de devenir un homme !~
+@1107 = ~Voyons, ne tire pas de conclusions hâtives, Bonne Mère.~
+@1108 = ~Des choses plus étranges se sont produites dans ce monde sauvage et perverti. Aimerais-tu moins notre fille si tu découvrais qu'elle avait désormais de la barbe ?~
+@1109 = ~Qu'est-ce que les voisins diraient ?!~
+@1110 = ~Que ta fille est devenue un bon gars, et quel est le mal là-dedans ? Ça ne me dérangerait pas d'avoir à la fois un fils et une fille.~
+@1111= ~Deux enfants pour le prix d'un seul. En voilà une économie.~
+@1112= ~Ah, toi et ton économie. Est-ce trop demander pour une femme que sa fille reste une fille ?~
+*/
+
+// AKAI
+
+@1113=~Bon Père, est-ce que mes yeux me trahissent ? Deux filles, qui se ressemblent comme des pois dans une cosse !~ [PGMOMB5]
+@1114=~As-tu songé que même si notre fille a certainement changé au cours de ces quelques années, elle a difficilement pu se diviser en deux ?~ [PGMOMB6]
+@1115=~Tu n'y as pas pensé avant d'inviter un tel duo au concours ?~ [PGMOMB7]
+@1116=~Si, Bonne Mère, mais est-ce que point de vue talent, notre fille n'en vaut pas deux normales ?~ [PGDADB0]
+@1117= ~N'importe quoi ! Elle était talentueuse, c'est sûr, mais en un seul exemplaire !~ [PGMOMB8]
+
+// LYRICA
+
+@1140 = ~C'est au cœur des doux jardins
+Que j'ai vu ma fiancée
+Elle glissait dans les jardins
+Sur ses blancs petits pieds.~ [PGLYRSO1]
+
+@11400 = ~C'est au cœur des doux jardins
+Que j'ai vu ma fiancée
+Elle glissait dans les jardins
+Sur ses blancs petits pieds.~
+
+@1141 = ~Elle me dit « Prenons le temps »
+Comme poussent les feuilles tendres 
+Moi j'étais jeune, ignorant
+Je ne voulais pas attendre.~ [PGLYRSO2]
+
+@11410 = ~Elle me dit « Prenons le temps »
+Comme poussent les feuilles tendres 
+Moi j'étais jeune, ignorant
+Je ne voulais pas attendre.~
+
+
+@1150 = ~Elle a l'air gentille. Et sa voix... ressemble à celle des Solaires, fredonnant dans la brise, les nuages, en vérité...~ [PGMOMB9]
+@1151 = ~Mais était-ce il y a si longtemps, Bon Père ? D'après son apparence, si cette Lyrica était un melon, la date de la cueillette serait passée.~ [PGMOMC0]
+@1152 = ~Voyons, ne tire pas de conclusions hâtives, Bonne Mère. Des choses plus étranges se sont produites en ce monde sauvage et perverti.~ [PGDADB1]
+@1153 = ~Notre fille pourrait avoir souffert des turpitudes du monde réel. De trop nombreuses lieues sur la route et quelques problèmes peuvent certainement vieillir un visage de quelques années, j'en suis sûr.~ [PGDADB2]
+@1154 = ~Ou bien elle est allée vivre quelques temps avec ma plus jeune soeur.~ [PGMOMC1]
+@1155 = ~C'est une autre possibilité, oui.~ [PGDADB3]
+@1156 = ~Ah, c'est si difficile de savoir quoi espérer. Elle a l'air sympathique et elle a du talent, c'est certain.~
+@1157 = ~Elle irradie une confiance en soi qui me rappelle notre casse-cou de fille, mais j'imagine que le spectacle ne fait que commencer...~
+@1158 = ~Nous n'en sommes qu'à la moitié, Bonne Mère. Attendons de voir.~
+@1159 = ~Oui, attendons de voir.~
+
+// ULGA
+
+@1200 = ~Ulga chanter maintenant.~[PGULGA02]
+
+//(Sur l'air du "Marin Saoul")
+
+@1201 = ~Quoi Ulga faire avec crâne d'humain ?
+Quoi Ulga faire avec crâne d'humain ?
+Quoi Ulga faire avec crâne d'humain ?
+Faire un joli panier !~ [PGULGA05]
+@1202 = ~Bon Père, qu'est-ce qui t'a pris d'inviter une ogresse à notre concours ?~ [PGMOMC2]
+@1203 = ~Pas de cheveux roux, pas d'yeux bleus. As-tu pensé à poser ces questions avant d'envoyer les invitations ?~ [PGMOMC3]
+@1204 = ~Oui, j'y ai pensé, mais des choses plus étranges se sont produites, Bonne Mère. Plus d'une jeune fille se transforme en ogresse après son mariage.~ [PGDADB4]
+@1205 = ~Enfin, sauf toi, bien sûr.~
+@1206 = ~C'est bien ce que je pense, et la même chose de notre fille !~
+@1207 = ~Bien sûr, Bonne Mère, bien sûr.~
+@1208=~Quoi Ulga faire avec joli panier ?
+Quoi Ulga faire avec joli panier ?
+Quoi Ulga faire avec joli panier ?
+Mettre marguerites dedans !~ [PGULGA06]
+@10209 = ~Vous aimer ?~ [PGULGA03]
+@1209 = ~*applaudit*~
+@1210= ~Alors, Ulga chanter plus !~ [PGULGA04]
+@1211= ~Allons, allons, petite ogresse, tu vas trop nous gâter. Laisse donc chaque barde avoir son tour.~ [PGJASS36]
+
+// Talindra
+
+@1250 = ~Qu'est-ce qui t'arrive donc ma jolie ?
+Ton fringuant Jimmy n'est pas là ?
+Les soldats sont venus pour lui
+Et l'ont emmené loin de moi.
+Parti en ville sa paie en poche,
+Les habits rouges l'ont enrôlé.
+Ils l'ont saoulé, croyez qu'c'est moche
+J'aurais préféré qu'ils l'aient tué.~ [PGTALIN1]
+@12500 = ~Qu'est-ce qui t'arrive donc ma jolie ?
+Ton fringuant Jimmy n'est pas là ?
+Les soldats sont venus pour lui
+Et l'ont emmené loin de moi.
+Parti en ville sa paie en poche,
+Les habits rouges l'ont enrôlé.
+Ils l'ont saoulé, croyez qu'c'est moche
+J'aurais préféré qu'ils l'aient tué.~
+@12501=~La simple vue de son insigne
+Nous donne à tous envie d'pleurer.
+J'ai par deux fois, croyez qu'c'est digne
+Cru m'évanouir et n'plus m'relever.
+Mon père a pris l'sergent à part
+Lui a offert une guinée d'or.
+Mais il n'a rien voulu savoir :
+« Il est à nous jusqu'à sa mort ».~
+@1251 = ~Brise mon coeur et puis s'en va.
+Brise mon cœur mon beau soldat.
+Moi qui dors dans ce lit si froid,
+Si lasse de cette vie sans toi.~ [PGTALIN2]
+
+/*
+@1250 = ~Qu'est-ce qui t'arrive donc ma jolie ?
+Ton fringuant Jimmy n'est pas là ?
+Les soldats sont venus pour lui
+Et l'ont emmené loin de moi.~
+@1251 = ~Parti en ville sa paie en poche,
+Les habits rouges l'ont enrôlé.
+Ils l'ont saoulé, croyez qu'c'est moche
+J'aurais préféré qu'ils l'aient tué.~
+@1252 =~La simple vue de son insigne
+Nous donne à tous envie d'pleurer.
+J'ai par deux fois, croyez qu'c'est digne
+Cru m'évanouir et n'plus m'relever.~
+@1253 = ~Mon père a pris l'sergent à part
+Lui a offert une guinée d'or.
+Mais il n'a rien voulu savoir :
+« Il est à nous jusqu'à sa mort ».~
+@1254 = ~Quand Jimmy me parle de la guerre
+C'est mourir que de l'écouter
+Je cours cacher mes larmes amères
+Je ne peux plus le supporter.~
+@1255 = ~Un brigadier, un grenadier
+Voilà ce qu'ils vont faire de lui
+Et il est là à plaisanter
+Ne m'oublie jamais, qu'il me dit.~
+@1256 = ~Brise mon coeur et puis s'en va.
+Brise mon cœur mon beau soldat.
+Moi qui dors dans ce lit si froid,
+Si lasse de cette vie sans toi.~
+@1257 = ~Brise mon coeur et puis s'en va.
+Brise mon cœur mon beau soldat.
+Moi qui dors dans ce lit si froid,
+Si lasse de cette vie sans toi.~
+
+*/
+
+@1258 = ~Ah, vraiment, sa chanson est délicieuse, mais quel genre de fille a des oreilles qui pointent en direction des falaises ?~ [PGMOMC4]
+@1259 = ~Une elfe, je dirais, Bonne Mère.~ [PGDADB5]
+@1260 = ~Vraiment ?~ [PGMOMC5]
+@1261 = ~As-tu songé, Bon Père, que même si notre fille a changé au long de toutes ces années, il y a peu de chance qu'elle ait soudain vu une paire de Cormanthors lui pousser sur la tête !~ [PGMOMC6]
+@1262 = ~Pas si vite, chérie. Tu te souviens comme notre fille a poussé lors de son treizième été ?~ [PGDADB6]
+@1263 = ~Un demi tonneau de plus, elle a pris. Qui nous dit que ses oreilles n'ont pas rattrapé leur retard ?~ [PGDADB7]
+@1264 = ~La crétinerie de cet homme ! La prochaine fois, tu me diras que notre fille s'est transformée en un buisson de ronces qui joue de la vielle !~ 
+@1265 = ~Des choses plus étranges se sont produites, Bonne Mère. Des choses plus étranges.~ 
+@1266 = ~Ce ne serait pas si mal d'avoir des ronces comme fille. Cela garderait les lapins hors de nos terres et jardins.~ 
+@1267 = ~Oh ! Quel crétin, je le disais !~
+@1280 = ~Oh, quelle longue journée, et je sais que vous êtes aussi épuisés que je le suis, mais je vous implore, vous tous, qui admirez les bardes et louez les artistes, de rester concentrés pour la dernière, mais pas la moindre, de nos participants.~ [PGJASS37]
+@1281 = ~D'on ne sait où, mais arborant le plus joli sourire que j'aie jamais eu le privilège de contempler, je vous prie d'applaudir Keto Riven alors qu'elle monte sur notre modeste scène !~ [PGJASS38]
+@1282 = ~Tu as entendu ça, Bon Père ? Son nom est Keto ! Ce patronyme a une consonnance familière. Oh, et si c'était notre agneau perdu ?~ [PGMOMC7]
+@1283 = ~Ecoute bien, Bonne Mère. Nous reconnaîtrons notre fille bien assez tôt à la manière dont elle raconte une histoire.~ [PGDADB8]
+
+// Keto est perdue
+
+@1300 = ~Ooh, le temps imparti est écoulé ! Et juste avant que qui ce soit dans le public ne soit égorgé. Ça, c'est ce que j'appelle du spectacle. Allons, applaudissons Keto !~ [PGJASS39]
+
+@1301 = ~*applaudit*~
+// Réalise qu'il applaudit seul. S'arrête.
+@1302 = ~...*applaudit*~
+@1303 = ~Oh.~
+@1304 = ~J'ai toujours voulu savoir ce que sentait Umberlie.~ [pgcrwdd1]
+@1305 = ~Oui. Enfin.~ [PGJASS40]
+@1306 = ~Une tentative courageuse. Ne le prenez pas mal, jeune fille. La demi-déesse des bardes immortels sourit à tous ceux qui font des efforts sincères !~ [PGJASS41]
+@1307 = ~Pauvre chou. J'avais de grands espoirs pour celle-ci, vu son apparence. Mon coeur se brise de la voir se débattre de la sorte.~ [PGMOME1]
+@1308 = ~Oui, Bonne mère. Ça pourrait arriver a n'importe qui, bien sûr. On ne peut pas juger de la qualité d'un artiste en une seule performance, mais il manquait quelque chose à cette jeune fille.~ [PGDADB9]
+@1309 = ~Notre Caitie, elle savait ce qu'elle voulait et était prompte à le dire. Rien de cette hésitation superficielle.~ 
+@1310 = ~Ma fille n'a jamais dit "heu" ou "hum" ou "s'il vous plait, puis-je dire un mot ?"~ 
+@1311= ~C'est vrai, c'est vrai. Notre fille se ferait respecter. Elle n'avait peur de rien.~ 
+@1312= ~Mais, tu te souviens, Bon Père ? Cette fille qui a chanté au milieu ? Celle qui était lyrique. Elle avait l'air plutôt gentille et futée, aussi.~ 
+@1313= ~De l'esprit et du talent, pour sûr, des cheveux comme un lever de soleil, mais je ne me souviens pas que notre Caitie rivalisait avec les oiseaux, Bonne Mère.~
+@1314 = ~Notre Caitie était capable de n'importe quoi, pour autant qu'elle s'y mette ! Je pense... non, je le sens au fond de moi ! C'est notre fille, notre petit agneau perdu !~
+@1315 = ~Mes chers amis, il est l'heure. Même si en réalité, nous sommes tous victorieux, pour avoir assisté à une telle pléthore de talents.~ [PGJASS42]
+@1316 = ~Je voudrais demander à nos juges secrets, les bienfaiteurs de cette délicieuse petite compétition, de bien vouloir se manifester et rendre leur verdict !~ [PGJASS43]
+@1317 = ~Oh, l'attente ! En vérité, c'est vraiment la partie la plus difficile !~ [PGJASS44]
+@1318 = ~*murmure*~
+@1319 = ~Et maintenant, mesdames, messieurs, la révélation que vous avez attendue toute la journée, le gagnant de notre Tournoi Bardique Inter-Amnien, le barde incontesté de l'année est...~ [PGJASS45]
+@1320 = ~LYRICA !~ [PGJASS46]
+@1321 = ~Barry, les paysans applaudissent. Pourquoi sont-ils aussi heureux ? Ce sont des paysans. C'est moi qui ai gagné.~ [PGLYR11]
+@1322 = ~Les paysans VOUS applaudissent, duchesse. Pas eux-mêmes, vous.~ [PGBARR08]
+@1323 = ~Moi. Bien sûr.~ [PGLYR13]
+@1324 = ~Oui, oui, je suis certaine que vous êtes contents. Vous avez tous été témoins de quelque chose de vraiment très spécial, aujourd'hui.~ [PGLYR14]
+@1325 = ~Mon moment. Mon moment spécial de gloire.~ [PGLYR15]
+@1326 = ~Et ce n'est que le début. Attends qu'elle réalise qu'il y a des retrouvailles dans l'air.~
+@1327 = ~Oh, Bon Père, toute cette attente ! Je ne peux plus le supporter.~ 
+@1328 = ~Elle a l'air tellement fière d'avoir gagné, il faut que je lui dise quelque chose !~
+@1329 = ~Je ressens la même chose, Bonne Mère.~
+
+// Keto se place
+
+@1350 = ~Calme-toi, mon coeur ! Quelle histoire insoutenable !~ [PGMOMC8]
+@1351 = ~Il y a une douleur dans la voix de cette fille qu'elle ne peut masquer à l'oreille d'une mère. Oserions-nous espérer qu'elle raconte sa propre histoire ?~ [PGMOMD0]
+
+// Cette partie pourrait être utilisée pour toutes les retrouvailles.
+
+@1352 = ~Que pourrait-on penser d'autre ? Cheveux roux, yeux bleus, cette petite inclinaison familière de la tête... Je me souviens d'avoir serré ce menton entre mes doigts et de lui avoir donné des bonbons alors qu'elle ne savait pas encore parler.~
+@1353 = ~Oh, ça doit être notre Caitie, Bon Père, saine et sauve. Ou, du moins, enfin en vue, et bientôt dans nos bras ! Oh, toute cette attente ! Je ne le supporte plus !~
+@1354 = ~Elle rayonne tellement sous ces applaudissements, regarde-la ! Il faut que je lui dise quelque chose !~ 
+@1355 = ~Merci. Merci.~ 
+@1356 = ~Mademoiselle... Keto ?~ [PGDADC0]
+@1357 = ~Oui, M'dame ? Monsieur ?~
+@1358 = ~Il était presque temps, j'étais prêt à abandonner la couronne et m'en aller.~
+@1359 = ~Oh, Prudence, ma chère ?~ 
+@1360 = ~C'est avec une joie singulière et un honneur particulier que je vous couronne vainqueur du premier (et oserais-je dire dernier, maintenant que tout ceci est sur le point de se résoudre) Tournoi Bardique Inter-Amnien !~
+@1361 = ~Tous les lots du concours sont à vous, et vous pouvez marcher tête haute et poitrine en avant, sachant que vous êtes le barde ultime de cette année !~ [PGJASS51]
+@1362 = ~Je... j'ai juste chanté une petite chanson... mais merci beaucoup, monsieur, madame... Je... j'essaierai d'être à la hauteur de cet honneur !~ [PGPRU11]
+
+// Keto gagne avec l'histoire du miroir
+
+@1400 = ~Merci, du fond du coeur !~
+@1401 = ~Est-ce que tu as entendu ça, Bon Père ?~ [PGMOMC9]
+@1402 = ~Oui, Bonne Mère. Ces mots nous rappellent la fille que nous cherchons.~ [PGDADC1]
+@1403 = ~C'est avec une joie singulière et un honneur particulier que je vous couronne, Keto Riven, vainqueur du premier (et oserais-je dire dernier, à moins que vous ne prévoyiez de prendre un nouveau coup sur la tête) Tournoi Bardique Inter-Amnien !~ [PGJASS50]
+@1404 = ~Toutes les primes du concours sont à vous, et vous pouvez marcher tête haute et poitrine en avant, sachant que vous êtes le barde ultime de cette année !~ [PGJASS51]
+
+// Keto gagne, Yoshimo
+
+@1450 = ~Il y a une douleur tue dans la voix de cette fille qu'elle ne peut masquer à l'oreille d'une mère. Oserions-nous espérer qu'elle est celle que nous cherchons ?~ [PGMOMD9]
+
+// PGJassy
+
+@4500 = ~Pour commencer, nous avons la gorge d'or de la scène de la bonne société ! Cet artiste a distrait plus d'une débutante et d'un duc dans les frontières d'Amn, mais je n'exagère pas en disant qu'il vous donnera le meilleur de lui-même !~ [PGJASS52]
+@4501 = ~Nos artistes suivantes viennent des Glaciales Dix-Cités, mais elles réchaufferont certainement vos coeurs avec leur joyeuse performance. Et vos yeux ne vous trompent pas : ces jeunes femmes sont aussi identiques que peuvent l'être des jumelles.~ [PGJASS53]
+@4502 = ~Je suis certain que vous ferez comme moi et accueillerez doublement Alesis et Epiphone, les délicieuses et talentueuses jumelles Akai !~ [PGJASS54]
+@4503 = ~Pour commencer, nous vous proposons un peu d'exotisme ! Cette jongleuse de mots mystique vous fera crier "encore !" alors que vous goûterez et toucherez la texture de ses vers délicieusement compacts.~ [PGJASS55]
+@4504 = ~S'il vous plait, ne vous retenez pas, je sais que je ne pourrais pas, pour Liffetta !~ [PGJASS56]
+@4505 = ~Bien ! Il est temps de continuer ! Notre prochaine performance sera l'oeuvre de la mélodiste Prudence Dubhthistle, une jeune femme avec un don particulier pour la chanson !~ [PGJASS57]
+@4506 = ~Pour commencer, voici le Joli Coeur de l'Est ! Est-ce que votre belle s'endort le soir avec le visage de cet homme à l'intérieur des paupières ? Est-ce que mes cheveux sont d'or et bouclés ? Bien sûr que oui !~ [PGJASS58]
+@4507 = ~Et voici notre pâtre favori, Pendragon Madrigal !~ [PGJASS59]
+@4508 = ~Bon, à présent, nous avons quelque chose de très excitant à vous proposer, un talent doté d'une beauté si sublime et d'un tel charme que je... et bien, que je me demande qui m'a gratifié d'un coup d'oeil dans le miroir !~ [PGJASS60]
+@4509 = ~Notre prochaine invitée a eu la gentillesse de nous faire une petite place dans son programme déjà très chargé. Je suis donc sûr que vous l'accueillerez comme il se doit, ici, à Imnesvale.~ [PGJASS61]
+@4510 = ~S'il vous plait, accueillez la seule, l'unique, Lyrica !~ [PGJASS62]
+@4511 = ~Notre première participante est probablement l'un des plus grands talents à avoir jamais foulé cette scène. Ou n'importe quelle autre. Au monde !~ [PGJASS63]
+@4512 = ~Reculez... Et, je rappelle aux siffleurs que se faire rattacher un membre arraché au temple coûte terriblement cher, faites place à Ulga, l'Ogresse Chantante !~ [PGJASS64]
+@4513 = ~A présent, nous accueillons cette sorte de voix délicieuse qui ne peut que s'élever lentement, au cours de nombreux millénaires, dans les hauteurs feuillues de la civilisation elfe, là où l'air est fin, comme les femmes... Je dois avouer que personnellement, je les préfère un peu plus charnues, mais leurs mélodies sont plantureuses.~ [PGJASS65]
+@4514 = ~Je vous prie d'accueillir mademoiselle Talindra Haut-Arbre !~ [PGJASS66]
+@4515 = ~Il y a peu, dans ce pays où nous sommes, un crime de proportions dévastatrices fut commis. Vous voyez, notre héros, <CHARNAME> de Château-Suif, tomba dans une embuscade aux environs de la Porte de Baldur...~ [FWKETOI9]
+@4516 = ~C'est pas dans ce pays-ci ! C'est au Nord de la frontière ! Tu parles d'étrangers !~ [PGHEKLA0]
+@4517 = ~C'est vrai, cette petite partie ne se déroule pas vraiment dans ce pays, mais pour la suite, nous serons très vite au Sud...~ 
+@4518 = ~Ouais, mais est-ce que ça devient mieux pour autant ?~ [PGHEKLB0]
+@4519 = ~Haa !~ [PGHEKLC0]
+@4520 = ~Hé !~ [PGHEKLE0]
+@4521 = ~Euh.~ [FWKETOJ0]
+@4522 = ~Notre héros vaquait à ses affaires, profitant d'un moment de détente après avoir vaincu bien des monstres infâmes le long de la Côte des Epées...~ [FWKETOJ5]
+@4523 = ~Notre héroïne vaquait à ses affaires, profitant d'un moment de détente après avoir vaincu bien des monstres infâmes le long de la Côte des Epées...~ [FWKETOJ6]
+@4524 = ~Comme quoi ?~ 
+@4525 = ~Comme quoi ? Quoi comme quoi ?~ 
+@4526 = ~Qu'est-ce qu'<PRO_HESHE> faisait ? Qu'est-ce que ça fait un héros pour se détendre ?~ 
+@4527 = ~C'est vrai ! Qu'est-ce qu'on sait des héros et de la détente, nous ?~ 
+@4528 = ~Mais ce n'est pas vraiment important pour la suite de l'histoire.~ 
+@4529 = ~Alors pourquoi tu l'as mentionné ?~ 
+@4530 = ~Allez ! Allez ! On veut TOUTE l'histoire !~ 
+@4531 = ~Dis-nous ce que <CHARNAME> fait pour se détendre !~ 
+@4532 = ~Allez !~ 
+@4533 = ~<CHARNAME>... euh, et bien, décida de... euh...~ 
+@4534 = ~Dis, <CHARNAME> ! Les gens sont curieux ! Qu'est-ce que tu as fait pour te détendre après tes hauts faits, dis-moi ?~ 
+@4535 = ~Entre deux aventures, je passe mon temps dans l'étude et la contemplation silencieuse.~ 
+@4536 = ~Tu as l'air nerveuse. Tu n'es pas nerveuse, si ?~ 
+@4537 = ~J'aime bien des femmes, puis du vin. Et quand il n'y a plus de vin, encore des femmes !~ 
+@4538 = ~J'aime bien des hommes, puis du vin. Et quand il n'y a plus de vin, encore des hommes !~ 
+@4539 = ~J'imagine que je fais beaucoup de siestes.~ 
+@4540 = ~Pssst, Keto... raconte juste ton histoire ! Ne perds pas le fil !~ 
+@4541 = ~Facile ! Je vais au marché et je dépense tout l'or que j'ai gagné durement !~
+@4542 = ~Et bien, je parfais mes compétences ! Un aventurier ne peut jamais vraiment se reposer. Même quand je ne défends pas chèrement ma vie, je m'exerce en vue des dangers inévitables du futur.~ ~Et bien, je parfais mes compétences ! Une aventurière ne peut jamais vraiment se reposer. Même quand je ne défends pas chèrement ma vie, je m'exerce en vue des dangers inévitables du futur.~
+@4543 = ~Donc, vous savez tout. Voilà ce que notre héros faisait pour se détendre.~ ~Donc, vous savez tout. Voilà ce que notre héroïne faisait pour se détendre.~
+@4544 = ~Chuuut ! Encore un peu plus fort, non ?~ 
+@4545 = ~Je vais vous dire ce que <CHARNAME> fait pendant son temps libre, bonnes gens ! <PRO_HESHE> s'inquiète pour ses amis !~ 
+@4546 = ~Noble, fidèle, et aussi vain que n'importe quel héros amnien avant lui.~ ~Noble, fidèle, et aussi vaine que n'importe quelle héroïne amnienne avant elle.~
+@4547 = ~Voilà ce que fait un aventurier pour se détendre.~ ~Voilà ce que fait une aventurière pour se détendre.~
+@4548 = ~Vous êtes contents maintenant ?~
+@4549 = ~Pff. C'est plutôt ennuyeux.~
+@4550 = ~Je pensais qu'elle dirait que <CHARNAME> tue des dragons comme passe-temps.~
+@4551 = ~(bâille)~ 
+@4552 = ~Hum... Où en étions-nous ? Ah oui ! Notre héros profitait de ce temps de détente lorsque, soudain, lui et ses compagnons de voyage furent enlevés !~ ~Hum... Où en étions-nous ? Ah oui ! Notre héroïne profitait de ce temps de détente lorsque, soudain, elle et ses compagnons de voyage furent enlevés !~ 
+@4553 = ~Ah !~
+@4554 = ~Rançonnés !~
+@4555 = ~Ooh !~
+@4556 = ~Kidnappés !~
+@4557 = ~Eek !~
+@4558 = ~Kidnappés par qui ?~ 
+@4559 = ~Un sorcier démoniaque !~ 
+@4560 = ~(gloups)~
+@4561 = ~Etre kidnappé par un sorcier démoniaque, c'est pas mal.~ 
+@4562 = ~Evidemment ! Le péril était incommensurable ! La souffrance illimitée ! La torture insupportable ! Mais il était là, <CHARNAME>, prisonnier dans le donjon ténébreux de l'infâme sorcier Irenicus !~ ~Evidemment ! Le péril était incommensurable ! La souffrance illimitée ! La torture insupportable ! Mais elle était là, <CHARNAME>, prisonnière dans le donjon ténébreux de l'infâme sorcier Irenicus !~
+@4563 = ~Je n'ai jamais entendu parler de lui.~ 
+@4564 = ~Moi non plus.~ 
+@4565 = ~Si vous aviez entendu parler de lui, ce serait bien pire ! Remerciez le ciel de n'avoir jamais rencontré l'infâme sorcier Irenicus !~
+@4566 = ~Ooh ! Ça devient effrayant !~ 
+@4567 = ~Pouvez-vous mesurer ce qu'endura <CHARNAME> ? Piégé. Sans défense. Ses amis étaient perdus, de nouveaux ennemis se déclaraient, et il subit des blessures qui ne guériraient jamais. Mais, après un temps interminable, <CHARNAME> parvint enfin à s'enfuir !~ ~Pouvez-vous mesurer ce qu'endura <CHARNAME> ? Piégée. Sans défense. Ses amis étaient perdus, de nouveaux ennemis se déclaraient, et elle subit des blessures qui ne guériraient jamais. Mais, après un temps interminable, <CHARNAME> parvint enfin à s'enfuir !~
+@4568 = ~Comment ?~
+@4569 = ~Ouais, comment est-ce que <CHARNAME> s'échappe du donjon puisqu'<PRO_HESHE> est tout faible et sans défense...~
+@4570 = ~La compatriote de <CHARNAME>, Imoen, se libéra de sa propre cellule et ouvrit la cage de son ami !~ ~La compatriote de <CHARNAME>, Imoen, se libéra de sa propre cellule et ouvrit la cage de son amie !~
+@4571 = ~Mais comment cette Imoen s'est-elle échappée ?~
+@4572 = ~Oh, j'ai sauté cette partie-là, n'est-ce pas... Vous voyez, l'infâme magicien Irenicus avait ses propres ennemis... Les Voleurs de l'Ombre.~
+@4573 = ~Ils attaquèrent son donjon, et, pendant ce combat, il y eut des explosions de magie, des flèches qui volaient ! La cellule d'Imoen fut abîmée par une déflagration, et elle fut capable de s'en extirper...~
+@4574 = ~Les Voleurs de l'Ombre ont attaqué cet Irenicus ?~
+@4575 = ~Est-ce que les voleurs ne sont pas des gens mauvais ?~
+@4576 = ~Et les gens mauvais n'attaquent que des gens gentils comme nous !~
+@4577 = ~Oui ! Des voleurs m'ont pris un de mes poulets la semaine passée, ces maudits gredins !~
+@4578 = ~Pauvre Irenicus, persécuté par des voleurs !~
+@4579 = ~Non, non ! Vous avez tout compris de travers ! Parfois, des gens mauvais attaquent d'autres gens mauvais parce que... ils sont en compétition ! Pour être le plus mauvais !~ 
+@45801 = ~Maudits mauvais !~
+@45802 = ~Logique.~ 
+@4580 = ~Oh.~
+@4581 = ~Attends une seconde.~ 
+@4582 = ~Quoooooi ?~
+@4583 = ~Tu as dit que notre héros, <CHARNAME>, s'est échappé de sa prison parce que son amie Imoen a déverrouillé sa cage.~ ~Tu as dit que notre héroïne, <CHARNAME>, s'est échappée de sa prison parce que son amie Imoen a déverrouillé sa cage.~ 
+@4584 = ~C'est ça.~ 
+@4585 = ~Et notre autre héroïne, Imoen, s'est échappée de sa cellule parce qu'elle avait été endommagée dans la bataille entre les Voleurs de l'Ombre et l'infâme sorcier Irenicus pour voir lesquels étaient les plus mauvais.~ 
+@4586 = ~C'est vrai aussi.~
+@4587 = ~Donc, ce que tu dis, c'est que les héros de cette aventure n'ont rien foutu d'autre que de se laisser torturer et tout le truc, jusqu'à ce que grâce à un coup de bol, leurs culs paresseux soient tirés d'affaire ?~ ~Donc, ce que tu dis, c'est que les héroïnes de cette aventure n'ont rien foutu d'autre que de se laisser torturer et tout le truc, jusqu'à ce que grâce à un coup de bol, leurs culs paresseux soient tirés d'affaire ?~
+@4588 = ~Hé, il a raison !~ 
+@4589 = ~Ouais !~ 
+@4590 = ~Non mais attendez une minute ! C'est vrai qu'il y a eu un petit peu de chance à l'origine de leur évasion, mais je vous assure que <CHARNAME> et Imoen ont dû se battre férocement pour sortir de ce donjon, risquant leurs vies et démontrant leur courage à chaque pas.~ 
+@4591 = ~On dirait que cette Imoen a fait tout le boulot. Elle a libéré <CHARNAME>, non ? Qu'est-ce qui lui est arrivé ?~ 
+@4592 = ~Oui, Imoen ! Qu'est-il arrivé à Imoen ?~ 
+@4593 = ~J'y arrive dans un instant. Vous ne voulez pas entendre parler de <CHARNAME> et l'énigme du génie, d'abord ? Ou du harem de dryades ? Ou de la salle des âmes emprisonnées ? Ou de Yoshimo ?~
+@4594 = ~Non !~
+@4595 = ~Imoen !~
+@4596 = ~Parle-nous d'Imoen !~ 
+@4597 = ~Ah... hum.~ 
+@4598 = ~Bien, après de nombreux hauts faits, déployant leur courage et leurs compétences, <CHARNAME> et Imoen émergèrent de l'entrée en ruines du donjon d'Irenicus, pour se retrouver au milieu de la promenade de Waukyne dans la cité d'Athkatla !~ 
+@4599 = ~Wow ! Je parie que le loyer pour ce donjon devait être atroce !~ 
+@4600 = ~C'est sûr. C'est le meilleur centre commercial après Franc-Marché. Ma soeur est allée faire des emplettes là-bas lors de ses vacances au printemps passé. Elle a acheté une paire de sandales. Superbes, c'est sûr, mais chères ! Elles lui ont coûté deux pièces d'or !~
+@4601 = ~Non, pas vrai !~
+@4602 = ~Deux pièces d'or ! C'est trois mois d'orge !~
+@4603 = ~Incroyable !~
+@4604 = ~Excusez-moi ! Ouhou ! Est-ce qu'on peut en revenir à mon histoire, oui ?~ 
+@4605 = ~(grommelle)~ 
+@4606 = ~Oh, d'accord.~
+@4607 = ~Hum ! Ils trouvèrent leur Némésis, Irenicus, sur cette Promenade, en train de combattre un groupe de Mages Cagoulés déterminés à l'empêcher de menacer la population de la ville avec sa magie décadente !~
+@4608 = ~Imoen, emplie de rage et d'indignation suite à tout ce que <CHARNAME> et elle avaient eu à subir aux mains d'Irenicus, se lança dans la bataille avec ses propres pouvoirs magiques...~ 
+@4609 = ~Cette Imoen peut lancer des sorts ?~
+@4610 = ~Tu n'avais pas dit ça !~
+@4611 = ~Pourquoi est-ce qu'elle n'a pas fait exploser sa cellule, si elle pouvait faire de la magie ?~ 
+@4612 = ~J'comprends rien.~
+@4613 = ~Elle était désespérée et soumise à la torture, vous vous souvenez ?~
+@4614 = ~Mais elle s'est sentie mieux ?~
+@4615 = ~En combattant pour sortir du donjon ?~
+@4616 = ~Elle a pu faire une sieste dans le donjon ?~
+@4617 = ~J'comprends toujours rien.~ 
+@4618 = ~Elle... oh, elle était tellement furieuse... et frustrée... et elle ne savait pas quoi faire d'autre... qu'elle trouva la force de lancer un sort, et d'exploser cet Irenicus, qui ne voulait pas arrêter de parler, dans le néant !~ 
+@4619 = ~Donc, Imoen a renvoyé Irenicus dans le néant et sauvé le monde tandis que <CHARNAME> n'a de nouveau rien foutu ?~
+@4620 = ~NON !!~ 
+@4621 = ~Hum.~
+@4622 = ~Non. Imoen n'eut en réalité pas la possibilité d'envoyer Irenicus dans le néant, et <CHARNAME> n'eut pas la possibilité de se joindre à la bataille, parce qu'avant qu'<PRO_HESHE> ne puisse saisir ce qui se passait réellement, comme je vous l'explique pour l'instant, les Mages Cagoulés arrêtèrent Imoen et Irenicus et les envoyèrent à Spellhold.~
+@4623 = ~Alors, vous en dites QUOI ?~
+@4624 = ~Hmm.~ 
+@4625 = ~Alors ? Des questions ?~
+@4626 = ~Est-ce vrai ce qu'on dit des Mages Cagoulés ? Est-ce qu'ils sentent vraiment les cacahuètes ?~
+@4627 = ~On m'a dit qu'ils sentaient le soufre et la vanille.~
+@4628 = ~Mais qu'est-ce qui cloche chez vous, bon sang ? Vous ne pouvez pas juste écouter une histoire ?~ [FWKETOJ1]
+@4629 = ~J'essaie de faire de mon mieux, ici, et vous ne pouvez pas vous arrêtez, bon sang !~ [FWKETOJ2]
+@4630 = ~BIEN SUR, LES MAGES CAGOULES SENTENT LES CACAHUETES, ET, TANT QU'ON Y EST, UMBERLIE SENT COMME DU CARAMEL A L'EAU DE MER !!!~ [FWKETOJ3]
+@4631 = ~Mademoiselle ! Nous avons un mot à vous dire, si vous avez une seconde !~ [PGDADC2]
+@4632 = ~Barry ! La foule attaque ! Je vais être piétinée !~ [PGLYR12]
+@4633 = ~Cette performance est terminée !~ [PGLYR08]
+@4634 = ~Oh, Barry ! Barry, s'il te plait, écarte ces...~ [PGLYR09]
+@4635 = ~Attendez ! Nous devons vous parler ! C'est très important.~ [PGMOMD1]
+@4636 = ~Oh. Oh ! Oui, vous êtes les juges.~ 
+@4637 = ~Vous voulez certainement m'engager pour un concert privé ? Barry va s'occuper des détails pratiques.~ 
+@4638 = ~Non, ce n'est rien de ce genre. Nous avons organisé ce concours pour vous trouver, comprenez-vous ? Nous avons cherché si longtemps !~ 
+@4639 = ~Oui, le meilleur barde d'Amn. Hum. Je sais. C'est moi !~ 
+@4640 = ~Oui, c'était magnifique ! Tu es une ménéstrelle de qualité, et ton Père et moi ne pourrions pas être plus fiers.~ 
+@4641 = ~D'aaaaccord, je pense qu'il est temps d'y aller, à présent. BARRY !~
+@4642 = ~C'est bien ce que je craignais. Elle est devenue un peu zinzin ces dernières années. Voilà pourquoi elle ne nous a jamais envoyé le moindre message !~ 
+@4643 = ~Oh, dis-lui, Bon Père ! Dis-lui qui elle est !~ 
+@4644 = ~Tu es notre fille ! Ton nom n'a pas toujours été Lyrica, bien sûr. Non, nous t'avons prénommée comme Mamy O'Fairney.~ 
+@4645 = ~Folie ! Il y a quelque chose dans l'eau, ici ! Le puits est empoisonné, ces gens sont déments ! BARRY !~ 
+@4646 = ~Attends, calme-toi, il n'y a pas de mal. Tu as simplement oublié qui tu étais.~ 
+@4647 = ~Pendant nos recherches, nous avons eu des indices qui nous faisaient penser que c'était probablement ce qui s'était passé. Mais notre fille, elle te ressemblait...  et il y a des années, nous avons perdu sa trace, elle fut perdue pour le monde...~ 
+@4648 = ~Notre fille avait beaucoup de talent et racontait de belles histoires, et la perdre... ça nous a presque tué.~ 
+@4649 = ~Nous savions que dans ce pays, quelque part, une jeune femme d'un talent rare se promenait, capable de surpasser n'importe qui. Alors nous avons décidé de la ramener auprès de nous.~
+@4650 = ~C'est ce qu'est cette compétition, Caitie. Notre espoir et prière de retrouver notre fille.~
+@4651 = ~Caitie ? CAITIE !? Mon nom n'a jamais été Caitie, et je ne suis pas votre enfant, bande de charlatans !~
+@4652 = ~Je descends des nymphes ! L'esprit d'Oghma coule dans mes veines ! Je ne suis pas le genre de personne qu'on appelle "Caitie" !~ 
+@4653 = ~C'est une ruse, n'est-ce pas ? De la mauvaise publicité ! Non ! Vous essayez de me rendre folle.~
+@4654 = ~Qui vous a envoyés ? QUI ? Aviez-vous l'intention de me KIDNAPPER ?~ 
+@4655 = ~Attends, Caitie, si tu te calmais juste une seconde et réfléchissais à ceci, tu verrais que...~
+@4656 = ~ASSASSINS ! Gardes, ASSASSINS ! AAIIIIIIIIIIIIIEEEEEE !!!!~
+@4657 = ~(soupir) Allons, Lyrica, nous allons nous écarter de ces admirateurs dérangés et te trouver quelque chose à boire. Tout ira bien.~ 
+@4658 = ~Oh, Barry ! Ils sont tellement menaçants !~ 
+@4659 = ~Oui, oui. Ce seigneur et sa damoiselle sont des brutes terrifiantes, avec leurs 50 kilos.~ 
+@4660 = ~Ecoutez, Duchesse, que diriez-vous si je vous offrais une petite excursion d'une dizaine de jours à Esmeraltan ? Eaux de source, mets délicieux, chouchoutage en règle et le reste !~
+@4661 = ~Cela pourrait m'aider à récupérer de cette tension.~
+@4662 = ~(renifle) Quelque peu. Il vaut mieux que ce soit un mois.~ 
+@4663 = ~Ça marche.~
+@4664 = ~Une chambre avec vue ?~ 
+@4665 = ~Heu...~ 
+@4666 = ~BARRY ! JE SUIS TRES FRAGILE EN CE MOMENT !!!~
+@4667 = ~Oui, oui ! Plein de vues. Une vue sur des lieues, ma chérie.~ 
+@4668 = ~Alors pourquoi traînons-nous dans ce trou à rats ? Mes cordes vocales prennent la poussière.~ 
+@4669 = ~Oh, Bon Père, qu'allons-nous faire ? Cette... sirêne criarde ne peut pas être de notre chair et sang ! Quel que soit l'état de sa mémoire, notre fille avait trop de coeur pour nous renier de cette manière !~ [PGMOMD2]
+@4670 = ~Des choses plus étranges se sont produites dans ce monde sauvage et perverti, Bonne Mère. Parfois les gens ne parviennent pas à apprécier la récompense qu'ils ont sous le nez, même quand il s'agit de la chance d'avoir une mère comme toi.~ [PGDADC3]
+@4671 = ~Oh, Bon Père, tu vas me noyer les yeux à parler de la sorte.~
+@4672 = ~Je dois dire que ces derniers événements nous pointent une triste vérité : notre plan a échoué. Mais nous avons fait de notre mieux pour trouver notre fille, bien mieux que nous n'aurions pu espérer. Tu peux dormir en le sachant au fond de toi.~
+@4673 = ~Oui, nous avons essayé, mais seules douleur et déception en ont résulté. J'aurai des nuits agitées, Bon Père. Des nuits agitées.~ 
+@4674 = ~Je pense que nous ferions mieux de quitter Imnesvale, à présent. Dépêchons-nous avant que cette chanteuse nous fasse arrêter et enchaîner pour avoir commis le crime crapuleux d'avoir pensé un instant qu'elle était notre fille disparue.~
+@4675 = ~Son premier souvenir du monde fut ténèbres.~ [FWKETOJ4]
+@4676 = ~La fille se redressa, ses yeux voyaient rouge, un rouge piquant. Elle paniqua un instant, essaya de les ouvrir, mais... mais ils n'en brûlèrent que davantage. Elle lutta pour maîtriser ses nerfs et laissa ses autres sens prendre la relève. Elle sentait et respirait de la poussière, rien d'autre, et un grondement nauséeux résonnait dans ses oreilles.~ [FWKETOJ7]
+@4677 = ~Elle essaya de se mettre debout... Et c'était une erreur, car elle n'avait plus d'équilibre. Elle put alors goûter à la poussière. Crachant, elle réalisa que le goût métallique qu'elle avait dans la bouche n'était pas seulement la terre qu'elle venait d'avaler, mais aussi le goût de son propre sang.~ [FWKETOJ8]
+@4678 = ~Elle roula sur le dos et resta là, assommée, jusqu'à ce que le rouge devienne rose et que le grondement devienne un chuchotement tranquille. Après quelques temps, elle se remit debout, cette fois sans retomber. Elle avait mal partout. Le flanc de colline escarpé situé sur sa gauche et les déchirures de ses vêtements racontaient une histoire plutôt simple.~
+@4679 = ~Si elle avait eu la moindre possession personnelle, lorsqu'elle était en haut de la colline, celle-ci n'avait pas survécu à la chute. Le fourreau vide à sa hanche lui révéla qu'elle avait autrefois possédé une dague, mais ne lui fournit aucun autre indice.~
+@4680 = ~Ce n'est que lorsqu'elle se mit à chercher la dague en question qu'elle réalisa qu'elle n'avait aucune idée de qui elle était et de ce qu'elle faisait là. C'était juste une fille confuse, perdue et percluse en bas d'une falaise. Dans sa frustration, elle tenta de gravir la colline.~
+@4681 = ~Une nouvelle chute, se répercutant douloureusement dans ses membres, lui apprit que la pente était trop raide pour pouvoir être escaladée. Il lui restait peu de possibilités : elle pouvait soit marcher, soit pleurer. Elle fit volte-face et se mit à marcher.~
+@4682 = ~Les arbres firent peu à peu place à des buissons, et au détour d'un potager, elle aperçut un petit garçon qui jouait à chat avec celles qui devaient être ses soeurs. La jeune fille essaya de sourire et de leur faire signe, mais à la place, elle s'écroula dans la poussière.~ 
+@4683 = ~Un seau d'eau froide plus tard, elle ouvrit à nouveau les yeux, second réveil difficile. Des enfants étaient penchés sur son visage, la priant de donner un signe de vie. L'un d'entre eux chipotait à son oreille, et notre héroïne anonyme le chassa instinctivement. C'est seulement à ce moment-là qu'elle réalisa qu'elle portait des boucles d'oreille qui avaient survécu à la chute, un miracle en soi.~ 
+@4684 = ~Elle remua la tête de gauche à droite, et des perles de cristal chatouillèrent la peau de sa nuque en s'entrechoquant. Elle en eut le souffle coupé, reconnaissant cette sensation familière. Elle s'y accrocha, repliant les mains autour de ses oreilles, et s'assit maladroitement sur le sol crasseux alors que les enfants s'égaillaient avec bruit vers les cabanes voisines.~
+@4685 = ~Au bout d'un certain temps, ils revinrent avec leurs parents, un groupe misérable et effrayé, peu impressionnés par une fille sans argent, en guenilles, et sans aucune idée de son identité.~ 
+@4686 = ~Finalement, ils la prirent au mot : elle était bien blessée, perdue, et sans réponses. Ils lui offrirent des vêtements propres et un lit, partagèrent avec elle une portion de leur repas. Son fourreau vide s'attira quelques regards interloqués, et davantage lorsqu'elle continua à le porter, mais les villageois ne dirent rien.~ 
+@4687 = ~Ils la pressèrent de se trouver un nom, cependant, et une paire de syllabes brisées lui sauta aux lèvres rapidement. Ce n'était pas réellement un nom, et cela ne signifiait rien pour elle lorsqu'elle le prononçait face à un miroir, mais il remplissait son rôle.~ 
+@4688 = ~Cinq jours sans histoires s'écoulèrent. La fille découvrit les lieux, se rendit utile, et écouta les contes des villageois. A la troisième nuit, elle était persuadée de les avoir déjà tous entendus, mais elle continuait d'écouter, désirant remplir les trous noirs de son esprit.~
+@4689 = ~La plupart de leurs contes étaient des anecdotes paysannes classiques, mais il y avait parfois un récit concernant les bandes d'orques errants qui vivaient dans les collines, aux alentours. La fille remarqua que de nombreux regards suspicieux se posaient sur elle lorsqu'on évoquait ces créatures. Il semblait que les orques n'aient plus été repérés depuis son arrivée.~
+@4690 = ~Le sixième matin, elle s'éveilla avec quatre fermiers penchés sur elle, leurs visages déformés par des grimaces mécontentes. Ils lui firent comprendre qu'elle devait s'habiller et les suivre, sans bavarder, ni traîner.~
+@4691 = ~Ils la conduisirent le long de chemins de traverse jusqu'à une clairière au sommet de la colline dont elle était tombée. Leur destination... Elle la sentit dans l'air avant de la voir. C'était comme si un tonneau pourri plein de sueur et un autre plein de morve s'étaient cognés, avaient explosé et recouvert la campagne.~
+@4692 = ~Au moins une douzaine de cadavres d'orques généraient cette puanteur. La plupart semblaient être morts au combat, mais une paire avaient des couteaux de jet plantés dans le dos, manifestement lancés alors qu'ils tentaient de fuir.~
+@4693 = ~Au début, la fille ne comprit pas ce qu'ils voulaient lui montrer, pourquoi elle avait à contempler un tel carnage, mais alors... alors elle le vit.~ 
+@4694 = ~Au milieu du champ de bataille gisait l'orque le mieux vêtu du lot, sans doute le chef. Et au-dessus de lui, une dague enfoncée à la base de l'épine dorsale, se trouvait un jeune homme, sans doute le héros du combat.~ 
+@4695 = ~La fille savait ce qui devait immanquablement suivre, mais ses jambes ne voulurent pas lui obéir. Elle ne pouvait pas proférer le moindre son. Elle était paralysée par le carnage, et l'angoisse, et l'effroi.~
+@4696 = ~Sinistre, le chef des fermiers arracha la dague du dos du champion, et l'essuya en s'approchant de la fille. Elle tressaillit alors qu'il la remettait dans son fourreau, lequel lui correspondait, bien sûr, parfaitement.~
+@4697 = ~Les larmes qu'elle avait voulu verser depuis son réveil au bas de la falaise vinrent enfin, mais les fermiers ne les entendirent pas. Ils s'éloignèrent, simplement, et elle sut qu'elle n'était pas invitée à les suivre.~
+@4698 = ~Après les larmes, elle se mit à courir. Au loin. Vers n'importe où.~ 
+@4699 = ~Tu as entendu ça, Bon Père ?~ [PGMOMC9]
+@4700 = @1402 // ~Oui, Bonne Mère. Ses mots évoquent la fille que nous recherchons.~ [PGDADC4]
+@4701 = ~Mais qu'est-il arrivé à la fille ?~
+@4702 = ~Oui, qu'est-elle devenue ?~
+@4703 = ~Vous voulez savoir comment l'histoire se termine, chers auditeurs ? La fille continua à courir. Elle ne s'arrêtera peut-être jamais de courir.~
+@4704 = ~Mais, ce n'est pas une fin !~
+@4705 = ~Non, en effet. Il ne peut y avoir de fin, pas tant qu'elle ignore qui elle est.~ 
+@4706 = ~Car vous, vous qui avez un endroit d'où vous venez, vous qui vous souvenez d'amis de votre enfance et vous qui pouvez songer à un lit familier où terminer vos jours, sachez que vous êtes bénis. Vous ne portez pas le fardeau d'un passé oublié.~ [FWKETO46]
+@4707 = ~Contrairement à la fille qui court, vous avez le luxe de pouvoir vous arrêter.~ [FWKETO47]
+@4708 = ~Oui, elle a raison.~ [PGHEKLA1]
+@4709 = ~Et moi qui me suis toujours plaint d'être coincé dans un bled... Aucun autre endroit ne serait chez moi !~ [PGHEKLB1]
+@4710 = ~(renifle) Je n'avais réalisé que j'avais autant de chance !~ [PGHEKLC1]
+@4711 = ~Moi non plus !~ [PGHEKLD1]
+@4712 = @4631 // = ~Mademoiselle, nous avons quelque chose à vous dire, si vous avez une seconde...~ [PGDADC2]
+@4713 = ~Vous avez...?~ [FWKETOJ9]
+@4714 = ~Bien, dites ce que vous avez à l'esprit. Parler ça me connaît.~ [FWKETOK0]
+@4715 = ~Oui, en effet, et nous sommes si fiers de toi !~ [PGMOMD4]
+@4716 = ~Fiers ? Pourquoi seriez-vous fiers de moi ? Vous ne me connaissez même pas.~ [FWKETOK1]
+@4717 = ~Oh, mais si, mon enfant. Je te connais.~ [PGMOMD5]
+@4718 = ~Là, dans ce sourire. Il faudrait plus d'années que j'en ai vécues pour oublier cela. Tu as le sourire de ton père.~[PGMOMD6]
+@4719 = ~Vous... connaissez mon père ? Vous me connaissez ? Plutôt impressionnant. Je ne me connais même pas moi-même.~ [FWKETOK2]
+@4720 = ~Allons, Bonne Mère, ne laissons pas notre impatience étouffer la demoiselle.~ [PGDADC6]
+@4721 = ~Qui... Qui êtes-vous ?!~
+@4722 = ~Les O'Fairney de Valplume, Myles et Grainne. Nous sommes très respectables, tu as ma parole.~ 
+@4723 = ~C'est vrai, ma fille.~
+@4724 = ~Valplume ? Qu'est-ce que vous y faites ?~
+@4725 = ~Nous possédons un peu de terre, élevons quelques moutons, louons quelques chaumières, gardons un toit sur notre manoir...~ 
+@4726 = ~Vous êtes des seigneurs ?~
+@4727 = ~Oh, nous ne prenons pas de grands airs. Nous sommes des gens simples.~
+@4728 = ~Avec des terres, des moutons, des chaumières, un manoir...~
+@4729 = ~Nous avons également une fille. Une jolie créature. Bavarde, cela dit, et plutôt difficile en grandissant, mais rien de tel qu'un enfant avec de la force de caractère.~
+@4730 = ~Elle nous a terriblement manqué, chaque jour de son absence.~
+@4731 = ~Où est-elle partie ?~
+@4732 = ~C'est une question difficile, mon enfant. Tu comprendras peut-être que notre fille, comme le font souvent les demoiselles, a rencontré un jeune homme fringant d'un val occidental, aussi vif de son bras qu'elle était vive d'esprit, et ils sont tombés amoureux. Peut-être étaient-ils trop jeunes, mais ils étaient du genre aventureux et déterminés à se marier. Nous ne souhaitions à notre fille que le bonheur, donc nous leur avons donné notre bénédiction.~
+@4733 = ~Peu de temps après le mariage, la paire a pris la route, notre fille ayant l'intention de voyager avec son champion jusqu'à son village natal. Les mots étaient la passion de notre fille. C'était facile pour elle de nous écrire le compte-rendu de son périple, plus difficile de trouver des moyens sûrs de renvoyer ses messages.~
+@4734 = ~Cependant, elle y parvenait. Pendant les premiers mois, une lettre trouvait de temps à autre son chemin jusque chez nous, racontant sa joie, les anecdotes de la route, des louanges de son jeune mari... nous étions certains que notre fille ne manquait pas de bonheur.~
+@4735 = ~Mais, soudain un mois sans nouvelles s'écoula, puis deux, puis trois, puis plus encore, et nous avons réalisé avec une horreur grandissante que peut-être nous ne recevrions plus jamais de lettres de notre fille. C'est à ce moment-là que nous avons commencé nos recherches, mais la surface à couvrir était énorme. Et le temps continua à passer, alors que nous remuions ciel et terre pour retrouver des traces de notre fille et de son mari.~
+@4736 = ~Un jour, nous sommes arrivés à un village, où circulait une histoire similaire à celle que vous venez de conter. Au plus profond de nos coeurs, nous avons su qu'il s'agissait de notre fille, et le jeune homme mort était son...~
+@4737 = ~Mari ? Non !~ 
+@4738 = ~Tu as parlé d'une belle paire de boucles d'oreilles, dans ton récit. C'était un cadeau de mariage, en réalité, d'un mari à sa femme, d'or et de gemmes de crystal. Notre Cait, car le nom de notre fille est Catriona, y tenait plus qu'à n'importe quel anneau, c'est pourquoi elle décida de les porter à la place d'une bague de mariage plus traditionnelle.~
+@4739 = ~Dis-nous, mon enfant, si toi et la fille de ton histoire sont la même personne, si tu es notre agneau perdu. Toi, Keto, es-tu Caitie O'Fairney, notre fille ?~
+@4740 = ~A présent que nous te voyons de près, ces boucles d'oreilles que tu portes nous disent tout ce que nous voulions savoir. C'était un cadeau de mariage, en réalité, d'un mari à sa femme, d'or et de gemmes de crystal. Tu y tenais plus qu'à n'importe quel anneau, c'est pourquoi tu as décidé de les porter à la place d'une bague de mariage plus traditionnelle.~
+@4741 = ~Keto, née Catriona O'Fairney, tu es notre fille perdue.~
+@4742 = ~Vous... Ma famille ? Ce jeune homme... nous étions mariés ?!!~ 
+@4743 = ~Bon Père, elle a le souffle coupé. Je pense que nous l'avons choquée.~
+@4744 = ~J'ai juste ce qu'il faut pour détendre la demoiselle, Bonne Mère. Tiens, ma chérie, prends une lampée de whisky de ma bouteille.~ 
+@4745 = ~Bouteille ? Oh ! Non, merci. J'ai la mienne.~ 
+@4746 = ~C'est charmant... vraiment, vraiment touchant... mais nous avons un concours à clôturer, mon Seigneur, et j'ai souvenir d'une adorable paire de cuisses courbaturées qui attendent mes bons soins, ailleurs, donc si nous pouvions régler cette histoire de Barde Inter-Amien de l'Année, je pense que tout le monde apprécierait.~ 
+@4747 = ~Nous avons trouvé le barde que nous cherchions ! Keto, nous comprenons que le passé doit être encore trouble pour toi, et nous devons avoir l'air d'étrangers, mais nous savions combien notre fille était talentueuse et intelligente, et c'est ce qui nous a permis de te retrouver !~
+@4748 = ~Tu as toujours été une conteuse, parlant à qui voulait bien t'entendre, et écoutant qui voulait bien parler.~
+@4749 = ~Ton premier mot après "papa" et "maman" a été "histoire" et que les lapins mangent mes haies, si je mens.~
+@4750 = ~C'est le voeu d'un homme sobre comme un Helmite. Ton Père adore ses haies.~ 
+@4751 = ~Attendez... Vous n'allez pas faire de moi la gagnante juste parce que je suis votre fille, quand même ?~
+@4752 = ~Pourquoi pas ? C'est exactement ce que nous recherchions. Notre fille.~
+@4753 = ~Ce qui serait superbe si c'était une compétition de "êtes-vous ma fille ?" mais c'était supposé être un concours de bardes.~ [FWKETOQ1]
+@4754 = ~Oh, si j'avais su que c'était une compétition de "êtes-vous ma fille ?", j'aurais mis mes collants roses.~ [PGJASS70]
+@4755 = ~Tu es une excellente barde. Personne ne pourrait dire le contraire.~ 
+@4756 = ~C'est vrai, je suis une bonne barde et... et je me suis prouvé quelque chose aujourd'hui. Je sais qui je suis mieux que je ne le croyais.~
+@4757 = ~Mais je sais aussi que je n'étais pas la meilleure. Je pense que vous le savez aussi.~ 
+@4758 = ~C'est vrai, cette Prudence pourrait faire s'étrangler de jalousie un rossignol, mais je ne serai pas accusée de sous-estimer mon propre enfant !~ 
+@4759 = ~Viens, Bonne Mère. Il n'y a pas d'échappatoire quand la chair de ta chair t'indique le droit chemin. Comment pourrions-nous regarder notre Cait dans les yeux si nous trompions l'une de ses pairs ?~
+@4760 = ~Oui, nous donnerons l'argent à la fille qui l'a gagné, mais notre amour à la fille qui le mérite.~ 
+@4761 = ~Viens, mon enfant. Laisse tes parents t'étreindre avec des années de retard.~
+@4762 = ~Merci. Merci de m'avoir retrouvée. Je... Je ne me souviens pas de tout... mais tout semble... si... vrai... et vous êtes ici.~
+@4763 = ~Bon Père, je pense qu'elle a de nouveau du mal à respirer. Ne serre pas notre chérie si fort !~
+@4764 = ~La plupart des miroirs n'apprennent jamais qu'à montrer exactement ce que vous leur présentez. Mais je vais vous confier un secret... Quelques uns, très peu, vraiment très peu, deviennent plus que ça. Un peu de magie survient et ils apprennent à faire plus que simplement refléter. Je l'ai vu de mes propres yeux.~ [FWKETOK3]
+@4765 = ~Le miroir dont je vais parler n'a pas pris le meilleur départ dans ce monde. Ce n'était pas le miroir ornemental d'une jeune femme ni même un vieux miroir solide de taverne. Non, ce miroir fut découvert par une jeune femme solitaire, au bas d'une falaise.~ [FWKETOK4]
+@4766 = ~Il n'arborait pas de bordure brillante en argent ou de joyaux délicats. Il était un peu tordu, et son manche était fêlé. Mais une fois que la jeune fille eut poli sa surface, et bien, il reflétait aussi bien que n'importe quel miroir de luxe. Comme il n'avait rien de spécial, la jeune fille ne le conserva pas, et il se mit à passer de main en main, de lieu en lieu.~ 
+@4767 = ~Personne n'en voulait pour longtemps. Mais il remplissait son rôle, c'était la seule chose qu'il savait faire. Il observait le monde et le montrait exactement comme il le voyait. Et c'était assez. C'est tout ce que la plupart des gens pensent à demander à un miroir.~ 
+@4768 = ~Et cela satisfaisait parfaitement le miroir. Il n'avait jamais fait que ce qu'on lui demandait, et ne voyait pas de raison d'en changer. Il savait que les gens le traiteraient bien s'il continuait à tranquillement s'acquitter de son rôle : refléter le monde.~
+@4769 = ~Mais un jour, entre un sonnet et une sérénade, quelque chose de magique se produisit. Le miroir regardait un jeune homme qui partait compter fleurette à sa belle, et pour la première fois, il vit quelque chose qui se trouvait derrière la surface, au-delà des apparences. Il vit la tristesse derrière son sourire, et de l'inquiétude derrière son panache.~ 
+@4770 = ~Bon, au début, cela effraya le miroir, car il n'avait jamais rien remarqué derrière ce qu'il voyait. C'était aussi choquant pour lui que si nous nous réveillions un matin, capable de voir des fantômes ou d'entendre les vers qui creusent le sol.~ 
+@4771 = ~Pire, être effrayé fit encore davantage peur au miroir, car il n'avait jamais ressenti de véritables émotions auparavant, seulement leurs reflets.~
+@4772 = ~Bientôt, pourtant, le miroir redevint aussi heureux qu'auparavant. Personne ne remarqua qu'il avait changé, et il continua à passer de main en main... tombant de l'arrière d'un chariot, offert à une grande-tante, comme enjeu dans une partie de dés.~ 
+@4773 = ~Mais le miroir regardait tout autour de lui avec une appréhension des choses plus profonde, il grandissait et apprenait des sentiments cachés et des désirs enfouis. C'était une toute autre manière de regarder le monde.~
+@4774 = ~Et soudain, ce miroir eut une idée. Vous voyez, le miroir comprit que s'il ne montrait aux gens que ce qu'ils reflètent, personne n'en retirerait rien. A présent qu'il en savait tant sur les gens et ce qu'ils étaient en réalité, il pouvait leur présenter davantage que les masques qu'ils portaient.~
+@4775 = ~De cette manière, ils auraient à affronter la vérité à leur sujet, et ils pourraient apprendre des choses sur les autres qui seraient normalement restées cachées.~ 
+@4776 = ~Au début, ça ne se passa pas trop bien. Non, même pas bien du tout. Vous voyez, le miroir ne s'attendait pas à ce que les gens réagissent si mal lorsqu'il leur montrait qui ils étaient vraiment. Le miroir pensait que ce serait bien vu, qu'on le décorerait comme d'autres avant lui, qu'il serait peut-être même suspendu au mur d'un joli parloir, quelque part, mais non.~
+@4777 = ~Certaines personnes s'enfuirent en courant. D'autres éclatèrent en sanglots. Certains devinrent vraiment violents... Un le jeta même à terre, furieux de découvrir son reflet ! Elle... Je veux dire, il, le miroir... était terrifié. Il n'arrivait pas à comprendre ce qui avait mal tourné, pourquoi personne ne voulait voir la pure vérité.~ 
+@4778 = ~Pour un temps, il en revint à de simples reflets, joua le gentil miroir qui veut plaire. Il redevint un perroquet de glace. Pas d'interprétation, pas de révélation. Juste des reflets. Honteux, et je vous jure que c'est vrai, le miroir pleura des larmes d'argent quand personne ne le regardait.~
+@4779 = ~Mais le miroir ne parvint pas à résister bien longtemps. Il savait qu'il devait y avoir moyen de donner au monde plus qu'un simple artifice de lumière. Prudemment, il recommença à regarder les choses avec attention, cette fois en s'intéressant non seulement à ce qu'il voyait, mais aussi à ce qu'il entendait, ce qu'il ressentait, à la vérité derrière les mots et les images et les déguisements de tous ceux qui croisaient sa route.~
+@4780 = ~Finalement, il comprit. Montrer au public simplement ce qu'il attendait ne serait plus jamais suffisant : le miroir savait qu'il n'y avait pas d'intérêt, pas de valeur, là-dedans. Mais montrer la laideur sans artifice du monde, et bien... cela ne lui vaudrait qu'un autre voyage jusqu'en bas d'une falaise, et d'autres cassures, brisures, égratignures.~
+@4781 = ~L'astuce n'était pas d'exposer simplement, avec virulence, chaque mensonge et verrue et bouillonnement qui se terraient sous la surface. Mais les sentiments, la vérité des sentiments, ça c'était quelque chose qui en valait la peine. Montrez à un homme la vérité du désir, de la peur, de la douleur ou de la victoire, et il saura mieux comment y faire face lorsqu'ils viendront frapper à sa porte.~
+@4782 = ~Et si quelques uns ne parvenaient pas à supporter la vérité, à voir leurs propres peurs et désirs et douleurs reflétés, et bien... c'était tant pis. Parce que le plus important n'était pas de gagner un cadre d'argent ou l'honneur de figurer dans un parloir comme d'autres miroirs.~
+@4783 = ~Le miroir comprit enfin qu'il était plus important de colporter la vérité que de se retrouver dans une maison et d'être poli et accroché à la garde-robe d'une jeune femme.~ 
+@4784 = ~Alors si vous êtes aussi chanceux que je l'ai été, et que vous rencontrez ce miroir, s'il vous montre quelque chose que vous ne vous attendiez pas à voir, et que vous apprenez quelque chose de plus à propos de vous-même, quelque chose que vous n'auriez pas espéré d'un miroir, ne soyez pas surpris. Considérez que c'est un cadeau dont vous vous souviendrez tous les deux.~ [FWKETOK7]
+@4785 = ~Attendez. C'est tout ? Juste un miroir ?~ [PGHEKLA2]
+@4786 = ~Mais tais-toi. C'était allégorique et chargé de sens et je ne sais quoi encore du même style.~ [PGHEKLB2]
+@4787 = ~J'ai trouvé que c'était très émouvant.~ [PGHEKLC2]
+@4788 = ~J'crois oui.~ [PGHEKLA3]
+@4789 = ~Bien joué !~ [PGHEKLB3]
+@4790 = ~Oui, tout à fait charmant !~ [PGHEKLC3]
+@4791 = ~Je n'ai toujours pas compris.~ [PGHEKLA4]
+@4792 = ~Un jour, nous sommes arrivés dans un village où bruissait la rumeur d'une fille sans mémoire, un fourreau vide au côté. Non loin, on avait retrouvé un jeune aventurier mort, son couteau planté dans le dos, sur une pile d'orques qu'il avait massacrés.~
+@4793 = ~Au plus profond de nos coeurs, nous savions qu'il s'agissait de notre fille, et le jeune homme mort de son...~
+@4794 = ~Il te manque une chose, ma douce, une belle paire de boucles d'oreilles dont tu te souviens peut-être... C'était un cadeau de mariage, en réalité, d'un mari à sa femme, d'or et de gemmes de crystal. Notre Cait, car Catriona était le nom de notre fille, y tenait plus qu'à n'importe quel anneau, c'est pourquoi elle décida de les porter à la place d'une bague de mariage plus traditionnelle.~
+@4795 = ~Toi, Keto, es-tu Caitie O'Fairney, notre fille ?~
+@4796 = ~Tu es une excellente barde. Je n'accepterai pas qu'on dise le contraire.~ 
+@4797 = ~Et ce qui est encore mieux, c'est que tu es la plus douée parmi tout ceux que nous avons vus aujourd'hui ! Oh, Caitie, cette histoire que tu as conté... mon coeur s'en est brisé ! Bien sûr, tes collègues savent une chose ou l'autre, mais en vérité, tu aurais gagné le concours même si tu avais été l'enfant adoptif d'un kobold !~
+@4798 = ~Oui. Nous ne pourrions pas regarder notre Cait en face si nous avions grugé l'un de ses collègues. Nous voulons donner le prix au barde qui le mérite, et notre amour à la fille qui le mérite, et il se fait que c'est la même personne !~
+@4799 = ~Il ne veut pas que vous entendiez cette histoire, vous savez. Même maintenant, je peux sentir son regard sur moi, qui désapprouve. Mais je sais qu'il est bon de vous la raconter même si ce n'est pas ce qu'il aurait voulu.~ [FWKETOK5]
+@4800 = ~Notre homme aurait pu être un véritable héros, si le salaire avait été plus élevé. Il avait la langue agile et le bras ferme, il était ténébreux et charmant et toujours certain d'être du côté des vainqueurs. Il n'était ni le plus fort, ni le plus malin, mais son attitude lui permettait de se tirer de toutes les situations. Futé et de bonne compagnie, c'était le spécimen idéal parmi ces aventuriers à l'affût, un chasseur d'hommes. Sa confiance en soi était inébranlable.~ [FWKETOK6]
+@4801 = ~Est-ce que tu entends ça, Bon Père ? Langue agile, bras ferme, sombre et charmant... Cette fille est sous le charme !~ [PGMOME0]
+@4802 = ~Oui, ça me rappelle une histoire que j'ai déjà entendue... Une fille aux joues rondes et rouges, surgissant du froid de l'hiver, débordant de mots à propos d'un beau et véritable héros traversant notre ville...~ [PGDADC7]
+@4803 = ~Penses-tu... Bon Père, serait-ce une histoire à *son* propos ?~ [PGMOMD7]
+@4804 = ~Quand l'étranger vint à lui, lui proposant des sommes faramineuses en échange de la capture d'un personnage mystérieux et ambivalent des légendes côtières, bien sûr, notre homme connut la suspicion. Mais il avait aussi sa fierté... La fierté d'un homme choisi pour une tâche parce qu'il sait qu'il est le meilleur, le plus adapté, au faîte de la profession qu'il s'est choisie. L'étranger insista pour qu'on lui livre sa proie saine et sauve, généralement un bon signe, car il n'aimait pas qu'on le prenne pour un tueur sans cervelle. Sa fierté était sans tache.~ 
+@4805 = ~Puis l'étranger insista  pour qu'il se soumette à des liens magiques et subisse un enchantement puissant pour qu'il se conforme à son devoir à la lettre. Une requête étrange, et presque insultante. Mais son professionnalisme prit le dessus. Pourquoi s'opposer au client ? De plus, il était certain, comme toujours, que personne ne pourrait le forcer à faire quelque chose dont il n'aurait pas envie, magie ou pas magie. Sa maîtrise de soi était légendaire.~
+@4806 = ~Sa confiance se mua en curiosité lorsqu'il rencontra sa cible. Un homme remarquable, quelqu'un que dans d'autres circonstances, il aurait évité, pour des raisons pratiques. Mais sa résolution était ferme.~ ~Sa confiance se mua en curiosité lorsqu'il rencontra sa cible. Une femme remarquable, quelqu'un que dans d'autres circonstances, il aurait évité, pour des raisons pratiques. Mais sa résolution était ferme.~
+@4807 = ~Puis l'impensable se produisit. A sa grande surprise, il réalisa qu'il s'était attaché. Sa curiosité se mua en respect. Et pire, ce respect lui fut rendu... Peut-être pas complètement par sa proie, mais certainement par ses compagnons.~
+@4808 = ~Dans son coeur, le respect se transforma en désarroi... A la fois parce qu'il s'était placé dans cette situation problématique mais aussi parce qu'il prenait conscience que les liens du mage faisaient leur sale travail. Ils l'empêchaient de parler, d'offrir un mot d'avertissement. Ils l'empêchaient de faire tout sauf ce qu'il avait accepté de faire.~
+@4809 = ~Rien que le fait de songer à prévenir ses compagnons lui causait une souffrance terrible car les maudites chaînes enchantées du magicien mordaient droit dans son âme. Lâcher brusquement la vérité, dessiner un message dans la poussière, tapoter un code d'avertissement sur son genou... Toutes ces solutions lui étaient interdites. Son coeur connaissait le désespoir, mais son corps seulement l'obéissance.~
+@4810 = ~Le jour crucial, celui où il fut obligé de faire ce qu'il avait accepté depuis le début, la rébellion brûlait en son sein, mais il était sans défenses. Peu importait son tourment intérieur, il avait ses ordres, il avait fait son pacte.~
+@4811 = ~Tout ce qu'il lui restait à faire, était d'empoisonner une marmite de ragoût avec un mélange spécial, puis d'escorter le groupe jusqu'au repaire du magicien. Alors, il en était certain, le sort serait levé, et il pourrait enfin commencer à se rattraper.~ 
+@4812 = ~Il pourrait alors, il en était certain, retrouver le statut qu'il avait gagné auprès de ses compagnons, et, pouvait-il même y penser, retrouver l'affection dont il avait commencé à jouir. Accomplir ce dernier acte méprisable était en fait un soulagement. La fin de cette trahison était à sa portée.~
+@4813 = ~Mon Dieu... Je prie pour que ce ne soit pas une histoire à propos de celui que nous connaissons. Il a toujours eu l'air d'un garçon bien ! Ah, mais ça pourrait expliquer...~
+@4814 = ~Ce garçon, le héros de cette histoire, qu'il soit lié à nous ou un simple étranger, cette fille souffre de son destin. Peux-tu l'entendre, Bonne Mère ?~
+@4815 = ~Je l'entends, Bon Père, bien que, dans mon esprit, ma fille aurait le bon sens de voir au travers des intentions d'une crapule trompeuse prête à la trahir.~
+@4816 = ~Des choses plus étranges se sont produites, mon amour. Plus d'une jeune fille s'est amourachée d'un aventurier, malgré les bons conseils de sa mère.~
+@4817 = ~Pourtant, ce n'était pas terminé. Le magicien saisit sa proie, mais le sort ne s'estompa pas. Il aurait brisé son code personnel pour protester, ou au moins transpirer, mais à ce stade, tous les actes de défiance lui étaient interdits. Ses amis ne connaissaient que le sommeil, et son coeur ne connaissait que la honte. Son esprit l'avait mené dans un endroit où son coeur se rebellait avec violence, mais l'un et l'autre étaient plus prisonniers que jamais, à la merci du sortilège.~
+@4818 = ~La fin n'était pas le soulagement qu'il avait espéré. Son employeur ne voulait pas lui payer les richesses promises, ni le libérer. A la place, il l'envoya mourir aux mains mêmes de ceux qu'il avait trahis. En vérité, il fut transformé en ce qu'il avait toujours détesté le plus, un tueur sans cervelle, l'esclave des passions meurtrières d'un autre, trop faible pour accomplir son sale travail lui-même.~
+@4819 = ~Non seulement il avait trahi ses amis, mais il s'était trahi lui-même, dans tous les sens du terme. Il pleura en mourant. Cet homme autrefois fier pleura. Je le sais parce que je l'ai vu. C'est quelque chose qui a dû lui coûter, car de tels enchantements peuvent chasser une âme jusque dans les Autres Plans. Et nous... j'ai pleuré moi aussi.~
+@4820 = ~Quand un ami jure de devenir votre ennemi avant même de vous avoir rencontré, il n'est pas facile de trouver la faute. Et il n'est pas facile de se venger de celui qui tirait les ficelles d'un homme qui n'a jamais pensé en avoir.~
+@4821 = ~Il a déjà servi sa sentence. Je le voyais sur son visage quand il n'y prenait pas garde, et je le sentais quand je le regardais dans les yeux... Quand il était fatigué, le sortilège faiblissait juste assez pour révéler sa peur. Et puis encore quand il... quand il est mort.~
+@4822 = ~Je vais donc faire ce qu'il aurait détesté, je le sais, et vous dire que j'ai connu le véritable Yoshimo. Et je ferai en sorte qu'on se souvienne de lui non pas comme d'un monstre, mais comme d'un homme qui a découvert l'amitié et l'introspection trop tard.~ [FWKETOK8]
+@4823 = ~A propos de Yoshimo, oui mes amis, LE Yoshimo, il n'y a pas de réponses faciles. Quand je pense à mon... mon ami, je sais qu'il s'est trompé. Mais je sais aussi qu'il a reconnu ce tort. Et je sais qu'il l'a ressenti, plus profondément que je ne le pourrai jamais.~ [FWKETOK9]

@@ -1,0 +1,18 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGJASSY")
+         FadeToColor([20.0],0)
+         PlaySong(0)
+         Wait(1)
+         Weather(NOWEATHER)
+         FadeFromColor([20.0],0)
+         Wait(3)
+	 PlaySound("PGCROWD1")
+	 Wait(6)
+	 SetGlobal("PGKetosTurn", "GLOBAL", 1)
+         StartDialogueNoSet([PC])
+         EndCutSceneMode()
+END
+

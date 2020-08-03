@@ -1,0 +1,15 @@
+
+/*
+
+IF
+AreaCheck("AR0509")
+Global("PGKetoSpawned","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("keto08",[439.489],5)
+SetGlobal("PGKetoSpawned","GLOBAL",1)
+END
+
+*/
+
+

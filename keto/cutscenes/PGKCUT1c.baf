@@ -1,0 +1,97 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGJASSY")
+         FadeToColor([20.0],0)
+         Wait(1)
+         Weather(NOWEATHER)
+         PlaySong(0)
+         CreateCreature("PGAlesis",[4053.3062],15)
+         CreateCreature("PGepipho",[4235.3015],15)
+         ActionOverride("PGTEWES",DestroySelf())
+         ActionOverride("PGKCHOR1",DestroySelf())
+         ActionOverride("PGKCHOR2",DestroySelf())
+         FadeFromColor([20.0],0)
+         Wait(2)
+         MoveToPoint([4195.3000]) // Jasper wings
+ActionOverride("PGAlesis",MoveToPoint([4200.3125])) // Move to center stage
+ActionOverride("PGEpipho",MoveToPoint([4250.3100])) // Move to center stage
+Wait(3) // Wait for her to get there
+FaceObject("PGAlesis")
+MoveViewPoint([4225.3112],INSTANT)
+ActionOverride("PGalesis",Face(14))
+ActionOverride("PGepipho",Face(14))
+SmallWait(1)
+// PlaySound("PGAKAI")
+PlaySound("PGAKAI01")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI1", "PGalesis")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI2", "PGepipho")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI3","PGalesis")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI4", "PGepipho")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI1", "PGalesis")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI2", "PGepipho")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI3", "PGalesis")
+ Wait(3)
+// CreateVisualEffectObject("PGAKAI4", "PGepipho")
+// Wait(6)
+ PlaySound("PGAKAI02")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI1", "PGalesis")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI2","PGepipho")
+ Wait(6)
+ CreateVisualEffectObject("PGAKAI3","PGalesis")
+ CreateVisualEffectObject("PGAKAI4", "PGepipho")
+ Wait(1)
+
+// applause
+
+PlaySound("PGCrowd1")
+DisplayStringHead("PGCROWDA",@999)
+DisplayStringHead("PGCROWDB",@999)
+DisplayStringHead("PGCROWDC",@999)
+DisplayStringHead("PGCROWDD",@999)
+DisplayStringHead("PGCROWDE",@999)
+DisplayStringHead("PGCROWDF",@999)
+DisplayStringHead("PGCROWDG",@999)
+DisplayStringHead("PGCROWDH",@999)
+DisplayStringHead("PGCROWDI",@999)
+DisplayStringHead("PGCROWDJ",@999)
+DisplayStringHead("PGCROWDK",@999)
+DisplayStringHead("PGCROWDL",@999)
+Wait(1)
+ActionOverride("PGAlesis",MoveToPoint([4053.3062]) // Contestant back to wings
+ActionOverride("PGEpipho",MoveToPoint([4235.3015]) // Contestant back to wings
+SmallWait(1) // Let her get clear
+MoveViewPoint([4404.3129],VERY_FAST) // Camera zoom for parental comments
+DisplayStringHead("PGKMOM",@1113)
+Wait(6)
+DisplayStringHead("PGKMOM",@1114)
+Wait(10)
+DisplayStringHead("PGKMOM",@1115)
+Wait(5)
+DisplayStringHead("PGKDAD",@1116)
+Wait(5)
+DisplayStringHead("PGKMOM",@1117)
+Wait(5)
+FadeFromColor([20.0],0)
+         MoveToPoint([4225.3112]) // Jassy moves to centerstage
+	 Wait(3)
+         ActionOverride("PGAlesis",DestroySelf()) // Contestant back to wings
+         ActionOverride("PGEpipho",DestroySelf()) // Contestant back to wings
+         MoveViewObject("PGJassy",VERY_FAST)
+	 SetGlobal("PGKetosTurn", "GLOBAL", 1)
+         StartDialogueNoSet([PC])
+         EndCutSceneMode()
+END
+
+
+

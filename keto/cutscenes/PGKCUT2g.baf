@@ -1,0 +1,16 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("Keto")
+         GiveItemCreate("PGKCLOAK","Keto",1,1,1)
+         GiveItemCreate("PGKLTRS","Keto",1,1,1)
+         ActionOverride("PGKMom",EscapeArea())
+         ActionOverride("PGKDad",EscapeArea())
+         Wait(10)
+         ActionOverride("Keto",StartDialogueNoSet(Player1))
+         EndCutSceneMode()
+END
+
+
+

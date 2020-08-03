@@ -1,0 +1,51 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("Keto")
+         PlaySong(0)
+         ActionOverride("PGJassy",MoveToPoint([4200.3125]))
+         Wait(2)
+         DisplayStringHead("PGJassy",@1358)
+         Wait(2)
+         DisplayStringHead("PGJassy",@1359)
+         CreateCreature("PGPru",[4053.3062],15)
+         ActionOverride("PGPru",MoveToObject("PGJassy"))
+         Wait(3)
+         DisplayStringHead("PGJassy",@1360)
+         Wait(12)
+         DisplayStringHead("PGJassy",@1361)
+         Wait(10)
+
+         // applause
+
+PlaySound("PGCrowd4")
+DisplayStringHead("PGCROWDA",@999)
+DisplayStringHead("PGCROWDB",@999)
+DisplayStringHead("PGCROWDC",@999)
+DisplayStringHead("PGCROWDD",@999)
+DisplayStringHead("PGCROWDE",@999)
+DisplayStringHead("PGCROWDF",@999)
+DisplayStringHead("PGCROWDG",@999)
+DisplayStringHead("PGCROWDH",@999)
+DisplayStringHead("PGCROWDI",@999)
+DisplayStringHead("PGCROWDJ",@999)
+DisplayStringHead("PGCROWDK",@999)
+DisplayStringHead("PGCROWDL",@999)
+Wait(3)
+
+       DisplayStringHead("PGPru",@1362)
+       Wait(13)
+       ActionOverride("PGPru",EscapeArea())
+       Wait(1)
+       ActionOverride("PGJassy",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+       SetGlobal("PGKetoPlaced","GLOBAL",1)
+       Wait(3)
+       FaceObject(Player1)
+       Wait(1)
+       StartDialogueNoSet(Player1)
+       EndCutSceneMode()
+END
+
+
+

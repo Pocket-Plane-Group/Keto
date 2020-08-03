@@ -1,0 +1,1004 @@
+/*
+
+ActionOverride(Player1,LeaveAreaLUA("ARFE01","",[1579.1992],2))
+ActionOverride(Player2,LeaveAreaLUA("ARFE01","",[1620.2023],2))
+ActionOverride(Player3,LeaveAreaLUA("ARFE01","",[1512.2041],14))
+ActionOverride(Player4,LeaveAreaLUA("ARFE01","",[1566.2070],0))
+ActionOverride(Player5,LeaveAreaLUA("ARFE01","",[1464.2080],4))
+ActionOverride(Player6,LeaveAreaLUA("ARFE01","",[1530.2107],2))
+MultiPlayerSync()
+Explore()
+SmallWait(3)
+*/
+
+
+// CUTSCENES
+
+
+@0    = ~Good people, pray heed our petition,~ [PGKTWO00]
+@1    = ~Your attention we beg and we crave!~ [PGKTWO01]
+@2    = ~And if you are inclined for to listen,~ [PGKTWO11]
+@3    = ~An abundance of pastime we'll have.~ [PGKTWO02]
+@4    = ~We have come to relate many stories,~ [PGKTWO03]
+@5    = ~Concerning our forefathers' times,~ [PGKTWO04]
+@6    = ~And we trust they will drive out your worries,~ [PGKTWO05]
+@7    = ~Of this, we are both of one mind.~ [PGKTWO06]
+@8    = ~There is one thing more needing mention:~ [PGKTWO07]
+@9    = ~The songs we'll sing are all in fun.~ [PGKTWO08]
+@10   = ~So now that you've heard our intention,~ [PGKTWO09]
+@11   = ~We'll play on to the beat of the drum.~ [PGKTWO10]
+@12   = ~Lords and ladies...~ [PGTEWS01]
+@13   = ~Imnesvale will never be the same!~ [PGTEWS02]
+@14   = ~We welcome you to the first annual Pan-Amnish Bardic Competition!~ [PGTEWS03]
+@15   = ~And now...~ [PGTEWS04]
+@16   = ~The hardest working love slave in the business...~ [PGTEWS05]
+@17   = ~Head Boy in the House of Mirth...~ [PGTEWS06]
+@18   = ~The reason the gods made tights...~ [PGTEWS07]
+@19   = ~Your Master of Ceremonies...~ [PGTEWS08]
+@20   = ~JASPER ST. BAIRD!~ [PGTEWS09]
+@21   = ~Ho there!~ [PGJASS00]
+@22   = ~*clap*~
+@23   = ~*clap-clap*~
+@24   = ~Woohoo!~
+@25   = ~Thank you, thank you. You're a wonderful audience!~ [PGJASS02]
+@27   = ~Let's get started, hmm?~ [PGJASS03]
+@28   = ~I am so glad to be here with you, you lovely people!~ [PGJASS04]
+@29   = ~Things were looking a bit dodgy for me, I confess.~ [PGJASS05]
+@30   = ~That's the last time I take dance lessons from a succubus!~ [PGJASS06]
+@31   = ~*laughter*~
+@32   = ~I don't get it.~ [PGHEKLCA]
+@33   = ~But I know you eager fans did not travel to Imnesvale to hear about my busy morning!~ [PGJASS07]
+@34   = ~You came here for the arts. So let's get started!~ [PGJASS08]
+@36   = ~The rules are simple enough for the likes of you.~ [PGJASS09]
+@37   = ~Each contestant will be judged on style, originality, overall entertainment value, and their mass appeal.~ [PGJASS10]
+@38   = ~Our pair of judges has secretly blended with you audience members to gauge your reactions as well as use their own expertise to find their perfect bard and name that lucky performer the Pan-Amnish Bardic Champion!~ [PGJASS11]
+@39   = ~*cheers*~
+@40   = ~The winner will receive a purse of 2000 gold, an all-expenses-paid holiday in the Dalelands, as well as fame and glory forever!~ [PGJASS12]
+@41   = ~Or at least until the next contest!~ [PGJASS13]
+@42   = ~Oooh, the sense of anticipation in the air... It's so exciting, I'm tingling!~ [PGJASS14]
+@44   = ~Or is that my immortal mistress trying to recall me? Now, now, my kitten. I'll not be long!~ [PGJASS15]
+@46   = ~Are you ready for the first performer?~ [PGJASS16]
+@47   = ~Bring them on!~
+@48   = ~*Yawn* There sure are a lot of bards waiting to go on. I'm going to nap through the first half of this, under that shady tree.~
+@470   = ~I cannot wait!~
+@480   = ~There is something very important I have to do... over there. I'll be back for Keto's performance.~
+
+@49   = ~First up, we have the Heartthrob of the East!~ [PGJASS17]
+@50   = ~Does your lass dream herself to sleep with this man's face etched in her eyelids?~ [PGJASS18]
+@51   = ~Is my hair gold and curly?~ [PGJASS19]
+@52   = ~Of course she does!~ [PGJASS20]
+@53   = ~Here's everyone's favorite swain, Pendragon Madrigal!~ [PGJASS21]
+@54   = ~There he is!~ [PGGMIO02]
+@55   = ~Penny!~ [PGGMIO03]
+@56   = ~I love you, Penny!~ [PGGMIO04]
+@57   = ~As a warning, we don't want anyone poking an eye out...~ [PGJASS22]
+@58   = ~So I shall have to ask that you ladies in the audience refrain from throwing your corsets on stage.~ [PGJASS23]
+@59   = ~*sigh*~
+@60   = ~Awwwww.~ [PGGMIO15]
+@61   = ~Pooh!~ [PGPOPP11]
+@62   = ~Ahem.~ [PGPENN06]
+@63   = ~This one is for that special lady.~ [PGPENN6a]
+@64   = ~You know who you are.~ [PGPENN6b]
+@65   = ~In the rain...~ [PGPENN09]
+@66   = ~...the pavement shines like silver.~ [PGPENN10]
+@67   = ~All the lights...~ [PGPENN11]
+@68   = ~...are misty in the river.~ [PGPENN12]
+@69   = ~In the darkness...~ [PGPENN13]
+@70   = ~...the trees are full of starlight...~ [PGPENN14]
+@71   = ~...and all I see is her and me, forever and forever.~ [PGPENN15]
+@72   = ~Father, did it occur to ye to ask the sex of these parties you invited to the contest?~ [PGMOMA9]
+@73   = ~'Tis true, our lass may have changed o'er this handful of years past...~ [PGMOMB0]
+@74   = ~...but she's hardly gone and become a man!~ [PGMOMB1]
+@75   = ~Now, don't be getting hasty with your conclusions, Mother.~ [PGDADA5]
+@76   = ~Stranger things have happened in this wild, wicked world.~ [PGDADA6]
+@77   = ~Would ye love our girl any less if ye found she'd grown a beard?~ [PGDADA7]
+@78   = ~What would the neighbors think?!~
+@79   = ~That your daughter has become a fine fellow, and what's the harm in that?~
+@80   = ~I wouldn't mind having a son and daughter both.~
+@81   = ~Two children for the price o' one.~
+@82   = ~Now that's economy.~
+@83   = ~Ach, you and your economy.~
+@84   = ~Is it too much for a woman to ask that a daughter stay a daughter?~
+@85   = ~I love her...~ [PGPENN16]
+@86   = ~...but when the night is over...~ [PGPENN17]
+@87   = ~She is gone...~ [PGPENN18]
+@88   = ~...the river's just a river.~ [PGPENN19]
+@89   = ~Without her...~ [PGPENN20]
+@90   = ~...the world around me changes...~ [PGPENN21]
+@91   = ~The trees are bare and everywhere the streets are full of strangers.~ [PGPENN22]
+@92   = ~I love her...~ [PGPENN23]
+@93   = ~I love her...~ [PGPENN24]
+@94   = ~I love her...~ [PGPENN25]
+@95   = ~*sigh*~ [PGPOPP14]
+@96   = ~*sigh*~ [PGGMIO16]
+@97   = ~*sigh*~ [PGGROU05]
+@98   = ~*sigh*~ [PGGROU04]
+@198   = ~*sigh*~
+@99   = ~...But only on my own.~ [PGPENN26]
+@100   = ~Awwww.~ [PGGROU06]
+@200   = ~Awwww.~
+@101   = ~A wonderful performance indeed!~ [PGJASS24]
+@102   = ~Sweet young girls from here to Nashkel will cry themselves to bed tonight, I'm quite sure!~ [PGJASS25]
+@103   = ~Well, it's been an exciting first half, but we still have plenty of bards left to go!~ [PGJASS26]
+@104   = ~Who's ready for the next performer?~ [PGJASS27]
+@105   = ~More! More!~
+@106   = ~There's more? How long is this going to take? Wake me when it's your turn, eh, Keto?~
+
+@107 = ~Ahhhh!~
+@108 = ~Ooooh!~
+
+
+
+
+
+
+// LIFFETTA
+
+@999 = ~*applause*~
+
+@1000 = ~Four would be lovely
+Three friends with me as we stride
+And spring leaves budding.~ [PGLIFFA0]
+
+@1001 = ~Adventure is grand
+In caverns we dance. Laughter.
+Echoes, we descend.~ [PGLIFFA1]
+
+@1002 = ~Descend? Descend where?~ [PGCWD2A0]
+@1003 = ~That was all?~ [PGCWD3A0]
+@1004 = ~What was the four? Who's the bad guy 'ere?~ [PGCWD1A0]
+
+@1005 = ~The clink of a mug
+Wooden beams splinter 'neath me
+And gems in the walls.~ [PGLIFFA2]
+
+@1006 = ~Mug? Are they at the pub, or dancin' in caverns?~ [PGCWD4A0]
+@1007 = ~Quiet, let's see how it ends.~ [PGCWD3A1]
+@1008 = ~I like gems.~ [PGCWD2A1]
+
+@1009 = ~The battle, over
+All is red. Breath burning hot
+Though there is no sun.~ [PGLIFFA3]
+
+@1010 = ~The day is ended
+Weariness is all you feel
+Let out tired sigh.~ [PGLIFFA4]
+
+@1011 = ~(sigh)~ [PGCWD4A1]
+@1012 = ~She didn't mean you, nitwit!~ [PGCWD3A2]
+
+@1013 = ~Well! I don't know about you, but I'm spent just from listening! I ask you all for a warm round of applause for those 85 smashing syllables!~ [PGJASS28]
+
+@1014 = ~By my ears, Father, I must be going deaf. For a storyteller, that one had precious little to say.~ [PGMOMA0]
+
+@1015 = ~Aye, a fine frugality in her expression. Enough to make any Pa proud, I'd say. Why waste words on a poem?~ [PGDADA0]
+
+@1016 = ~Is that what it was? The things these modern poets come up with! Imagine poetry not rhyming!~ [PGMOMA1]
+
+@1017 = ~It's a Kara-Turian habit, Mother.~
+
+@1018 = ~Kara-Turian? Now, I wasn't going to question the child's dark hair, mind you...~
+
+@1019 = ~For many a lass changes the color of her hair as she grows older.~
+
+@1020 = ~Like Lady Dunryde back in Dagger Falls. Natural blonde? Who does she think she's fooling?~
+@1021 = ~But to the point, Father. I was making allowances, for 'tis true, our lass may have changed o'er this handful of years past.~
+@10210 = ~This poetess has little of our girl in her to look at, but now I see why.~
+
+@1022 = ~She's not our girl at all! In picking bards to invite to the competition, did it occur to ye our babe's hardly gone and gained another culture!?~
+
+@1023 = ~Now, don't be getting hasty with your conclusions, Mother. Stranger things have happened in this wild, wicked world.~
+@10230 = ~Many a child grows up to be something foreign and strange for their parents to behold.~
+@10231 = ~Would ye love our girl any less if ye found she'd become a Kara-Turian flower?~
+
+@1024 = ~What would the neighbors think?!~
+
+@1025 = ~That your daughter has seen so much of the world as to become more worldly in appearance.~
+@10251 = ~And what's the harm in that? I wouldn't mind having a daughter from across the seas.~
+@10250 = ~Two children for the price o' one. Now that's economy.~
+
+@1026 = ~Ach, you and your economy. Is it too much for a woman to ask that a daughter stay fair of face and flame of hair?~
+
+
+// PRUDENCE
+
+@1027 = ~My girl, before you begin, why don't you say a few words for our audience? Your name, Dubhthistle... are you of the infamous Schamedar Dubhthistle clan?~ [PGJASS29]
+@1028 = ~I... I'm sure I don't know, sir. I'm no one as special as that. Just Prudence.~ [PGPRU10]
+@1029 = ~Indeed you are. So, lords and ladies, I give you... just Prudence!~
+
+
+
+@1031 = ~Mellow the moonlight, to shine is beginning,
+Close by the window, Young Eileen is spinning,
+Bent o'er by the fire, a blind grandmother is sitting,
+Crooning and moaning and drowsily knitting.
+There's a form at the casement, the form of her true love
+And he whispers with face bent, "I'm waitin' for you, love.
+Get up from your stool, through the lattice step lightly
+And we'll rove in the grove while the moon's shinin' brightly."~ [PGPRU02]
+
+@10310 = ~Mellow the moonlight, to shine is beginning,
+Close by the window, Young Eileen is spinning,
+Bent o'er by the fire, a blind grandmother is sitting,
+Crooning and moaning and drowsily knitting.
+There's a form at the casement, the form of her true love
+And he whispers with face bent, "I'm waitin' for you, love.
+Get up from your stool, through the lattice step lightly
+And we'll rove in the grove while the moon's shinin' brightly."~
+
+@1032 = ~The maid shakes her head, on her lips lays her fingers,
+Steals up from the stool, longs to go and yet lingers
+A frightened glance turns her to her drowsy grandmother,
+puts one foot on the stool, spins the wheel with the other
+Lazily, easily swings now the wheel round,
+Slowly and lowly is heard now the reel sound,
+Noiseless and light, to the lattice above her,
+The maid steps then leaps to the arms of her lover.~ [PGPRU03]
+
+@10320 = ~The maid shakes her head, on her lips lays her fingers,
+Steals up from the stool, longs to go and yet lingers
+A frightened glance turns her to her drowsy grandmother,
+puts one foot on the stool, spins the wheel with the other
+Lazily, easily swings now the wheel round,
+Slowly and lowly is heard now the reel sound,
+Noiseless and light, to the lattice above her,
+The maid steps then leaps to the arms of her lover.~
+
+@1033 = ~Slower and slower and slower the wheel spins,
+Lower and lower and lower the reel rings,
+Ere the wheel and the reel stop their ringing and moving
+Through the grove the young lovers by moonlight are roving.~ [PGPRU04]
+
+@10330 = ~Slower and slower and slower the wheel spins,
+Lower and lower and lower the reel rings,
+Ere the wheel and the reel stop their ringing and moving
+Through the grove the young lovers by moonlight are roving.~
+
+
+@1050 = ~Now I haven't heard singing like that since the demigoddess herself graced me with a birthday tune. Ah, to be so young again...~ [PGJASS30]
+@1051 = ~But I digress. Please, show your appreciation for Prudence Dubhthistle!~ [PGJASS31]
+
+@1052 = ~Such a lovely girl, and such a beautiful voice! Ach, I feel the unstoppable urge to make her a cup o' tea.~ [PGMOMB2]
+@1053 = ~'Tis a motherly instinct she sings to, that's for certain! And did ye hear, Father? She sounded confused as to her family name!~ [PGMOMB3]
+@1054 = ~Is it too soon to say I'm proud of the woman our lass has become?~ [PGMOMB4]
+
+@1055 = ~Might be, Mother. We've yet to see all the young ladies awaitin' their turn.~ [PGDADA8]
+@1056 = ~One may surprise us yet.~ [PGDADA9]
+
+@1057 = ~Aye, perhaps I'm too eager to reach the end of this infernal search and know she's safe and sound.~
+@1058 = ~Hand to heart, if honesty were at stake, I'd have to say that while our girl could carry a tune, she never carried it over the hill and away like young Prudence.~
+@10580 = ~She may resemble a songbird a wee too much to be ours.~
+
+@1059 = ~Now, don't be getting hasty with your conclusions, Mother. Stranger things have happened in this wild, wicked world.~
+@1060 = ~Could be that our Cait had to sing for her supper more than we'd care to think about.~
+@1061 = ~The harsh edge of starvation has a sharp way of honing a skill.~
+
+@1062 = ~Oh, Father! Bite your tongue! Such thoughts have given me many a sleepless night!~
+
+@1063 = ~Chin up, love. That will all be behind our girl after today.~
+
+@1064 = ~No sooner than we pick her out of this maddening crowd.~
+
+@1065 = ~Aye, no sooner than that.~
+
+
+// Joules
+
+@1066 = ~I'm sure you'll all give a warm embrace to Sir Joules!~ [PGJASS32]
+
+@1067 = ~Not in those filthy cloaks, they won't. I'd really rather you didn't breathe on me, either.~ [PGJOUL10]
+@1068 = ~(ahem) Yes, well. Glad to see I was right about the competition needing a bit of class. I would ask that you keep the cows quiet and refrain from blowing your nose during my performance.~ [PGJOUL11]
+@1069 = ~That is, I WOULD ask, but I know there would be little point.~ [PGJOUL12]
+
+@1070 = ~Whasse mean by that?~ [PGHELKB7]
+
+@1071 = ~He means you should shut it!~ [PGHELKC7]
+
+@1072 = ~Sir Joules, did you have a song prepared? Or is this to be a conceptual performance only?~ [PGJASS33]
+
+@1073 = ~Quite so, quite so.~ [PGJOUL13]
+
+
+@1074 =~I care not for these ladies
+That must be woo'd and pray'd
+Give me sweet Amaryllis
+The wanton country maid,
+Nature Art disdaineth,
+Her beauty is her own.
+
+And when we court and kiss
+She cries 'Forsooth, let go!'
+But when we come where comfort is
+She never will say no.~ [PGJOUL07]
+
+@10740 =~I care not for these ladies
+That must be woo'd and pray'd
+Give me sweet Amaryllis
+The wanton country maid,
+Nature Art disdaineth,
+Her beauty is her own.
+
+And when we court and kiss
+She cries 'Forsooth, let go!'
+But when we come where comfort is
+She never will say no.~
+
+@1075 = ~These ladies must have pillows
+And beds by strangers wrought
+Give me a bow'r of willows
+Of moss and leaves unbought,
+And fresh Amaryllis
+On milk and honey fed,
+
+And when we court and kiss
+She cries 'Forsooth, let go!'
+But when we come where comfort is
+She never will say no.~ [PGJOUL08]
+
+@10750 = ~These ladies must have pillows
+And beds by strangers wrought
+Give me a bow'r of willows
+Of moss and leaves unbought,
+And fresh Amaryllis
+On milk and honey fed,
+
+And when we court and kiss
+She cries 'Forsooth, let go!'
+But when we come where comfort is
+She never will say no.~
+
+// JOULES
+
+
+@1100 = ~I didn't think that was all that classy. Why get so dressed up, I ask you?~ [PGHEKLD7]
+@1101 = ~Those fancy folk can't even afford to fire their servants, I hear.~ [PGHEKLC8]
+@1102 = ~No choice but to let them pamper them and put them in eight layers of silks.~ [PGHEKLC9]
+
+@1103 = ~I'm sure we'll all be humming that tune for a long, long while.~ [PGJASS34]
+@1104 = ~I do so love a maddeningly catchy song. There's nothing quite like feeling the need to bash my brains out with a brick!~ [PGJASS35]
+
+/*
+
+@1105 = ~Father, did it occur to ye to ask the sex of these parties you invited to the contest?~
+@1106 = ~'Tis true, our lass may have changed o'er this handful of years past, but she's hardly gone and become a man.~
+
+@1107 = ~Now, don't be getting hasty with your conclusions, Mother.~
+@1108 = ~Stranger things have happened in this wild, wicked world. Would ye love our girl any less if ye found she'd grown a beard?~
+
+@1109 = ~What would the neighbors think?!~
+
+@1110 = ~That your daughter has become a fine fellow, and what's the harm in that? I wouldn't mind having a son and daughter both.~
+@1111= ~Two children for the price o' one. Now that's economy.~
+
+@1112= ~Ach, you and your economy. Is it too much for a woman to ask that a daughter stay a daughter?~
+*/
+
+// AKAI
+
+@1113=~Father, do my eyes deceive me? Two girls, like as peas in a pod!~ [PGMOMB5]
+@1114=~Did it occur to ye, for all our lass may have changed o'er these handful o' years passed, she's hardly split in two!~ [PGMOMB6]
+@1115=~Did ye not think on it before inviting such a couplet to the contest?~ [PGMOMB7]
+
+@1116=~Aye, Mother, but wasn't our girl talented enough to equal two normal daughters?~ [PGDADB0]
+
+@1117= ~The fancy! Talented to be sure, but one girl, nonetheless.~ [PGMOMB8]
+
+
+// LYRICA
+
+@1140 = ~Down by the sally gardens
+My love and I did meet
+She passed the sally gardens
+on little snow white feet~ [PGLYRSO1]
+
+@11400 = ~Down by the sally gardens
+My love and I did meet
+She passed the sally gardens
+on little snow white feet~
+
+
+@1141 = ~She bid me to take love easy
+as the leaves grow on the trees
+But I being young and foolish
+with her would not agree~ [PGLYRSO2]
+
+@11410 = ~She bid me to take love easy
+as the leaves grow on the trees
+But I being young and foolish
+with her would not agree~
+
+
+@1150 = ~She seems nice. And her voice--like the solars humming on a breeze and a cloud, she is.~ [PGMOMB9]
+@1151 = ~But... has it been so many years, Father? From the look of her, if this Lyrica were a melon, it'd be past cutting time.~ [PGMOMC0]
+
+@1152 = ~Now, don't be getting hasty with your conclusions, Mother. Stranger things have happened in this wild, wicked world.~ [PGDADB1]
+@1153 = ~Our girl could have suffered the slings and arrows of the real world. Too many miles on the road and a few hardships can put a few extra years on your face, sure enough.~ [PGDADB2]
+
+@1154 = ~Or she could have gone to tutor with my younger sister.~ [PGMOMC1]
+
+@1155 = ~There is that possibility.~ [PGDADB3]
+
+@1156 = ~Ach, it's so hard to know what to hope. She does seem nice, and a lovely talent to be sure.~
+@1157 = ~There's a confidence to her that speaks of our devil-may-care daughter, but I suppose it's early in the show, yet.~
+
+@1158 = ~We're but half done, Mother. 'Tis but to wait and see.~
+
+@1159 = ~Aye. We'll wait and see.~
+
+
+// ULGA
+
+@1200 = ~Ulga sing now.~ [PGULGA02]
+
+//(To the tune of "The Drunken Sailor")
+
+@1201 = ~What Ulga do with skull of puny human?
+What Ulga do with skull of puny human?
+What Ulga do with skull of puny human?
+Make a pretty basket!~ [PGULGA05]
+
+
+@1202 = ~Father, what possessed ye to invite an ogre to our contest?~ [PGMOMC2]
+@1203 = ~No hair of red, no eyes of blue. Did ye not think to ask these things before sending out the invitations?~ [PGMOMC3]
+
+@1204 = ~Aye, I though of it, but stranger things have happened, Mother. Many a girl becomes an ogre once she's married.~ [PGDADB4]
+@1205 = ~Present company excepted, o' course.~
+
+@1206 = ~I should say so, and the same for our girl!~
+
+@1207 = ~O' course, Mother. O' course.~
+
+@1208=~What Ulga do with pretty basket?
+ What Ulga do with pretty basket?
+ What Ulga do with pretty basket?
+ Fill it up with daisies!~ [PGULGA06]
+
+@10209 = ~You like?~ [PGULGA03]
+
+@1209 = ~*clap*~
+
+@1210= ~Then Ulga sing more!~ [PGULGA04]
+
+@1211= ~Now, now, ogrekins, you'll spoil us. Let every bard have their turn.~ [PGJASS36]
+
+
+
+
+
+
+
+// Talindra
+
+
+@1250 = ~What's the matter with you me lass?
+And where's your dashing Jimmy?
+Them soldier boys have picked him up,
+And taken him far from me.
+Last pay day he went into to town,
+And them red-coated fellas,
+Enticed him in and made him drunk,
+He'd better gone to the gallows.~ [PGTALIN1]
+
+@12500 = ~What's the matter with you me lass?
+And where's your dashing Jimmy?
+Them soldier boys have picked him up,
+And taken him far from me.
+Last pay day he went into to town,
+And them red-coated fellas,
+Enticed him in and made him drunk,
+He'd better gone to the gallows.~
+
+@12501=~The very sight of his cockade,
+It sets us all a-cryin'.
+And me, I nearly fainted twice,
+I thought that I was dying.
+Me father said he'd pay the smart,
+And he'd run for a golden guinea,
+But the Sergeant swore he kissed the book,
+So now they've got young Jimmy.~
+
+@1251 = ~So break me heart and then it's o'er,
+O' break me heart me dearie,
+As I lie in this cold, cold bed,
+Of a single life I'm weary.~ [PGTALIN2]
+
+/*
+@1250 = ~What's the matter with you me lass?
+And where's your dashing Jimmy?
+Them soldier boys have picked him up,
+And taken him far from me.~
+
+@1251 = ~Last pay day he went into to town,
+And them red-coated fellas,
+Enticed him in and made him drunk,
+He'd better gone to the gallows.~
+
+@1252 =~The very sight of his cockade,
+It sets us all a-cryin'.
+And me, I nearly fainted twice,
+I thought that I was dying.~
+
+@1253 = ~Me father said he'd pay the smart,
+And he'd run for a golden guinea,
+But the Sergeant swore he kissed the book,
+So now they've got young Jimmy.~
+
+@1254 = ~When Jimmy talks about the wars,
+It's worse than death to hear him.
+I must go out to hide me tears,
+Because I cannot bear him.~
+
+@1255 = ~Brigadier or grenadier,
+They said they're sure to make him.
+So now he jibes and cracks his jokes,
+And bids me not forsake him.~
+
+@1256 = ~So break me heart and then it's o'er,
+O' break me heart me dearie,
+As I lie in this cold, cold bed,
+Of a single life I'm weary.~
+
+@1257 = ~So break me heart and then it's o'er,
+O' break me heart me dearie,
+As I lie in this cold, cold bed,
+Of a single life I'm weary.~
+
+*/
+
+@1258 = ~Ach, for truth she sings a sweetly song, but what manner of girl has ears that point directions to the cliffs?~ [PGMOMC4]
+
+@1259 = ~An elf, I'd say, Mother.~ [PGDADB5]
+
+@1260 = ~Do ye, now?~ [PGMOMC5]
+@1261 = ~Did it occur to ye, Father, for all our lass may have changed o'er these handful o' years passed, she's hardly gone and sprouted a pair of Cormanthors on her head!~ [PGMOMC6]
+
+@1262 = ~Nay so fast, love. Remember how much our daughter sprouted her thirteenth summer?~ [PGDADB6]
+@1263 = ~Half a barrel taller, she was. Who's to say her ears haven't caught up?~ [PGDADB7]
+
+@1264 = ~The tomfoolery of the man! Next you'll be telling me our daughter's been turned into a bramble that plays the hurdy-gurdy!~
+
+@1265 = ~Stranger things have happened, Mother. Stranger things.~
+@1266 = ~Wouldn't be such misfortune to have a bramble for a daughter. T'would keep the rabbits from our grounds and gardens.~
+
+@1267 = ~Pah! Tomfoolery, I say!~
+
+
+// Keto's intro
+
+@1280 = ~Oh, it's been a long day, and I know you're as exhausted as I, but I implore you, bard backers and artiste adherents all, to remain transfixed for the final, but by no means the least of our performers.~ [PGJASS37]
+@1281 = ~From parts unknown, bearing little but the most adorable grin I've ever had the privilege to lay eyes on, will you please clap Keto Riven onto our paltry stage?~ [PGJASS38]
+
+@1282 = ~Did ye hear that, Father? Her name is Keto! That moniker has a familar ring. Oh, what if she could be our lost lamb?~ [PGMOMC7]
+
+@1283 = ~Listen well, Mother. We'll know our girl soon enough by how she spins a tale.~ [PGDADB8]
+
+// Keto's lost
+
+@1300 = ~Ooh, time's up! And just before anyone in the audience was mauled. Now that's entertainment. Let's give a hand to Keto!~ [PGJASS39]
+
+@1301 = ~*CLAP*~
+// Realizes clapping alone. Pause
+@1302 = ~...*clap*~
+@1303 = ~Uh.~
+@1304 = ~I always wanted to know what Umberlee smelled like.~ [pgcrwdd1]
+
+@1305 = ~Yes. Well!~ [PGJASS40]
+@1306 = ~A valiant try. Don't take it so hard, young woman. The demigoddess of immortal bards smiles upon all who make a genuine effort!~ [PGJASS41]
+
+@1307 = ~Poor mite. I'd had high hopes for that one, by the look of her. My heart just breaks to see her flailing about.~ [PGMOME1]
+
+@1308 = ~Aye, Mother. Could happen to anyone, o'course. Can't judge the whole worth of a player by one performance, but there was something lacking in the lass.~ [PGDADB9]
+
+@1309 = ~Our Caitie, she knew her own mind and was quick to say it. None of that dibble-dabble hesitation.~
+@1310 = ~No daughter of mine ever said, "Err" or "hmm" or "Please, can I get a word out?"~
+
+@1311= ~True, true. Our girl would stand up and be counted. Not afraid of anything, she was.~
+
+@1312= ~But, remember, Father? That girl who sang about the middle? The lyrical one. She seemed nice enough and to have her wits about her.~
+
+@1313= ~Wit and talent enough, hair like the sunrise, but I don't recall our Caitie-O rivalling the birds, Mother.~
+
+@1314 = ~Our Caitie-O could do whatever she put her mind to! I think, nay, I feel it in my bones, she's our girl. She's our lost lamb!~
+
+@1315 = ~Good friends, it's that time. Surely, we are all winners for such a display of talent.~ [PGJASS42]
+@1316 = ~I would ask our secret judges, the benefactors of our delightful little contest, to please come forth and render your verdict!~ [PGJASS43]
+@1317 = ~Oh, the waiting, it truly is the hardest part!~ [PGJASS44]
+
+@1318 = ~*whisper*~
+
+@1319 = ~And now, ladies and gentlemen, the unveiling you've waited all day for, the winner of our inaugural Pan-Amnish Bardic Competition, the undisputed bard of the year...~ [PGJASS45]
+
+@1320 = ~Is LYRICA!~ [PGJASS46]
+
+@1321 = ~Barry, the peasants are cheering. What do they have to be so happy about? They're peasants. I'm the winner here.~ [PGLYR11]
+
+@1322 = ~The peasants are cheering for YOU, duchess. Not themselves, only you.~ [PGBARR08]
+
+@1323 = ~Only me. Of course.~ [PGLYR13]
+@1324 = ~Yes, yes, I'm sure you're pleased. You were all witness to something truly special here today.~ [PGLYR14]
+@1325 = ~My moment. My special, shining moment.~ [PGLYR15]
+
+@1326 = ~An' that's not the half of it. Wait 'til she finds there's a reunion in the air!~
+
+@1327 = ~Oh, Father, all this waitin'--I can't bear waitin' anymore.~
+@1328 = ~She looks so proud of herself at winnin', I've just got to say somethin'!~
+
+@1329 = ~I feel the same, Mother.~
+
+
+// Keto places
+
+@1350 = ~Be still my heart! What a tale to endure!~ [PGMOMC8]
+@1351 = ~There's lingering pain in the girl's voice that she cannot mask from a mother's ear. Dare we hope she speaks her own story?~ [PGMOMD0]
+
+// This part could be used for all the reunions.
+
+@1352 = ~What else is worth thinking? Hair of red, eyes of blue, a familiar tilt to her head. I can recall chucking that chin and giving her sweetmeats when she was nigh able to talk.~
+
+@1353 = ~Oh, it must be our Caitie, Father, safe and sound. Or, at least, finally within sight, and soon to welcome with open arms. Oh, all this waiting! I can't bear waiting anymore.~
+@1354 = ~She's beaming so brightly at the applause, look at her! I've just got to say somethin'!~
+
+@1355 = ~Thank you. Thank you.~
+
+@1356 = ~Miss... Keto?~ [PGDADC0]
+
+@1357 = ~Yes, ma'am? Sir?~
+
+
+
+@1358 = ~And not a moment too soon, I was about to just don the crown and be done with it.~
+@1359 = ~Oh, Prudence, dear?~
+@1360 = ~It is my singular joy and distinct honor to crown you the winner of the first (and I daresay last, now that Squire's come clean about the whole business) Pan-Amnish Bardic Competition!~
+@1361 = ~All the riches of the contest are yours, and you can walk with chin high and chest jutted, knowing that you are the undisputed bard of the year!~ [PGJASS51]
+
+@1362 = ~I... all I did was sing a little song... but thank you very much, sir, madam. I'll... I'll try to live up to the honor!~ [PGPRU11]
+
+
+// Keto wins with mirror
+
+@1400 = ~Thank you, truly!~
+
+@1401 = ~Did ye hear that, Father?~ [PGMOMC9]
+
+@1402 = ~Aye, Mother. Her words ring of the very girl we're searching for.~ [PGDADC1]
+
+@1403 = ~It is my singular joy and distinct honor to crown you, Keto Riven, the winner of the first (and I daresay last, unless you plan on another nasty knock to the head) Pan-Amnish Bardic Competition!~ [PGJASS50]
+@1404 = ~All the riches of the contest are yours, and you can walk with chin high and chest jutted, knowing that you are the undisputed bard of the year!~ [PGJASS51]
+
+
+// Keto wins, Yoshimo
+
+@1450 = ~There's lingering pain in the girl's voice that she cannot mask from a mother's ear. Dare we hope she is the one we seek?~ [PGMOMD9]
+
+
+
+
+
+// PGJassy
+
+@4500 = ~First up, we have the golden throat of the society scene! This performer has entertained many a debutante and duke within Amn's mighty reach, but it's no mighty reach to say that he'll give you his best!~ [PGJASS52]
+@4501 = ~Our next performers hail from the chilly Ten Towns, but they'll surely warm your hearts with their spirited playing. And your eyes aren't deceiving you--these young ladies are as identical as twins can be.~ [PGJASS53]
+@4502 = ~I just know you'll follow my lead and give twice the introduction to Alesis and Epiphone, the lovely and talented Akai twins!~ [PGJASS54]
+@4503 = ~First up, we have a taste of the exotic! Our mystical wordbender will have you begging for more as you taste and touch the texture of her delightfully compact verses.~ [PGJASS55]
+@4504 = ~Please hold nothing back--I know I won't--for Liffetta!~ [PGJASS56]
+@4505 = ~Well! Time to forge ahead! Our next stirring performance will certainly be coming from balladeer Prudence Dubhthistle, a young woman with a special gift for song!~ [PGJASS57]
+@4506 = ~First up, we have the Heartthrob of the East! Does your lass dream herself to sleep with this man's face etched in her eyelids? Is my hair gold and curly? Of course she does!~ [PGJASS58]
+@4507 = ~Here's everyone's favorite swain, Pendragon Madrigal!~ [PGJASS59]
+@4508 = ~Now then, we have something very exciting in store for you this evening, a talent of such sublime beauty and charm that I... well, I find myself wondering who has favored me with a glance in the mirror!~ [PGJASS60]
+@4509 = ~Our next performer was kind enough to make time in her extremely busy schedule for us, so I'm sure you'll make her feel very welcome here in Imnesvale.~ [PGJASS61]
+@4510 = ~Please welcome the one, the only, THE Lyrica!~ [PGJASS62]
+@4511 = ~Our first performer is certainly one of the biggest talents that's ever graced this stage. Or any other. Ever!~ [PGJASS63]
+@4512 = ~Stand back--and hecklers, please remember that having torn-off limbs replaced is so terribly expensive at temple--and make way for Ulga, the Singing Ogre!~ [PGJASS64]
+@4513 = ~Next up is the very sort of delicious voice that can only be bred slowly, over many millennia, in the leafy canopies of elven civilization, where the air is thin--and so are the women, quite frankly I prefer them with a bit more meat on their bones--but the melodies are lush.~ [PGJASS65]
+@4514 = ~I bid you all welcome miss Talindra Talltree!~ [PGJASS66]
+@4515 = ~Once, not so very long ago in this very land, a crime of devastating proportions was committed. You see, our hero, <CHARNAME> of Candlekeep was ambushed in the vicinity of Baldur's Gate--~ [FWKETOI9]
+@4516 = ~That's not this very land! That's north of the border! You're talkin' of foreigners!~ [PGHEKLA0]
+@4517 = ~True, that little part may have been not so much in this very land, but the story heads south very quickly!~
+@4518 = ~I'll say, but does it get any better?~ [PGHEKLB0]
+@4519 = ~Har!~ [PGHEKLC0]
+@4520 = ~Hee!~ [PGHEKLE0]
+@4521 = ~Eh.~ [FWKETOJ0]
+@4522 = ~Our hero was minding his business, enjoying a moment of relaxation after vanquishing more than one purveyor of infamy along the Sword Coast when suddenly--~ [FWKETOJ5]
+@4523 = ~Our hero was minding her business, enjoying a moment of relaxation after vanquishing more than one purveyor of infamy along the Sword Coast when--~ [FWKETOJ6]
+@4524 = ~Like what?~
+@4525 = ~Like what? What like what?~
+@4526 = ~What did <PRO_HESHE> do? What does a hero do to relax?~
+@4527 = ~Right! What do we know about heroes and relaxin'?~
+@4528 = ~But it's not actually important to the story.~
+@4529 = ~Then why did ye mention it?~
+@4530 = ~Hear! Hear! We want the full story!~
+@4531 = ~Tell us what <CHARNAME> does to relax!~
+@4532 = ~Hear!~
+@4533 = ~<CHARNAME>... err, well, <PRO_HESHE> decided to... uh...~
+@4534 = ~Say, <CHARNAME>! The people are curious! What did you do to relax after your feats of valor, eh?~
+@4535 = ~I use the time in between adventures for study and quiet contemplation.~
+@4536 = ~You look nervous. You aren't nervous, are you?~
+@4537 = ~I like me some wenches, then some wine. And, after the wine's gone, more wenches!~
+@4538 = ~I like me some men, then some wine. And, after the wine's gone, more men!~
+@4539 = ~I guess I take a lot of naps.~
+@4540 = ~Psst, Keto... just tell the story! Don't lose the thread!~
+@4541 = ~Easy! I go to the market and spend all my hard-won gold!~
+@4542 = ~Why, I hone my skills! An adventurer can never truly rest. Even when I am not fighting for my life, I look to the inevitable dangers of the future.~
+@4543 = ~So there you have it. That's what our hero does to relax.~
+@4544 = ~Sheesh! Tell the world a little more loudly, eh?~
+@4545 = ~I'll tell you what <CHARNAME> does in <PRO_HISHER> spare time, good people! Worries about <PRO_HISHER> friends.~
+@4546 = ~Nobly, faithfully, and as full of blab as any hero who has ever walked the land of Amn.~
+@4547 = ~That's what our adventurer does to relax.~
+@4548 = ~Happy now?~
+@4549 = ~Meh. That's kind of dull.~
+@4550 = ~I thought she'd say <CHARNAME> kills dragons as a hobby.~
+@4551 = ~(yawn)~
+@4552 = ~Uhm... where were we? Oh, yes! Our hero was enjoying a moment of relaxation when, all of the sudden, <PRO_HESHE> and <PRO_HISHER> travelling companions were hijacked!~
+@4553 = ~Ah!~
+@4554 = ~Bushwacked!~
+@4555 = ~Ooh!~
+@4556 = ~Kidnapped!~
+@4557 = ~Eek!~
+@4558 = ~Kidnapped by what?~
+@4559 = ~An evil wizard!~
+@4560 = ~(gasp)~
+@4561 = ~Kidnapped by an evil wizard is interestin' enough.~
+@4562 = ~Certainly, it is! The peril was immeasurable! The pain incomprehensible! The torture unbearable! But there <PRO_HESHE> was, <CHARNAME>, a prisoner in the dark dungeon of the dreaded wizard Irenicus.~
+@4563 = ~I've never heard of 'em.~
+@4564 = ~Me either.~
+@4565 = ~If you had heard of him, it would be all the worse for you! Be thankful you haven't encountered the dreaded wizard Irenicus!~
+@4566 = ~Ooh! This is getting spooky!~
+@4567 = ~Can you comprehend the sacrifices <CHARNAME> made? Trapped. Helpless. Friends were lost, enemies made, scars incurred that would not heal. An indeterminable amount of time passed, then <CHARNAME> made <PRO_HISHER> escape!~
+@4568 = ~How?~
+@4569 = ~Yeah, how'd <CHARNAME> escape the dungeon iffen <PRO_HESHE> was all weak and helpless?~
+@4570 = ~<CHARNAME>'s compatriot, Imoen, struggled free from her own cell and unlocked her friend's cage!~
+@4571 = ~But how'd this Imoen get out?~
+@4572 = ~Oh, I kind of skipped that part, didn't I? You see, the dreaded wizard Irenicus had enemies of his own--The Shadow Thieves.~
+@4573 = ~They attacked his dungeon, and, during the fight, there were explosions of magic, arrows flying! Imoen's cell was damaged in a blast, and she was able to wriggle free.~
+@4574 = ~The Shadow Thieves attacked this Irenicus?~
+@4575 = ~Aren't thieves wicked people?~
+@4576 = ~Wicked people only attack nice people like us!~
+@4577 = ~Yeah! Thieves stole one of my chickens just last week, the dirty buggers!~
+@4578 = ~Poor Irenicus, thieves pickin' on 'im!~
+@4579 = ~No, no! You've got it all wrong! Sometimes wicked people attack other wicked people because... they're in competition! To be the most wicked!~
+@45801 = ~Wicked rotters!~
+@45802 = ~Makes sense.~
+@4580 = ~Oh.~
+@4581 = ~Wait a second.~
+@4582 = ~Whaaaat?~
+@4583 = ~You said that our hero, <CHARNAME>, escaped <PRO_HISHER> imprisonment because <PRO_HISHER> friend Imoen unlocked <PRO_HISHER> cage.~
+@4584 = ~That's right.~
+@4585 = ~And our other hero, Imoen, got out of her cell because it was damaged in the battle between The Shadow Thieves and the dreaded wizard Irenicus to be the most wicked.~
+@4586 = ~Right again.~
+@4587 = ~So, wot yer sayin' is, the heroes of this adventure did squat but hang around bein' tortured and whatnot 'til a bit of luck happened by and sprang their lazy bums outta trouble!~
+@4588 = ~Hey, he's right!~
+@4589 = ~Yeah!~
+@4590 = ~Now, wait a minute! There may have been a tiny bit of fortune involved in the initial escape from bondage, but I assure you, <CHARNAME> and Imoen had to fight their way out of that dungeon, risking their lives and demonstrating courage with every step.~
+@4591 = ~Sounds to me like this Imoen did more of the hero work. She freed <CHARNAME> didn't she? What happened to her?~
+@4592 = ~Yes, Imoen! What happened to Imoen?~
+@4593 = ~I'll get to that eventually. Wouldn't you like to hear about <CHARNAME> and the genie's riddle first? Or the dryad harem? Or the chamber of trapped souls? Or Yoshimo?~
+@4594 = ~No!~
+@4595 = ~Imoen!~
+@4596 = ~Tell us about Imoen!~
+@4597 = ~Err... um.~
+@4598 = ~Well, after many feats of courage and consummate skill, <CHARNAME> and Imoen emerged from the rubbled entrance of Irenicus' dungeon, only to find themselves in Waukeen's Promenade in the city of Athkatla!~
+@4599 = ~Woo! I bet the rent for that dungeon was something awful.~
+@4600 = ~True. 'Tis the nicest market outside of Trademeet. Me sister shopped there on holiday last spring. Bought a pair of sandals, she did. Ever so fine, they were, but pricey! Cost her two gold!~
+@4601 = ~You don't say!~
+@4602 = ~Two gold? That's three months of barley!~
+@4603 = ~Amazin'!~
+@4604 = ~Excuse me! Yoohoo? Could we get back to my story, please?~
+@4605 = ~(grumble)~
+@4606 = ~Oh, all right.~
+@4607 = ~Ahem! They found their nemesis, Irenicus, in the Promenade, fighting off a team of Cowled Wizards determined to stop him from threatening the city folk with his dire magics!~
+@4608 = ~Imoen, filled with rage and indignation at all <CHARNAME> and she had suffered at Irenicus' hands, threw her own spellcasting powers into the fray--~
+@4609 = ~This Imoen can cast spells?~
+@4610 = ~You didn't say that before!~
+@4611 = ~Why didn't she blow up 'er prison cell, if she could use magic?~
+@4612 = ~I don't get it.~
+@4613 = ~She was tortured and helpless, remember?~
+@4614 = ~But she got better?~
+@4615 = ~Fighting her way out of the dungeon?~
+@4616 = ~She got to take a nap in the dungeon?~
+@4617 = ~I still don't get it.~
+@4618 = ~She... oh, she was so furious... and frustrated... and she didn't know what else to do... so she found the strength to cast a spell, and blow that Irenicus, who wouldn't stop talking, into oblivion!~
+@4619 = ~So Imoen blew Irenicus into oblivion and saved the day while <CHARNAME> did squat again?~
+@4620 = ~NO!!~
+@4621 = ~Ahem.~
+@4622 = ~No. Imoen did not have a complete chance to blow Irenicus into oblivion, and <CHARNAME> did not have the chance to join the battle, because before <PRO_HESHE> could register what was happening in greater detail than what I am telling you now, the Cowled Wizards arrested Imoen and Irenicus, both, banishing them to Spellhold.~
+@4623 = ~So, how do you like THAT?~
+@4624 = ~Hmm.~
+@4625 = ~Well? Any questions?~
+@4626 = ~Is it true what they say about Cowled Wizards? Do they really smell like peanuts?~
+@4627 = ~I heard they smell like brimstone and vanilla.~
+@4628 = ~What is wrong with you people? Can't you just listen to a story?!?~ [FWKETOJ1]
+@4629 = ~I am trying my best up here, and you just won't STOP!~ [FWKETOJ2]
+@4630 = ~SURE, THE COWLED WIZARDS SMELL LIKE PEANUTS, AND, WHILE WE'RE AT IT, UMBERLEE SMELLS LIKE SALT WATER TAFFY!!!~ [FWKETOJ3]
+@4631 = ~Miss! We've a word, if you've the will to hear it!~ [PGDADC2]
+@4632 = ~Barry! The crowd is surging! I'll be mobbed!~ [PGLYR12]
+@4633 = ~This audience is over!~ [PGLYR08]
+@4634 = ~Oh, Barry! Barry, please remove--~ [PGLYR09]
+@4635 = ~Wait! We need to speak with you! It's very important.~ [PGMOMD1]
+@4636 = ~Oh. Oh! Yes, you were the judges.~
+@4637 = ~You doubtless wish to engage me for some private function? Barry will handle all the arrangements.~
+@4638 = ~No, it's no such thing as that. We held this contest to FIND you, don't you see? We've been searching ever so long!~
+@4639 = ~Yes, for the best bard in all of Amn. Ho-hum. I know. It's me!~
+@4640 = ~Aye, there's a love. You're a fine bard, and your Father and I couldn't be prouder.~
+@4641 = ~Ooookay, I think it's time to be going now. BARRY!~
+@4642 = ~It's just as I feared. She did go plum in the head this handful o' years. That's why she never sent word home!~
+@4643 = ~Oh, tell her Father! Tell her who she is!~
+@4644 = ~You're our girl! Your name wasn't always Lyrica, o' course. No, we named ye after Granny O' Fairney.~
+@4645 = ~Madness! Something's gotten into the water supply! The well is poisoned, these people are insane! BARRY!~
+@4646 = ~Now, calm yourself, there's no harm here. You've only forgotten yourself.~
+@4647 = ~We had some hint in our search that might have been the way the river ran. But our girl, she had the same look about her, an' it so happened in this land years ago she was cut off from us, lost to the world.~
+@4648 = ~'Twas a girl of great talent and story, and the loss... well, it almost killed us.~
+@4649 = ~We knew that in this land, somewhere, wandered a young woman of rare talent who could outshine the rest. So we decided to bring her to us.~
+@4650 = ~That's what this competition was, Caitie. Our hope and prayer to find our girl.~
+@4651 = ~Caitie? CAITIE?!? My name has never been Caitie, and I am no child of you charlatans!~
+@4652 = ~I am descended from nymph stock! The spirit of Oghma courses through my very veins! I am not the sort of person who is called "Caitie"!~
+@4653 = ~This is some sort of trick, isn't it? Bad publicity! No! You're trying to confuse me.~
+@4654 = ~Who sent you? WHO? Were you planning to KIDNAP me?~
+@4655 = ~Now, Caitie, if you'll just calm down for a spell and think about this clearly--~
+@4656 = ~ASSASSINS! Guards, ASSASSINS! AAIIIIIIIEEEEE!!!~
+@4657 = ~(sigh) Now, Lyrica, we'll step away from the crazed fans and get you something to drink. It's going to be all right.~
+@4658 = ~Oh, Barry! They're so menacing!~
+@4659 = ~Yeah, yeah. The Squire and his missus are terrifying brutes, all ninety-nine pounds of them.~
+@4660 = ~Listen, duchess, how about I treat you to a ten-day in Esmeraltan? Sparkling waters, fine food, pampering, the works!~
+@4661 = ~That might help me recover from the strain.~
+@4662 = ~(sniff) A little. You had better make it a month.~
+@4663 = ~You've got it.~
+@4664 = ~A room with a view?~
+@4665 = ~Ehh...~
+@4666 = ~BARRY! I AM VERY FRAGILE RIGHT NOW!!!~
+@4667 = ~Sure, sure! Lots of view. View for miles, sweets.~
+@4668 = ~Then what are we hanging around this dump for? My vocal chords are getting dusty.~
+@4669 = ~Oh, Father, what are we to do? This... shrill siren cannot possibly be our own flesh and blood! Whatever her memory, our girl had too much heart to deny us like this!~ [PGMOMD2]
+@4670 = ~Stranger things have happened in this wild, wicked world, Mother. Sometimes people can't appreciate the prize right under their nose, even when it's the chance of a Mother like you.~ [PGDADC3]
+@4671 = ~Oh, Father, you'll make my eyes leak talking like that.~
+@4672 = ~I must say the wind's pointing toward the sad truth that our plan failed. We tried our best to find our girl, the best we could ever hoped for. You can sleep knowin' that in your heart.~
+@4673 = ~Aye, we tried, but only pain and disappointment came of it. It'll be a restless sleep, Father. A restless sleep.~
+@4674 = ~One had best away from Imnesvale, by the looks of it. Let us go before the singer has us taken away in chains for the dastardly crime of thinkin' she's our lost daughter.~
+@4675 = ~Her first memory of the world was black.~ [FWKETOJ4]
+@4676 = ~The girl came to, her eyes stinging a bitter red. She panicked for a moment and tried to open them, but that--that only made them burn the worse. She fought down her nerves and let her other senses take over. She felt and smelled little but dirt, heard nothing but a nauseating roar in her ears.~ [FWKETOJ7]
+@4677 = ~Tried to stand--and that was a mistake, as she had no balance to speak of. Now she could taste the dirt as well. Spitting, she realized the metallic flavor in her mouth wasn't simply swallowed earth, but her own blood.~ [FWKETOJ8]
+@4678 = ~She rolled onto her back and lay there numbly until the red faded to pink and the roar became a quiet whisper. After a few moments, she stood again, this time without toppling over. She hurt everywhere, and the steep hillside to her left and the rips in her clothes told the story plainly enough.~
+@4679 = ~If she had any personal effects at the top of the hill, they hadn't lasted the trip down. An empty sheath strapped to her hip told her she once carried a dagger, but offered no other clues.~
+@4680 = ~It wasn't until she started looking for the dagger that she realized that she had no idea who she was or what she was doing there. She was just an achy, lost, and confused girl at the bottom of a cliff. In frustration, she attempted to climb the hill.~
+@4681 = ~Another short tumble down, jarring the pain in her limbs, told her the incline was too steep to manage. Her choices were few: she could walk, or she could have a good cry. This girl, she did an about-face and started walking.~
+@4682 = ~Trees eventually gave way to scrub and vegetable patches eventually gave way to a boy playing tag with who she presumed were his sisters. She tried to smile and wave, but collapsed into the dirt instead.~
+@4683 = ~A splash of cold water later, she was opening her eyes for a second rude awakening. The children crowded her face, imploring her to show signs of life. One was fiddling at her ear, and our anonymous heroine instinctively slapped the child away. It wasn't until then that she realized she wore earrings that had survived the tumble, a miracle in itself.~
+@4684 = ~She tilted her head gingerly from side to side, and the beads of crystal tickled the skin of her neck as they moved. She gasped, recognizing the sensation as familiar. She clung to it, cupping her hands over her ears, and sat dumbly on the dusty ground as the children scrambled noisily for the nearby cabins.~
+@4685 = ~After a while, they brought back their parents, a frightened, sad-looking lot, not much impressed by a girl with no coin, ragged clothes, and no idea who she was.~
+@4686 = ~In the end, they took her at her word, accepting she was injured, lost, and short of answers. They gave the girl clean clothes and a bunk, shared with her a portion of their meals. She got some odd stares for the empty sheath, odder stares still when she continued to wear it, but the villagers said nothing.~
+@4687 = ~They prompted her for a name to call her by, though, and a pair of fractured syllables sprang quickly to her lips. It was no kind of name, and didn't mean anything to her when she spoke it in a mirror, but it served its purpose.~
+@4688 = ~Five uneventful days went by. The girl learned the land, performed odd jobs, and listened to the tales of the villagers. By the third night, she was fairly sure she'd heard them all, but she listened still, craving to fill the dark spaces in her head.~
+@4689 = ~Most of their stories were standard peasant fare, but there was the occasional talk of a marauding band of orcs that lived in the hills nearby. The girl noticed a number of suspicious glances her way whenever these tales aired. It seemed that the orcs hadn't been spotted since her arrival.~
+@4690 = ~On the sixth morning, she awoke with four farmers looming over her, their faces plowed into unhappy frowns. They made it clear that she was to dress and come with them--no chatter, no dallying.~
+@4691 = ~They led her along some winding back roads to a clearing near the top of the hill she'd tumbled down. Their destination--she smelled the scene before she saw it. 'Twas as though a rotted keg of sweat and another of phlegm had collided, burst, and coated the countryside.~
+@4692 = ~At least a dozen dead orcs accounted for the stink. Most looked to be dropped in combat, but a couple had throwing knives in their back, doubtless dropped as they tried to flee.~
+@4693 = ~At first, the girl could not figure out what they wanted her to see, why she had to look at such carnage, but then... then she saw him.~
+@4694 = ~At the center of the fray was the best-dressed orc in the bunch, doubtless the chieftain. And lying atop him, a dagger lodged at the base of his spine, was a young man, likely the hero of the hour.~
+@4695 = ~The girl knew what was coming next, but her legs wouldn't obey her to run. She could not move. She could not make a sound. She was simply transfixed by the gore and the anguish and the dread.~
+@4696 = ~The lead farmer grimly yanked the dagger from the champion's back, wiped it off as he approached the girl. She flinched as he dropped it into her sheath--of course, it was a perfect fit.~
+@4697 = ~The tears she had wanted to cry since she first awoke at the base of the cliff came to her then, but the farmers didn't hear. They just walked away, and she knew she was not invited.~
+@4698 = ~After her cry, she started running. Away. To anywhere.~
+@4699 = ~Did ye hear that, Father?~ [PGMOMC9]
+@4700 = @1402 // ~Aye, Mother. Her words ring of the very girl we're searching for.~ [PGDADC4]
+@4701 = ~But what happened to the girl?~
+@4702 = ~Yes, what became of her?~
+@4703 = ~Want to know how the story ends, dear listener? The girl kept running. She may never stop running.~
+@4704 = ~But, that's not an ending!~
+@4705 = ~No, it isn't. There can't be an ending, not until she knows who she is.~
+@4706 = ~For every one of you who has a place you belong, for each one of you who remembers friends from childhood, and for all who can look forward to a familiar bed at the end of your days, know that you are blessed. You do not carry the burden of the unknown past.~ [FWKETO46]
+@4707 = ~Unlike the running girl, you have luxury of standing still.~ [FWKETO47]
+@4708 = ~Aye, she's right.~ [PGHEKLA1]
+@4709 = ~And here I've always cursed being stuck in a small village, but no other place would be home!~ [PGHEKLB1]
+@4710 = ~(sniff) I never knew I was so lucky!~ [PGHEKLC1]
+@4711 = ~Me either!~ [PGHEKLD1]
+@4712 = @4631 // = ~Miss! We've a word, if you've the will to hear it!~ [PGDADC2]
+@4713 = ~You've...?~ [FWKETOJ9]
+@4714 = ~Aye, say what's on your mind. I'm no stranger to talking.~ [FWKETOK0]
+@4715 = ~Nay, no stranger to that, and we're ever so proud of you for it.~ [PGMOMD4]
+@4716 = ~Proud? Why would you be proud of me? You don't even know me!~ [FWKETOK1]
+@4717 = ~Oh, but we do, child. I know you.~ [PGMOMD5]
+@4718 = ~There, in your grin. It'd take more years than I've got to forget that. You've your father's smile.~ [PGMOMD6]
+@4719 = ~You... know my father? You know me? Pretty impressive. I don't even know myself.~ [FWKETOK2]
+@4720 = ~Now, Mother, let's not allow our eagerness for a reunion to smother the girl.~ [PGDADC6]
+@4721 = ~Who... who are you people?~
+@4722 = ~The O'Fairneys of Featherdale, Myles and Grainne. We're very respectable; you have my word on it.~
+@4723 = ~'Tis true, lass. She wouldn't stand for anything less.~
+@4724 = ~Featherdale? What do you do there?~
+@4725 = ~We own a little land, graze some sheep, lease a few cottages, keep a roof on our manor...~
+@4726 = ~You're a squire?~
+@4727 = ~Oh, we don't put on airs. We're simple folk.~
+@4728 = ~With land, sheep, cottages, a manor...~
+@4729 = ~We have a daughter, as well. A pretty thing. Talkative, mind you, a bit of a handful growing up, but there's something to be said for a child who's strong of spirit.~
+@4730 = ~We've missed her terribly, every day she's been gone.~
+@4731 = ~Where did she go?~
+@4732 = ~That's a tricky question, lass. You may understand that our daughter, as young girls are wont to do, met a dashing young man from a western Dale, strong of arm as she was forceful of mind, and fell in love. Perhaps they were too young, but they were adventuresome sorts, determined to marry. We wished our girl nothing but happiness, so we gave the pair our blessing.~
+@4733 = ~Not long after the wedding, the pair took to the road, our daughter intent on travelling with her champion to his birthplace. Words were our girl's trade. Simplicity for her to scribe descriptions of their journey, more difficult for her to find a dependable means to send those words home to us.~
+@4734 = ~Still, she endeavored. For the first few months, a missive would wander its way to us on occasion, speaking of her joy, humor from the road, praise of her young man... we were certain our girl never want for happiness.~
+@4735 = ~But, then, a month stretched into two, then three, then more, and we realized with growing dread that another letter from our daughter might not be coming. That's when we started our search, but there was an ample area to cover. Still more time passed as we sought answers of daughter and her husband.~
+@4736 = ~One day, we came across a village, superstitious with a story kindred to the tale you just shared. In our heart of hearts, we knew this was our daughter, the slain young man her--~
+@4737 = ~Husband? No!~
+@4738 = ~You spoke of a fine pair of earrings in your story. A wedding gift, they were, from the groom to his bride, of gold and crystal-cut gem. Our Cait, for Catriona is our daughter's name, prided them more than any ring, so she chose to sport them over a traditional wedding band.~
+@4739 = ~Tell us, child, if you and the lass of your story are one and the same, you are our lost lamb. You, Keto, are you Caitie O'Fairney, our daughter?~
+@4740 = ~Now we see you up close, those earrings you wear tell us all we need to know. A wedding gift, they were, from the groom to his bride. You prided them more than any ring, so you chose to sport them over a traditional wedding band.~
+@4741 = ~Keto, born Catriona O'Fairney, you are our lost daughter.~
+@4742 = ~You... my family? The young man... we were married?!~
+@4743 = ~Father, she gone short of breath. I think we've overwhelmed her.~
+@4744 = ~I know just the thing to soothe the girl, Mother. Here, love, have a spot of whiskey from my bottle.~
+@4745 = ~Bottle? Oh! No, thank you. I have my own.~
+@4746 = ~This is lovely... really, really, touching... but we've a contest to settle, Squire, and I've a lovely pair of aching thighs awaiting my ministrations, so if we could settle up with the Pan-Amnish Bard Of the Year, we'd all appreciate it.~
+@4747 = ~We've found just the bard we were looking for! Keto, we understand that your past is something fuzzy to you still, and we must seem like strangers, but knowing how clever and talented our daughter can be is what brought us so close to you again.~
+@4748 = ~You were always a talespinner, who'd speak to anyone who would listen, and listen to anyone who would speak.~
+@4749 = ~Yer first word after "Ma" and "Da" was "story," may the rabbits have their way with my hedges if I tell a lie.~
+@4750 = ~'Tis a vow sober as a Helmite. Your Father loves his hedges.~
+@4751 = ~Wait a second--you're not going to crown me the winner just because I'm your daughter, are you?~
+@4752 = ~Why not? That's exactly what we were looking for. Our daughter.~
+@4753 = ~Which would be grand if this was an "Are You My Daughter?" competition, but this was supposed to be a contest of bards.~ [FWKETOQ1]
+@4754 = ~If I'd known it was an "Are You My Daughter?" competition, I'd have worn my pink tights.~ [PGJASS70]
+@4755 = ~And you're a fine bard. I'll not hear talk otherwise.~
+@4756 = ~True, I am a fine bard, and... and I proved something to myself today. I know who I am better than I believed.~
+@4757 = ~But I also know I wasn't the best here today. I think you know it, too.~
+@4758 = ~Granted, that Prudence girl could make a songbird choke with envy, but I'll not be accused of slighting my own child!~
+@4759 = ~Come, Mother. There is no slight when your very flesh and blood avows 'tis the right thing to do. How could we look our Cait in the eye if we'd cheated one of her fellows?~
+@4760 = ~No, we'll give the money to the girl that earned it, but our love to the girl who deserves it.~
+@4761 = ~Come, child. Let your parents give you a hug that is years overdue.~
+@4762 = ~Thank you. Thank you for finding me. I... I may not remember everything... but it feels... so... right... that you're here.~
+@4763 = ~Father, I think she's having trouble catching her breath again. Don't squeeze our prize so tightly!~
+@4764 = ~Most mirrors never learn to do anything but show you exactly what you show them. But I'm going to let you in on a secret--a few, a very special few, become something more. Something magical happens to them and they learn how to do more than just reflect. I've seen it with my very own eyes.~ [FWKETOK3]
+@4765 = ~This mirror I speak of didn't have the best start in life. It wasn't some maiden's ornamental looking glass or even a sturdy old tavern piece. No, this mirror was found by a lonely girl at the bottom of a cliff.~ [FWKETOK4]
+@4766 = ~It had no shiny silver backing or delicate jewels. All it had was a cracked handle and a crooked frame. But once the girl polished the surface up a bit, well, it saw as well as any fancy mirror could. Being nothing special, the girl didn't keep the mirror, so it ended up being passed about from place to place.~
+@4767 = ~Nobody wanted it for long. But it did its duty, the only thing it really knew how to do. It watched the world and it showed the world exactly what it saw. And that's enough. That's all most people ever think to ask of a mirror.~
+@4768 = ~That suited the mirror just fine. It had only ever done what was expected of it, and saw no reason to stop. It knew that people would treat it well enough if it quietly went about its business of reflecting the world.~
+@4769 = ~But one day, somewhere between reflecting a sonnet and a serenade, something magical happened. The mirror looked out at a young man gone courting, and for the first time it saw more than just what was skin-deep. It saw the sadness behind the smile, and the insecurities behind the bluff.~
+@4770 = ~Well, at first this frightened the mirror, for it had never noticed anything beyond what it saw. It would be just as shocking as one of us waking up one morning able to see ghosts, or hear the worms turning the earth.~
+@4771 = ~Worse, being frightened only scared the mirror even more, for it had never known true feelings before, only reflections.~
+@4772 = ~Soon, however, the mirror was as happy as it had ever been. No one noticed anything different about it, and continued to pass it hither and yon-lost off the back of a cart, a gift to a great-aunt, an ante in a dice game.~
+@4773 = ~But the mirror watched all with deeper insight, growing and learning from hidden feelings and suppressed desires. It was a whole new way of looking at the world.~
+@4774 = ~Then this mirror had a thought. See, the mirror figured out that if it only showed people what they presented, nobody learned anything. Now that it knew so much about people and what they were truly like, it could show them so much more than the masks they wore on their faces.~
+@4775 = ~That way, they would have to face the truth about themselves, and they could learn things about others that would have remained hidden.~
+@4776 = ~At first, this didn't go well. No, this didn't go well at all. You see, the mirror didn't expect that people would react so badly to being shown exactly what they were. It thought it would be rewarded, get that gilding the other mirrors had, maybe get hung on a wall in some nice parlor somewhere, but no.~
+@4777 = ~Some people ran away. Some broke down crying. Some got downright violent--one even cast it to the floor, so angered was he by what he saw! She--I mean, it, the mirror--was terrified. Couldn't fathom what had gone wrong, why everyone didn't want the raw truth.~
+@4778 = ~For a time it went back to simple reflections once more, a mirror meek as you please. It resumed being a glass parrot. No interpretation, no insight. Just reflections. Ashamed--and I swear to you, this part is true--the mirror cried quicksilver tears when no one was looking.~
+@4779 = ~But the mirror just couldn't resist. It knew there had to be some way to give the world more than a trick of light. Carefully, it started to watch the world more closely again, this time not only seeing but hearing and feeling the truth of the words and the sights and the disguises of all that passed before it.~
+@4780 = ~Finally, it came to understand. Simply showing its audience what was expected would never be enough-the mirror knew there was no value in that. But showing the unsoftened ugliness of the world-well, that would only earn another trip down the hillside and more cracks, chips, and scrapes.~
+@4781 = ~The trick wasn't to just brazenly expose every boil and wart and lie that lurks beneath the surface. But feelings, the truth of feelings, now that was something worth showing. Show a man the truth of lust or fear or pain or victory, and he knows how better to deal with it when they come to his doorstep.~
+@4782 = ~And if a few couldn't handle their truth of seeing their own fears and lusts and pains reflected, well, that was fine. Because it wasn't about earning that silver coating or the honor of the parlor that some other mirrors enjoyed.~
+@4783 = ~The mirror understood at last that it was more important to be a beacon of truth than it was to be taken home and polished and set on some maiden's wardrobe.~
+@4784 = ~So if you're as lucky as I was, and you come across this mirror and it shows you something you didn't expect to see, and you learn a bit more about yourself than you thought you could from a mirror, don't be surprised. Consider it a gift you'll both remember.~ [FWKETOK7]
+@4785 = ~Wait. That's it? Just a mirror?~ [PGHEKLA2]
+@4786 = ~Hush, you. It was allegorical and meaningful and all them other fancy things.~ [PGHEKLB2]
+@4787 = ~I thought it was very moving.~ [PGHEKLC2]
+@4788 = ~You would.~ [PGHEKLA3]
+@4789 = ~Well done!~ [PGHEKLB3]
+@4790 = ~Yes, quite lovely!~ [PGHEKLC3]
+@4791 = ~I still don't get it.~ [PGHEKLA4]
+@4792 = ~One day, we came across a village, superstitious of a girl with an empty dagger sheath and no memories. Found not far away was a slain young adventurer, her knife in his back, amidst a pile o' orcs he'd offed.~
+@4793 = ~In our heart of hearts, we knew this was our daughter, the slain young man her--~
+@4794 = ~You're missing one thing, lass, a fine set of earrings that you might yet recall. A wedding gift, they were, from the groom to his bride, of gold and crystal-cut gem. Our Cait, for Catriona is our daughter's name, prided them more than any ring, so she chose to sport them over a traditional wedding band.~
+@4795 = ~You, Keto, are you Caitie O'Fairney, our daughter?~
+@4796 = ~You're a fine bard. I'll not hear talk otherwise.~
+@4797 = ~And what's more, you were the finest we saw all day! Oh, Caitie, the tale you told... my heart just melted! Granted, your fellows know a thing or two, but hand to heart, you'd have won the day if you were a kobold's stepchild!~
+@4798 = ~Aye. We couldn't look our Cait in the eye if we'd cheated one of her fellows. We came to give our money to the bard who earned it, and our love to the girl who deserves it, and she's one and the same.~
+@4799 = ~He doesn't want you to hear this story, you know. Even now, I can feel his disapproving gaze. But I know it's right to tell you, even if it's not what he would want.~ [FWKETOK5]
+@4800 = ~Our man would have been a certified hero, if the pay were better. He was bold of word and firm of deed, dark and charming and always sure he was on the winning side. He wasn't the strongest or the most clever, but his attitude could get him out of any situation. His wit and camaraderie made him the perfect specimen for the adventurer on the prowl, the hunter of men. His confidence was unbreakable.~ [FWKETOK6]
+@4801 = ~Do ye hear that, Father? Bold of word, firm of deed, dark and charming... Why, moonstruck the girl is!~ [PGMOME0]
+@4802 = ~Aye, does remind me of a tale I've heard before, an apple-cheeked girl come in from the winter's cold, bursting with words of a handsome and certified hero come to town.~ [PGDADC7]
+@4803 = ~Do you think... Father, could it be a story of *him*?~ [PGMOMD7]
+@4804 = ~When the stranger came to him offering copious riches to deliver one mysterious, ambivalent figure of coastal lore, of course he knew suspicion. But he also knew pride--the pride of a man chosen for a task because he knows he is the best, the most suited, perched at the very pinnacle of his chosen profession. The stranger insisted on delivery healthy and whole--usually a good sign, as he disdained being confused for a mindless killer. His pride was impeccable.~
+@4805 = ~Then the stranger insisted that he take on magical bonds, and endure a powerful enchantment to perform the duty to the letter. An odd request, even a trifle insulting. But professionalism won the day. Why argue with the customer? Besides, he was quite sure, as ever, that no one could make him do anything he would not wish to do himself, magic or no. His self-control was legendary.~
+@4806 = ~His confidence turned to curiosity when he found his quarry. A remarkable <PRO_MANWOMAN>, one under normal experiences he'd have given a wide berth as a practical matter. But his resolve was strong.~
+@4807 = ~Then, the unthinkable happened. To his surprise, he found that he cared. Curiosity turned to respect. Worse, that respect was returned--if not in equal measure by his subject, then certainly made up for by <PRO_HISHER> companions.~
+@4808 = ~Inside his heart, respect turned into dismay--both at this extremely troublesome situation, and the growing realization that the mage's bonds were doing their dirty work. They prevented him from speaking out, from offering a word of warning. From doing anything except what he had agreed to do.~
+@4809 = ~Even considering a warning caused him terrible pain as the wizard's damnable enchanted chains bit into his very soul. Blurting out the truth, scratching a message into the dirt, tapping out a coded warning on his knee--all avenues were closed to him. His heart knew despair, but his body knew only obedience.~
+@4810 = ~The day it mattered most, the day he was compelled to do what he had agreed to from the start, rebellion burned in his core, but he was helpless. Regardless of inner torment, he had his commands, he'd made his pact.~
+@4811 = ~All that remained was to spike a stew pot with a special packet, and finish escorting the group to the wizard's lair. Surely then the spell would be lifted. Surely then, he could begin to make amends.~
+@4812 = ~Surely, then, he could regain the status he had earned, the--dare he even think it?--affection he had come to enjoy. Performing the last dirty deed was actually a relief. The end of his deceit was in sight.~
+@4813 = ~Dear me... I pray 'tis not a story of whom we ken. He always seemed such a good lad! Ah, but it may explain...~
+@4814 = ~This lad, this hero of that girl's story, be he bonded or a stranger to us, she feels his fate deeply. Can ye hear that, Mother?~
+@4815 = ~I hear it, Father, though, by my mind, my daughter would have the sense to see through some charlatan scoundrel set to betray her.~
+@4816 = ~Stranger things have happened, love. Many's a young lass who's fallen for an adventurer despite her mother's good sense.~
+@4817 = ~Yet it was not the end. The wizard took his quarry, but the spell remained unbroken. He would have broken his personal code and cried out, or at least broken a sweat, but by then all acts of defiance were denied him. His friends knew only sleep, and his heart knew only shame. His wits had led him to a place that made his heart rebel mightily, but both bent more than ever, utterly spellbound.~
+@4818 = ~The end was not the relief he sought. His employer would not provide the promised riches, or his freedom. Instead, he was sent to die at the hands of those he had betrayed. In the end, he was made into that which he had always hated most--a mindless killer, a slave to the murderous passions of another too weak to do the deed.~
+@4819 = ~He had not only failed his friends, but himself, in every way that had ever meant a damn to him. He wept as he died. This once-proud man wept--I know it is true, for I saw it--something which must have cost him dearly, as such powerful enchantments can chase a soul to the planes beyond. And we... I wept as well.~
+@4820 = ~When a friend swears himself to become your enemy before he ever meets you, there is no easy blame. And there is no easy vengeance on the one who pulled the strings of a man who never believed he had them.~
+@4821 = ~His punishment has already been served. I saw it in his face in his unguarded moments, and I felt it when I looked in his eyes--when he was tired, the spell weakened just enough to show the fear. And again when he... when he died.~
+@4822 = ~So I will do what I know he would hate, and tell you that I knew the real Yoshimo. I will make it my business to know that he is remembered not as a villain, but as a man who learned friendship and introspection too late.~ [FWKETOK8]
+@4823 = ~For Yoshimo--yes, friends, THE Yoshimo--there are no easy answers. When I think of my... my friend, I will know he was wrong. But I will know that he recognized this wrong. And I will know that he felt it, more deeply than I ever could.~ [FWKETOK9]

@@ -1,0 +1,24 @@
+IF
+         True()
+THEN
+RESPONSE #100
+         CutSceneId("PGJASSY")
+         PlaySong(0)
+         FadeToColor([20.0],0)
+         Weather(NOWEATHER)
+         ActionOverride("PGLiff",DestroySelf())
+         ActionOverride("PGTEWES",DestroySelf())
+         ActionOverride("PGKCHOR1",DestroySelf())
+         ActionOverride("PGKCHOR2",DestroySelf())
+         Wait(3)
+         FadeFromColor([20.0],0)
+         Wait(3)
+	 PlaySound("PGCROWD1")
+	 Wait(6)
+	 SetGlobal("PGPCWantsSecondHalf", "GLOBAL", 1)
+         ActionOverride("PGJASSY",StartDialogueNoSet([PC]))
+         EndCutSceneMode()
+END
+
+
+
