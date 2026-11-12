@@ -39,7 +39,10 @@ LANGUAGE ~French (Galathee of the d'Oghmatiques)~
          ~keto/english/setup.tra~
          ~keto/french/setup.tra~
 
-
+LANGUAGE ~Schinese~
+         ~schinese~
+	 ~keto/english/setup.tra~
+         ~keto/schinese/setup.tra~
 
 BEGIN @0
 
